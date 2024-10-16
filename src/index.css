@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Righteous&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Protest+Strike&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,7 +17,3 @@ code {
     monospace;
 }
 
-body{
-  background-image: linear-gradient(to right, #282b76f4, #060846d4);
-  background-repeat: no-repeat;
-}

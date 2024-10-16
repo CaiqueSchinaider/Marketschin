@@ -1,0 +1,11 @@
+[33mcommit 76a5bd8d07233ebbbdfacfd7fa9ec99455e7fb0a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Caique Schinaider <caiqueschinaiderrufinoviana@gmail.com>
+Date:   Wed Oct 16 09:03:22 2024 -0300
+
+    Ajuste de cor do Header, e posição do input do banner
+
+[33mcommit 501a23a8b8657e2f828561f37ed04f1ef5db6416[m
+Author: Caique Schinaider <caiqueschinaiderrufinoviana@gmail.com>
+Date:   Tue Oct 15 21:53:37 2024 -0300
+
+    Primeiro commit: Upload do site
