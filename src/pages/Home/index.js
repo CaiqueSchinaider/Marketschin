@@ -1,7 +1,7 @@
 import Banner from "../../components/Banner";
 import Card from "../../components/Card";
 import Header from "../../components/Header";
-import produtosMock from "../../utils/productMock"
+import produtosMock from "../../utils/produtosMock"
 import styles from "./Home.module.css"
 
 function Home() {
@@ -10,7 +10,6 @@ function Home() {
     
 
     <>
-    
     <Header />
     <Banner/>
     <section className={styles.Home}>

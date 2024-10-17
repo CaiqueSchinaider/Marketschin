@@ -1,43 +1,40 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import Banner from "../../components/Banner";
 import Card from "../../components/Card";
 import Header from "../../components/Header";
-import produtosMock from "../../utils/productMock"
+import produtosMock from "../../utils/produtosMock";
+import styles from "./Buy.module.css";
+import Container from "../../components/Container";
+import Listadevideos from "../../components/Listadevideos";
 
-function Home() {
-   
-        document.body.style. backgroundImage = "linear-gradient(to right, #282b76f4, #060846d4)"
-        
+function Buy() {
+  document.body.style.backgroundImage =
+    "linear-gradient(to right, #282b76f4, #060846d4)";
+
+        const [searchValue, setSearchValue] = useState("");
+
+        const lidarComMudança = (evento) => {
+          setSearchValue(evento.target.value);
+        };
+
+      
   return (
-    <>
     
-    <Header />
-    <Banner/>
-  
-  
-  
-      {produtosMock.map((produto) => {
-        return (
-          <div style={{width: "auto"}}> 
-          <h1 style={{backgroundColor: "#18181874", borderRadius: "10px 10px 0px 0px", fontFamily:"Righteous, sans-serif", color: "white", width: "230px", 
-            margin: "7px 42px -1px 40px", paddingTop: "px", boxShadow: "7px 13px 14px 0px #0000009c",  alignItems: "center", display:"flex", justifyContent: "center",alignItems:"center"}}> {produto.Categoria} </h1>
-          
-          <Card data={produto.produtos}/>
-          </div>
-        
-        ) 
-      }
-      )}
-    </>
-  
-  )}
-
-  
-
-        
-       
-  
-
+    <section className={styles.Buy}>
+      <Header />
+      <Banner />
+        <input
+            type="search"
+            placeholder="Pesquisar..."
+            value={searchValue}
+            onChange={lidarComMudança}
+        />
     
+            <Listadevideos/>
+    
+    
+    </section>
+  );
+}
 
-export default Home;
+export default Buy

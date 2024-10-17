@@ -1,0 +1,20 @@
+
+.Buy div:nth-of-type(2) {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.Buy div:nth-of-type(2) input {
+    background-color: rgb(0, 2, 133);
+    color: white;
+    width: 270px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.786);
+}
+.Buy input::placeholder {
+    color: rgb(255, 255, 255);
+    font-style: italic;
+    
+}
