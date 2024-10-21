@@ -1,11 +1,7 @@
-import { Children } from "react"
-import styles from "./Container.module.css"
+import { Children } from "react";
+import styles from "./Container.module.css";
 
-function Container({children}){
-    return(
-        <section className={styles.Container}>
-            {children}
-        </section>
-    )
+function Container({ children }) {
+  return <section className={styles.Container}>{children}</section>;
 }
-export default Container
+export default Container;

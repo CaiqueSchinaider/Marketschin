@@ -1,32 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Righteous&family=Rubik+Mono+One&display=swap');
-@media screen and (max-width: 700px){
-    
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Righteous&family=Rubik+Mono+One&display=swap");
+@media screen and (max-width: 700px) {
 }
-
 
 .Card {
-    margin: 30px 10px;
-    padding:15px;
-    display: inline;
-    background-color: white;
-    transition: 0.8s ease;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.375);
+  margin: 0px 10px;
+  padding: 15px;
+  display: inline;
+  background-color: #ebe5e8;
+  transition: 0.8s ease;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.375);
 }
 .Card img {
-    width: 250px;
-    height: 250px;
-    border-radius: 13px;
+  width: 250px;
+  height: 250px;
+  border-radius: 13px;
 }
 
 .Card h2 {
-    color: brown;
+  font-size: 2rem;
+  padding-top: 0;
+  margin-top: 2px;
+  font-weight: bolder;
+  color: #a72608;
 }
-.Card p {
-    font-size: 1.2rem;
-    font-family: "Righteous", sans-serif;
+.Card span {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #121113;
+  font-size: 1.3rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
-.Card:hover {
-    transform: scale(1.1);
-    padding:10px 17px;
-}
+/* .Card:hover {
+  transform: scale(1.1);
+  padding: 10px 17px;
+} */

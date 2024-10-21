@@ -1,0 +1,61 @@
+.Categoria {
+  background-color: #29339b;
+  color: white;
+  box-shadow: inset 5px 3px 20px 1px black;
+  margin: 10px;
+  border-radius: 50px;
+  border: 2px solid #eee5e9;
+}
+
+.Categoria div {
+  display: flex;
+  justify-content: flex-start;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 0px 50px;
+}
+
+.Categoria h1 {
+  font-family: sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+  font-style: italic;
+  text-shadow: 4px 6px 12px rgba(255, 255, 255, 0.329);
+  background-color: transparent;
+  padding: 20px 0px 20px 70px;
+  margin: 0;
+}
+.Categoria nav {
+  display: flex;
+  background-color: #eee5e9;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  font-size: 1.1rem;
+  color: #ffffff;
+  width: 770px;
+  text-align: center;
+  border-radius: 30px;
+  padding: 0;
+  margin-top: 20px;
+}
+.Categoria nav p {
+  background-color: #a72608;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 120px;
+  height: 26px;
+  padding-top: 6px;
+  border-radius: 5px;
+  transition: 0.7s ease;
+  cursor: pointer;
+}
+
+.Categoria nav p:hover {
+  color: #ffffff;
+  transform: scale(1.2);
+}
+.Categoria nav p:active {
+  background-color: #641e0e;
+  transform: scale(1.2);
+  transition: none;
+}

@@ -1,18 +1,19 @@
 @media screen and (max-width: 700px) {
-    .Container {
-        padding-left: 30px !important;
-    }
-    
+  .Container {
+    padding-left: 30px !important;
+  }
 }
 
 .Container {
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 20px;
-    padding-left: 94px;
-    background-color: #18181874;
-    width: auto;
-    margin: 0px 40px;
-    border-radius: 0px 10px 10px 10px;
-    box-shadow: inset -2px -13px 20px 14px rgba(0, 0, 0, 0.442);
+  display: flex;
+  justify-content: center;
+  width: 280px;
+  padding: 10px 0px;
+  transition: 0.3s ease-in;
+  background-color: transparent;
+  opacity: 0.9;
+}
+.Container:hover {
+  transform: scale(1.1);
+  opacity: 1;
 }
