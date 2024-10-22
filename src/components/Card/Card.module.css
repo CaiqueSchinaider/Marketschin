@@ -1,33 +1,253 @@
 @import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Righteous&family=Rubik+Mono+One&display=swap");
-@media screen and (max-width: 700px) {
+/* Para telas menores */
+@media screen and (min-width:766px) and (max-width: 800px) {
+  .Card img {
+    width: 99px;
+    height: 99px;
+    position: relative;
+    padding-right: 7px;
+    border-radius: 13px;
+}
+
+.Card h2 {
+  font-size: 1.3rem;
+  padding-top: 0;
+
+}
+.Card span{
+
+  padding-top: 0px;
+  margin-top: 0; 
+  display: inline-block;
+  width: 150px;
+  white-space: nowrap;
+ text-overflow: ellipsis;
+ overflow: hidden;
+  
+  
+
+}
+
+.Card {
+  height: auto;
+  max-height: 80px;
+  width: 300px;
+  max-width: 300px;
+  padding-left: 0;
+
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 10px;
+  padding-top: 7px;
+  padding-bottom: 25px;
+  gap: 30px
+
+  ;
+}
+}
+@media screen and (min-width: 569px) and (max-width:765px) {
+  .Card {
+
+    width: 400px;
+    padding-left: 0;
+    height: auto;
+    max-height: 80px;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 10px;
+    padding-top: 7px;
+    padding:  7px 10px 25px 10px;
+    justify-content: space-between;
+    padding-bottom: 25px;
+    gap: 30px;
+    padding-left: 20px;
+    
+  }
+  
+  .Card span{
+
+    padding-top: 0px;
+    margin-top: 0; 
+    display: inline-block;
+    width: 270px;
+    white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   font-size: 1.4rem;
+    
+    
+    
+  
+  }
+  .Card img {
+    width: 99px;
+    height: 99px;
+    position: relative;
+    padding-left: 10px;
+    border-radius: 13px;
+}
+
+.Card h2 {
+  font-size: 1.6rem;
+  padding-top: 0;
+}
+  
+}
+@media screen and (max-width: 364px) {
+  .Card {
+
+    width: 200px;
+    padding-left: 0;
+    height: auto;
+    max-height: 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 5px;
+    padding-top: 3px;
+    padding:  3px 5px 15px 5px;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    gap: 15px;
+    padding-left: 10px;
+    
+  }
+  
+  .Card span{
+
+    padding-top: 0px;
+    margin-top: 0; 
+    display: inline-block;
+    width: 140px;
+   
+   font-size: 1rem;
+    
+    
+    
+  
+  }
+  .Card img {
+    width: 44px;
+    height: 44px;
+    position: relative;
+    padding-left: 4px;
+    border-radius: 6px;
+}
+
+.Card h2 {
+  font-size: 1rem;
+  padding-top: 0;
+}
+.Card p {
+  display: flex;
+  align-items: center;
+}
+}
+@media  screen and (max-width: 568px) and (min-width: 365px ) {
+  .Card {
+    display: flex;
+    flex-direction: column;
+    height: 180px;
+    width: 180px;
+    max-width: 120px;
+    font-size: 0.5rem;
+    justify-content: center;
+  }
+  .Card img {
+    width: 70px;
+    display: flex;
+    margin-top: 10px;
+    margin-left: 25px;
+    height: 70px;
+   border-radius: 10px;
+    
+}
+
+.Card h2 {
+ 
+  height: 10px;
+}
+
+.Card p {
+  display: inline-block;
+flex-direction: column;
+  margin-top: 10px;
+ padding-left: 20px;
+justify-content: center;
+ width: 90px;
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
+
+}
+.Card span {
+  font-size: 0.7rem;
+  width: 80px;
+  color: black;
+
+}
+.Card section p {
+  margin-top: 13px;
+}
+}
+/* Para telas maiores */
+@media screen and (min-width: 801px) {
+  .Card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 300px;
+    max-width: 350px;
+    justify-content: space-between;
+  }
+  .Card img {
+    width: 260px;
+    height: 260px;
+   padding: 22px;
+   border-radius: 50px;
+    
+}
+.Card h2 {
+  font-size: 1.5rem;
+  padding-top: 0;
+}
+
+.Card p {
+  margin-top: 0;
+ padding-left: 30px;
+ height: 70px;
+padding-bottom: 15px;
+ padding-top: 0;
+ 
+
+}
+.Card span {
+  font-size: 1.2rem;
+}
+.Card section p {
+  margin-top: 13px;
+}
 }
 
 .Card {
   margin: 0px 10px;
-  padding: 15px;
-  display: inline;
+  height: auto;
   background-color: #ebe5e8;
   transition: 0.8s ease;
   border-radius: 10px;
   box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.375);
 }
-.Card img {
-  width: 250px;
-  height: 250px;
-  border-radius: 13px;
-}
+
 
 .Card h2 {
-  font-size: 2rem;
-  padding-top: 0;
-  margin-top: 2px;
+  
+  margin-top: 1px;
   font-weight: bolder;
   color: #a72608;
 }
 .Card span {
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #121113;
-  font-size: 1.3rem;
+
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 /* .Card:hover {

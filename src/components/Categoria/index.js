@@ -7,7 +7,7 @@ function Categoria({ Need_AlgumaCategoria, children, navegação }) {
   return (
     <section className={styles.Categoria}>
       <h1>
-        {Need_AlgumaCategoria} <nav>{navegação}</nav>
+        <p>{Need_AlgumaCategoria}</p> <nav>{navegação}</nav>
       </h1>
       <div>{children}</div>
     </section>
