@@ -8,6 +8,12 @@ import Categoria from "../../components/Categoria";
 import Loading from "../../components/Loading";
 
 function Buy() {
+    
+    const [loading1, setLoading1] = useState(true)
+    document.body.style.backgroundColor = "rgb(21 32 149)";
+    setTimeout(() => {
+      setLoading1(false)
+    }, 1000)
   // Estado para a pesquisa e a categoria selecionada. A const "Pesquisa esta setada com os nosso Mock de produtos para que mesmo que não tenha nenhum valor de pesquisa, apareçam todos produtos"
   const [pesquisa, setPesquisa] = useState(produtosMock);
   const [categoriaSelecionada, setCategoriaSelecionada] = useState("");
@@ -42,8 +48,13 @@ function Buy() {
 
     setTimeout(() => {
       setLoad(false);
-    }, 500);
+    }, 200);
   };
+  const [loading, setLoading] = useState(true)
+  document.body.style.backgroundColor = "rgb(21 32 149)";
+  setTimeout(() => {
+    setLoading(false)
+  }, 500)
   // Links de navegação por categoria
   const links = (
     <>
@@ -98,6 +109,8 @@ function Buy() {
     <section className={styles.Buy}>
       <Header />
       <Banner />
+      {loading ? ( <Loading /> ) : (
+        <>
       <div>
         <input
           type="search"
@@ -106,19 +119,20 @@ function Buy() {
           onChange={filtrarProdutos}
         />
       </div>
-      {/* Esse "navegação" e "Need_AlgumaCategoria" servem para: O Need_AlgumaCategoria para mostrar a categoria atual (ainda não esta funcionando), ja o navegação, serve para puxar a const la de cima, e mostra la na tela (no componente categoria esta estruturado como ela se comporta no escopo). E no final de acordo com os produtos que foram filtrados e colocados dentro de "pesquisa" rodamos um map, declaramos que os produtos dentro se chamaram (produto), e como isso pegamos seu id, e todas informações, que vão para a props item, que puxa todos os dados do produtos */}
-      {Load ? (
-        <Loading />
-      ) : (
+      {Load ? (    <Loading /> ) : (
         <Categoria navegação={links} Need_AlgumaCategoria={categoriaAtual}>
           {pesquisa.map((produto) => (
             <Card key={produto.id} item={produto} />
           ))}
         </Categoria>
       )}
-      )
+      </>
+    )}
     </section>
-  );
+  )
 }
+  
+  
+  
 
 export default Buy;

@@ -1,17 +1,24 @@
+import { useState } from "react";
 import Banner from "../../components/Banner";
-import Card from "../../components/Card";
+
 import Header from "../../components/Header";
 
-import produtosMock from "../../utils/produtosMock";
 import styles from "./Home.module.css";
+import Loading from "../../components/Loading";
 
 function Home() {
+  const [loading, setLoading] = useState(true)
   document.body.style.backgroundColor = "rgb(21 32 149)";
+  setTimeout(() => {
+    setLoading(false)
+  }, 500)
+  
   return (
     <>
-      <Header />
+    
+      <Header/>
       <Banner />
-
+      {loading ? ( <Loading /> ) : (
       <section className={styles.Home}>
         <section>
           <h1>Você já conhece a nossa loja?</h1>
@@ -38,11 +45,20 @@ function Home() {
               <p>Ajuda</p>
             </a>
           </nav>
-          <div>Slide</div>
+          <div className="slide">
+            <img src=" "></img>
+            <img src=" "></img>
+            <img src=" "></img>
+            <img src=" "></img>
+
+          </div>
         </inside>
       </section>
+      )}
     </>
-  );
-}
+    
+  );}
+
+
 
 export default Home;

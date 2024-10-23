@@ -8,7 +8,7 @@ function AppRoutes() {
         <Route path="/comprar" element={<Buy />}>
           {" "}
         </Route>
-        <Route path="/home" element={<Home />}></Route>
+        <Route path="/" element={<Home />}></Route>
       </Routes>
     </BrowserRouter>
   );
