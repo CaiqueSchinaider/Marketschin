@@ -1,15 +1,20 @@
+@media screen and (min-width: 900px) {
+  .Categoria nav {
+    width: auto;
+    max-width: 750px;
+  }
+}
+
 @media screen and (min-width: 766px) and (max-width: 799px) {
- 
   .Categoria div {
-    gap: 0px;
+    gap: 23px;
     padding-left: 0;
-    justify-content: flex-start;
-    
+    justify-content: center;
   }
 
   .Categoria nav {
     width: auto;
-    max-width: 600px;
+    max-width: 555px;
     margin: auto;
     gap: 9px;
     display: flex;
@@ -24,32 +29,28 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .Categoria h1{
+  .Categoria h1 {
     padding: 20px 0px 20px 70px;
- 
   }
-  
 }
 @media screen and (max-width: 405px) {
-  .Categoria h1  {
+  .Categoria h1 {
     display: flex;
     flex-direction: column;
     padding: 30px;
-    
   }
   .Categoria h1 p {
     width: 300px;
   }
 }
-  @media screen and (max-width: 569px) and (min-width: 406px) {
-    .Categoria h1 {
+@media screen and (max-width: 569px) and (min-width: 406px) {
+  .Categoria h1 {
     display: flex;
     padding: 20px 20px 20px 20px;
     flex-direction: row;
   }
 }
-@media  screen and (max-width: 568px) {
-  
+@media screen and (max-width: 568px) {
   .Categoria nav {
     display: grid;
     grid-template-columns: 60px 20px;
@@ -58,33 +59,27 @@
     gap: 5px;
     min-width: 250px;
     justify-items: center;
-    
   }
 
   .Categoria nav p {
-    
-    
     width: 100px;
     height: 20px;
-
-    
 
     font-size: 0.7rem;
   }
   .Categoria nav p:nth-of-type(5) {
     grid-column: span 2;
-   
   }
   .Categoria div {
     row-gap: 0;
     justify-content: center;
     margin-inline: 10px;
   }
-  
-  .Categoria  p {
-    width: 200px ;
+
+  .Categoria p {
+    width: 200px;
     font-size: 1.3rem;
-    
+
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -92,12 +87,11 @@
 @media screen and (min-width: 569px) and (max-width: 765px) {
   .Categoria div {
     gap: 0px;
-  padding-left: 14%;
+    padding-left: 14%;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
   }
 
   .Categoria nav {
@@ -117,13 +111,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .Categoria h1{
+  .Categoria h1 {
     padding: 20px 20px 20px 20px;
-    
   }
 }
-@media screen and (min-width: 901px ) {
-  .Categoria h1{
+@media screen and (min-width: 901px) {
+  .Categoria h1 {
     padding: 20px 0px 20px 70px;
   }
 }
@@ -133,13 +126,11 @@
     padding: 20px 20px 20px 10px;
   }
 }
-@media screen and  (min-width: 767px) {
+@media screen and (min-width: 767px) {
   .Categoria {
     padding-left: 50px;
   }
   .Categoria nav {
-    width: 700px;
-    max-width: 700px;
     display: flex;
     justify-content: space-evenly;
   }
@@ -155,7 +146,6 @@
     padding: 0px 50px 40px 50px;
     justify-content: flex-start;
   }
-  
 }
 
 .Categoria {
@@ -163,24 +153,20 @@
   color: white;
   box-shadow: inset 5px 3px 20px 1px black;
   margin: 10px;
-  
+
   border-radius: 50px;
   border: 2px solid #eee5e9;
 }
 
 .Categoria div {
   display: flex;
-  
 
   flex-wrap: wrap;
-  
 }
 
 .Categoria h1 {
-
-  
   justify-content: center;
-  
+
   font-family: sans-serif;
   font-size: 2em;
   font-weight: 700;
@@ -192,7 +178,6 @@
 }
 
 .Categoria nav {
-
   background-color: #7c0a0a;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -214,7 +199,6 @@
   box-shadow: 2px 2px 8px 0px #000000e8;
   transition: 0.7s ease;
   cursor: pointer;
-  
 }
 
 .Categoria nav p:hover {
