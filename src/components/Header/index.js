@@ -12,7 +12,7 @@ function Header() {
     <header className={styles.Header}>
       <span>
         <Link to="/">
-          <h1>Market Schin</h1>
+          Market Schin
         </Link>
       </span>
       

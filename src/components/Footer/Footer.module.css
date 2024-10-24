@@ -1,12 +1,19 @@
-.Footer {
-  background-color: #29339b;
+.Footer{
+  background-color: #29339b44;
+  display: flex;
+  backdrop-filter: blur(3px) ;
+  position: fixed;
   color: rgb(255, 255, 255);
   bottom: 0;
+  justify-content: center;
   width: 100%;
+  align-items: center;
   height: 35px;
-  text-align: center;
-  align-items: bottom;
+  
   z-index: 900;
+  margin-top: 20px;
+  border-top: 1px solid white;
   font-family: "Righteous", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
+
