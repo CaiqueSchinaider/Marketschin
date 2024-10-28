@@ -1,14 +1,16 @@
 import { useState } from "react";
 import Banner from "../../components/Banner";
-
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import styles from "./Home.module.css";
 import Loading from "../../components/Loading";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import Slider from "react-slick";
 import { Autoplay } from "swiper/modules";
+import produtos from "../../utils/produtosMock";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -16,17 +18,6 @@ function Home() {
   setTimeout(() => {
     setLoading(false);
   }, 500);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    arrows: false,
-  };
 
   return (
     <>
@@ -56,9 +47,9 @@ function Home() {
           <inside>
             <h2>Confira nossos serviços &#9660; &#9660; &#9660; </h2>
             <nav>
-              <a href="#">
+              <Link to={"/comprar"}>
                 <p>Comprar</p>
-              </a>
+              </Link>
               <a href="#">
                 <p>Vender</p>
               </a>
@@ -66,17 +57,51 @@ function Home() {
                 <p>Ajuda</p>
               </a>
             </nav>
-            <Slider {...settings}>
-              <div>
-                <img src="image1.jpg" alt="Foto 1" />
-              </div>
-              <div>
-                <img src="image2.jpg" alt="Foto 2" />
-              </div>
-              <div>
-                <img src="image3.jpg" alt="Foto 3" />
-              </div>
-            </Slider>
+            <Carousel
+              autoPlay
+              infiniteLoop
+              showThumbs={false}
+              interval={5000}
+              showArrows={false}
+              showStatus={false}
+              showIndicators={false}
+            >
+              {produtos.map((produtosslide) => {
+                return (
+                  <Link
+                    to={"/comprar"}
+                    style={{ boxShadow: "inset 2px 2px 10px black" }}
+                  >
+                    <div key={produtosslide.id}>
+                      <img
+                        src={produtosslide.thumb}
+                        style={{ width: "250px", height: "250px" }}
+                      />
+                      <section>
+                        <h3>
+                          {" "}
+                          {Number.parseFloat(
+                            produtosslide.valor
+                          ).toLocaleString("pt-BR", {
+                            style: "currency",
+                            currency: "BRL",
+                          })}
+                        </h3>
+                        <p
+                          style={{
+                            width: "200px",
+                            display: "inline",
+                            fontSize: "1.4rem",
+                          }}
+                        >
+                          {produtosslide.name}
+                        </p>
+                      </section>
+                    </div>
+                  </Link>
+                );
+              })}
+            </Carousel>
           </inside>
         </section>
       )}
