@@ -7,7 +7,10 @@ function Categoria({ Need_AlgumaCategoria, children, navegação }) {
   return (
     <section className={styles.Categoria}>
       <h1>
-        <p>{Need_AlgumaCategoria}</p> <nav>{navegação}</nav>
+        <span>
+          <p>{Need_AlgumaCategoria}</p>
+        </span>{" "}
+        <nav>{navegação}</nav>
       </h1>
       <div>{children}</div>
     </section>

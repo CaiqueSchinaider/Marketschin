@@ -83,9 +83,9 @@
   backdrop-filter: blur(10px);
   border-radius: 30px;
   margin: 0;
-  position: absolute !important;
+  position: relative !important;
   right: 120px;
-  top: 300px;
+  top: 400px;
 }
 
 .Home inside section h3 {
@@ -120,61 +120,351 @@
 }
 
 /* Media Queries */
-@media screen and (max-width: 660px) {
-  .Home h1 {
-    font-size: 2rem !important;
+@media screen and (max-width: 504px) {
+  .Home {
+    flex-direction: column;
   }
-  .Home p {
-    font-size: 0.8rem !important;
-  }
-  .Home strong {
-    font-size: 1rem !important;
-  }
-}
-
-@media screen and (max-width: 950px) {
-  .Home section {
-    max-width: 450px;
-    width: auto;
-    margin: 24px 45px 0px 45px;
-    box-shadow: 4px 4px 16px 5px #00000066;
-  }
-  .Home span h2 {
-    display: none;
-  }
-  .Home h1 {
-    font-size: 3rem;
-  }
-  .Home p {
-    font-size: 1.3rem;
-  }
-  .Home strong {
-    font-size: 2.4rem;
-  }
-}
-
-@media screen and (min-width: 951px) and (max-width: 1550px) {
-  .Home span h2 {
-    display: none;
+  .Home nav {
+    flex-direction: column;
+    margin: auto;
+    width: 150px;
+    height: auto;
   }
   .Home section {
-    max-width: 600px;
+    max-width: 410px;
     width: auto;
-    margin: 24px 45px 0px 45px;
+    margin: auto;
     box-shadow: 4px 4px 16px 5px #00000066;
   }
   .Home h1 {
-    font-size: 3rem;
-  }
-  .Home p {
     font-size: 2rem;
   }
+  .Home p {
+    font-size: 1.2rem;
+  }
+  .Home inside p {
+    font-size: 1.7rem;
+    width: 100px;
+  }
+  .Home inside div {
+    font-size: 1rem !important;
+  }
   .Home strong {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
+  }
+  .Home inside div {
+    display: flex;
+    flex-direction: column;
+    background-color: #770101 !important;
+    height: 500px;
+    margin-top: 0 !important;
+  }
+  .Home ul li {
+    border: 2px solid white;
+    background-color: transparent !important;
+  }
+  .Home inside {
+    margin: auto;
+    width: 300px;
+    margin-top: 35px !important;
+    border: 1px solid white !important;
+    margin-bottom: 400px !important;
+    justify-content: flex-start !important;
+    height: auto;
+    flex-direction: column-reverse;
+  }
+  .Home inside h2:nth-of-type(1) {
+    font-size: 1.3rem;
+    color: #f8f8f8;
+    font-family: "Bebas Neue", sans-serif;
+    text-shadow: 0px 0px 20px #920000;
+    background-color: #7701019b;
+    padding: 10px;
+    border-radius: 30px;
+    text-wrap: nowrap;
+    position: absolute !important;
+    top: 280px;
+    right: 5%;
+    animation: gradual 6s infinite;
+    cursor: pointer;
+  }
+  @keyframes gradual {
+    0% {
+      background-color: #7701019b;
+    }
+    10% {
+      background-color: #8f00009b;
+    }
+    20% {
+      background-color: #8401019b;
+    }
+    30% {
+      background-color: #8b01019b;
+    }
+    40% {
+      background-color: #9400009b;
+    }
+    50% {
+      background-color: #ab01019b;
+    }
+    60% {
+      background-color: #9400009b;
+    }
+    70% {
+      background-color: #8b01019b;
+    }
+    80% {
+      background-color: #8401019b;
+    }
+    90% {
+      background-color: #8f00009b;
+    }
+    100% {
+      background-color: #7701019b;
+    }
   }
 }
 
-@media screen and (min-width: 1251px) {
+.Home inside section h3 {
+  /*Preço do produtos*/
+  font-size: 1.8rem;
+  padding-top: 10px;
+  color: #ffffff;
+  font-family: "Bebas Neue", sans-serif;
+  text-shadow: 0px 0px 10px #770101;
+  text-shadow: 0px 0px 10px rgba(201, 6, 6, 0.995);
+  margin: 0;
+  z-index: 100;
+}
+.Home inside section {
+  height: 150px !important;
+  z-index: 110;
+  border: 2px solid white;
+  backdrop-filter: blur(8px);
+  margin-top: 20px !important;
+}
+.Home inside div img {
+  position: relative;
+  margin: 0px auto;
+  width: 295px !important;
+  height: 295px !important;
+}
+.Home inside div section p {
+  font-size: 1.1rem !important;
+  padding: 10px;
+  border: 1px solid white;
+  margin: 0 !important;
+}
+
+@media screen and (min-width: 505px) and (max-width: 710px) {
+  .Home {
+    flex-direction: column;
+  }
+  .Home section {
+    max-width: 410px;
+    width: auto;
+    margin: auto;
+    box-shadow: 4px 4px 16px 5px #00000066;
+  }
+  .Home h1 {
+    font-size: 2rem;
+  }
+  .Home p {
+    font-size: 1.2rem;
+  }
+  .Home inside p {
+    font-size: 2rem;
+  }
+  .Home inside div {
+    font-size: 1rem !important;
+  }
+  .Home strong {
+    font-size: 1.8rem;
+  }
+  .Home inside div {
+    display: flex;
+    background-color: #770101 !important;
+    height: 500px;
+    margin-top: 20px;
+  }
+  .Home ul li {
+    border: 2px solid white;
+  }
+  .Home inside {
+    margin: auto;
+    margin-top: 35px !important;
+    border: 1px solid white !important;
+    margin-bottom: 400px !important;
+    justify-content: flex-start !important;
+    height: auto;
+  }
+  .Home inside h2:nth-of-type(1) {
+    font-size: 2rem;
+    color: #f8f8f8;
+    font-family: "Bebas Neue", sans-serif;
+    text-shadow: 0px 0px 20px #920000;
+    background-color: #7701019b;
+    padding: 10px;
+    border-radius: 30px;
+    text-wrap: nowrap;
+    position: absolute !important;
+    top: 280px;
+    right: 20%;
+    animation: gradual 6s infinite;
+    cursor: pointer;
+  }
+  @keyframes gradual {
+    0% {
+      background-color: #7701019b;
+    }
+    10% {
+      background-color: #8f00009b;
+    }
+    20% {
+      background-color: #8401019b;
+    }
+    30% {
+      background-color: #8b01019b;
+    }
+    40% {
+      background-color: #9400009b;
+    }
+    50% {
+      background-color: #ab01019b;
+    }
+    60% {
+      background-color: #9400009b;
+    }
+    70% {
+      background-color: #8b01019b;
+    }
+    80% {
+      background-color: #8401019b;
+    }
+    90% {
+      background-color: #8f00009b;
+    }
+    100% {
+      background-color: #7701019b;
+    }
+  }
+  .Home inside section h3 {
+    /*Preço do produtos*/
+    font-size: 1.8rem;
+    padding-top: 10px;
+    color: #ffffff;
+    font-family: "Bebas Neue", sans-serif;
+    text-shadow: 0px 0px 10px #770101;
+    text-shadow: 0px 0px 10px rgba(201, 6, 6, 0.995);
+    margin: 0;
+    z-index: 100;
+  }
+  .Home inside section {
+    height: 120px !important;
+    padding-left: 200px;
+    padding-right: 200px;
+    z-index: 110;
+    border: 2px solid white;
+    background-color: transparent !important;
+    backdrop-filter: blur(8px);
+    margin-top: 320px !important;
+  }
+  .Home inside div img {
+    position: absolute;
+    right: 4%;
+    width: 460px !important;
+    height: 460px !important;
+  }
+  .Home inside div section p {
+    font-size: 1.1rem !important;
+    padding: 10px;
+    border: 1px solid white;
+  }
+}
+
+@media screen and (min-width: 710px) and (max-width: 1159px) {
+  .Home {
+    flex-direction: column;
+  }
+  .Home section {
+    width: auto;
+    margin: 24px 45px 0px 45px;
+    box-shadow: 4px 4px 16px 5px #00000066;
+  }
+  .Home h1 {
+    font-size: 2.3rem;
+  }
+  .Home p {
+    font-size: 1.4rem;
+  }
+  .Home inside p {
+    font-size: 2rem;
+  }
+  .Home inside div {
+    font-size: 1rem !important;
+  }
+  .Home strong {
+    font-size: 1.8rem;
+  }
+  .Home inside div {
+    display: flex;
+    background-color: #770101 !important;
+    height: 300px;
+    margin-top: 20px;
+    border-bottom: 1px solid white;
+  }
+  .Home ul li {
+    border-top: 1px solid white;
+  }
+  .Home inside {
+    margin: auto;
+    margin-top: 35px !important;
+    justify-content: flex-start !important;
+    margin-bottom: 400px !important;
+  }
+  .Home inside h2:nth-of-type(1) {
+    font-size: 3rem;
+    color: #f8f8f8;
+    font-family: "Bebas Neue", sans-serif;
+    text-shadow: 0px 0px 20px #a80000;
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    text-wrap: nowrap;
+    position: absolute !important;
+    top: 280px;
+    cursor: pointer;
+  }
+  .Home inside section h3 {
+    /*Preço do produtos*/
+    font-size: 2.3rem;
+    color: #ffffff;
+    font-family: "Bebas Neue", sans-serif;
+    text-shadow: 0px 0px 10px #770101;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1160px) and (max-width: 1367px) {
+  .Home section {
+    max-width: 500px;
+    width: auto;
+    margin: 24px 45px 0px 45px;
+    box-shadow: 4px 4px 16px 5px #00000066;
+  }
+  .Home h1 {
+    font-size: 2.3rem;
+  }
+  .Home p {
+    font-size: 1.4rem;
+  }
+  .Home inside p {
+    font-size: 2rem;
+  }
+  .Home inside div {
+    font-size: 1rem !important;
+  }
+  .Home strong {
+    font-size: 1.8rem;
+  }
   .Home inside div {
     display: flex;
     background-color: #770101 !important;
@@ -191,7 +481,7 @@
     justify-content: flex-start !important;
   }
   .Home inside h2:nth-of-type(1) {
-    font-size: 2rem;
+    font-size: 3rem;
     color: #f8f8f8;
     font-family: "Bebas Neue", sans-serif;
     text-shadow: 0px 0px 20px #a80000;
@@ -199,8 +489,46 @@
     border-radius: 30px;
     margin: 0;
     position: absolute !important;
-    right: 120px;
-    top: 300px;
+    top: 280px;
+    right: 280px;
+  }
+  .Home inside section h3 {
+    /*Preço do produtos*/
+    font-size: 2.3rem;
+    color: #ffffff;
+    font-family: "Bebas Neue", sans-serif;
+    text-shadow: 0px 0px 10px #770101;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1367px) {
+  .Home inside div {
+    display: flex;
+    background-color: #770101 !important;
+    height: 300px;
+    margin-top: 20px;
+    border-bottom: 1px solid white;
+  }
+  .Home ul li {
+    border-top: 1px solid white;
+  }
+  .Home inside {
+    margin: auto;
+    margin-top: 35px !important;
+    justify-content: flex-start !important;
+  }
+  .Home inside h2:nth-of-type(1) {
+    font-size: 3rem;
+    color: #f8f8f8;
+    font-family: "Bebas Neue", sans-serif;
+    text-shadow: 0px 0px 20px #a80000;
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    margin: 0;
+    position: absolute !important;
+    top: 280px;
+    right: 200px;
   }
   .Home inside section h3 {
     font-size: 2.3rem;

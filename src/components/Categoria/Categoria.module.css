@@ -1,3 +1,38 @@
+@media screen and (max-width: 325px) {
+  .Categoria h1 {
+    font-size: 0.5rem !important;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .Categoria h1 span p {
+    width: 200px !important;
+    font-size: 1rem;
+  }
+  .Categoria h1 nav p {
+    overflow: hidden;
+    white-space: nowrap !important;
+    width: 60px;
+  }
+  .Categoria h1 nav {
+    display: grid;
+    flex-direction: column;
+    width: 100px !important;
+    max-width: 100px !important;
+
+    grid-template-columns: 60px 70px;
+    width: auto;
+    max-width: 680px;
+    gap: 5px;
+    min-width: 150px;
+    justify-items: center;
+  }
+}
+@media screen and (min-width: 910px) {
+  .Categoria h1 {
+    padding-left: 0 !important;
+  }
+}
 @media screen and (min-width: 900px) {
   .Categoria nav {
     width: auto;
@@ -43,11 +78,14 @@
     width: 300px;
   }
 }
-@media screen and (max-width: 569px) and (min-width: 406px) {
+@media screen and (max-width: 568px) and (min-width: 406px) {
   .Categoria h1 {
     display: flex;
-    padding: 20px 20px 20px 20px;
-    flex-direction: row;
+    flex-direction: column;
+    padding: 30px;
+  }
+  .Categoria h1 p {
+    width: 300px;
   }
 }
 @media screen and (max-width: 568px) {
@@ -84,6 +122,16 @@
     text-overflow: ellipsis;
   }
 }
+@media screen and (max-width: 700px) {
+  .Categoria nav {
+    width: auto;
+    max-width: 600px;
+    margin: auto;
+    gap: 9px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
 @media screen and (min-width: 569px) and (max-width: 765px) {
   .Categoria div {
     gap: 0px;
@@ -102,7 +150,6 @@
     display: flex;
     justify-content: space-evenly;
   }
-
   .Categoria nav p {
     width: 70px;
     height: 20px;
@@ -153,9 +200,10 @@
   color: white;
   box-shadow: inset 5px 3px 20px 1px black;
   margin: 10px;
-
+  width: auto;
   border-radius: 50px;
   border: 2px solid #eee5e9;
+  margin-bottom: 400px;
 }
 
 .Categoria div {

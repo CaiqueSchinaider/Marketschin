@@ -18,7 +18,11 @@ function Home() {
   setTimeout(() => {
     setLoading(false);
   }, 500);
-
+  const scrolar = () => {
+    document
+      .getElementsByClassName("Carousel")[0]
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <>
       <Header />
@@ -39,13 +43,12 @@ function Home() {
               eficiente, pagamentos seguros e a qualidade de nossos produtos!
             </p>
           </section>
-          <span>
-            <h2>
-              <h2>Confira nossos serviços &#9660; &#9660; &#9660; </h2>
-            </h2>
-          </span>
+
           <inside>
-            <h2>Confira nossos serviços &#9660; &#9660; &#9660; </h2>
+            <h2 onClick={scrolar}>
+              Confira nossos serviços &#9660; &#9660; &#9660;
+            </h2>
+
             <nav>
               <Link to={"/comprar"}>
                 <p>Comprar</p>
@@ -58,6 +61,7 @@ function Home() {
               </a>
             </nav>
             <Carousel
+              className="Carousel"
               autoPlay
               infiniteLoop
               showThumbs={false}
