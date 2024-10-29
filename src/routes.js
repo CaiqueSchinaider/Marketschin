@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Buy from "./pages/Buy";
+import Product from "./components/Product";
 function AppRoutes() {
   return (
     <BrowserRouter>
@@ -9,6 +10,7 @@ function AppRoutes() {
           {" "}
         </Route>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/produto/:id" element={<Product />}></Route>
       </Routes>
     </BrowserRouter>
   );
