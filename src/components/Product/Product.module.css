@@ -1,4 +1,4 @@
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1271px) {
   .Product {
     display: flex;
     padding-top: 70px;
@@ -23,7 +23,7 @@
     background-color: #7c0a0a;
     border-radius: 20px;
     width: 300px;
-    height: 230px;
+    height: 260px;
     margin-left: 40px;
   }
   .Product article h1 {
@@ -33,7 +33,7 @@
   .Product button {
     width: 130px;
     height: 45px;
-    margin: 10px auto;
+    margin: 20px auto;
     background-color: rgb(29, 245, 0);
     color: white;
   }
@@ -59,7 +59,8 @@
   }
   .Product section {
     color: rgb(255, 255, 255);
-    width: 1000px;
+    width: auto;
+    max-width: 700px;
     height: 400px;
     margin-top: 60px;
   }
@@ -80,12 +81,32 @@
   padding: 20px;
   height: 220px;
 }
+
+.Product nav a:hover {
+  transform: scale(1.1);
+}
+.Product nav:hover a:not(:hover) {
+  opacity: 0.8;
+}
 .Product nav a {
   background-color: #7c0a0a;
   color: white;
   text-align: center;
   border-radius: 8px;
   padding: 10px;
+  cursor: pointer;
+  transition: ease 0.3s;
+}
+.Product article button {
+  cursor: pointer;
+  transition: ease 0.3s;
+  animation: compra 3s infinite;
+}
+
+.Product article button:hover {
+  transform: scale(1.1);
+  text-shadow: 0px 0px 18px white;
+  box-shadow: 0px 0px 8px white;
 }
 
 @media screen and (min-width: 987px) and (max-width: 1270px) {
@@ -124,7 +145,7 @@
   .Product button {
     width: 100px;
     height: 35px;
-    margin: 10px auto;
+    margin: 20px auto;
     background-color: rgb(29, 245, 0);
     color: white;
   }
@@ -217,9 +238,9 @@
     margin: 10px auto;
   }
   .Product button {
-    width: 100px;
-    height: 35px;
-    margin: 0 auto;
+    width: 150px;
+    height: 45px;
+    margin: 5px auto;
     background-color: rgb(29, 245, 0);
     color: white;
   }
@@ -231,7 +252,7 @@
     background-color: #500808;
     padding: 6px;
     border-radius: 10px;
-    margin: a;
+    margin: 5px;
     box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.493);
   }
   .Product article p:nth-of-type(2) {
@@ -251,12 +272,11 @@
   }
 
   .Product section {
-    position: absolute;
-    top: 550px;
+    position: relative;
     display: flex;
     color: rgb(255, 255, 255);
     width: auto;
-    height: 400px;
+    height: auto;
     padding: 40px;
   }
   .Product section h2 {
@@ -334,15 +354,15 @@
     padding: 10px;
   }
   .Product article h1 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: aliceblue;
-    margin: 10px auto;
+    margin: 5px auto;
     text-align: center;
   }
   .Product button {
-    width: 100px;
-    height: 35px;
-    margin: 0 auto;
+    width: 120px;
+    height: 40px;
+    margin: 10px auto;
     background-color: rgb(29, 245, 0);
     color: white;
   }
@@ -377,12 +397,11 @@
     text-overflow: ellipsis;
   }
   .Product section {
-    position: absolute;
-    top: 550px;
+    position: relative;
     display: flex;
     color: rgb(255, 255, 255);
     width: auto;
-    height: 400px;
+    height: auto;
     padding: 40px;
   }
   .Product section h2 {
@@ -581,20 +600,20 @@
     width: auto;
     max-width: 180px;
     margin-left: 40px;
-    height: 210px;
+    height: 230px;
 
     padding: 10px;
   }
   .Product article h1 {
     font-size: 1.1rem;
     color: aliceblue;
-    margin: 10px auto;
+    margin: 5px auto;
     text-align: center;
   }
   .Product button {
     width: 100px;
     height: 35px;
-    margin: 0 auto;
+    margin: 10px auto;
     background-color: rgb(29, 245, 0);
     color: white;
   }

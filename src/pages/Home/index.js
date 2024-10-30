@@ -50,7 +50,7 @@ function Home() {
             </h2>
 
             <nav>
-              <Link to={"/comprar"}>
+              <Link to={"/comprar/all"}>
                 <p>Comprar</p>
               </Link>
               <a href="#">
@@ -73,7 +73,7 @@ function Home() {
               {produtos.map((produtosslide) => {
                 return (
                   <Link
-                    to={"/comprar"}
+                    to={"/comprar/all"}
                     style={{ boxShadow: "inset 2px 2px 10px black" }}
                   >
                     <div key={produtosslide.id}>

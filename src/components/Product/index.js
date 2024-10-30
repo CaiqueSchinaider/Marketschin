@@ -3,7 +3,7 @@ import produtos from "../../utils/produtosMock";
 import Banner from "../Banner";
 import Header from "../Header";
 import styles from "./Product.module.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Loading from "../Loading";
 
 function Product() {
@@ -15,7 +15,15 @@ function Product() {
     );
     setProdutoatual(filtrarproduto);
   }, [id]);
-
+  const [load, setLoad] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoad(true);
+    }, 800);
+  }, []);
+  if (!load) {
+    return <Loading />;
+  }
   return (
     <>
       <Header />
@@ -24,7 +32,9 @@ function Product() {
         <div className={styles.Product}>
           <aside>
             <figure>
-              <img src={produtoatual.thumb} alt={produtoatual.name} />
+              <a href={produtoatual.thumb} target="blank">
+                <img src={produtoatual.thumb} alt={produtoatual.name} />
+              </a>
             </figure>
 
             <article>
@@ -58,10 +68,22 @@ function Product() {
             <p>{produtoatual.especificacoes}</p>
           </section>
           <nav>
-            <a>Ver relacionados</a>
-            <a>Ver carrinho</a>
-            <a>Fechar carrinho</a>
-            <a>Voltar</a>
+            <Link
+              to={`/comprar/${produtoatual.categoria}`}
+              style={{ textDecoration: "none" }}
+            >
+              Ver relacionados
+            </Link>
+            <Link to="#" style={{ textDecoration: "none" }}>
+              Ver carrinho
+            </Link>
+            <Link to="#" style={{ textDecoration: "none" }}>
+              Fechar carrinho
+            </Link>
+            {/* Adicionei o valor null (que na verdade é tratado como uma string) temporariamente, na pagina de compras verifica se o parametro da url é diferente de "null" se for diferente ele pega o parametro, se não ele usa todos produtos do Mock para exibir */}
+            <Link to={`/comprar/all`} style={{ textDecoration: "none" }}>
+              Voltar
+            </Link>
           </nav>
         </div>
       ) : (

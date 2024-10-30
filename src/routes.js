@@ -6,7 +6,7 @@ function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/comprar" element={<Buy />}>
+        <Route path="/comprar/:paramscategoria" element={<Buy />}>
           {" "}
         </Route>
         <Route path="/" element={<Home />}></Route>

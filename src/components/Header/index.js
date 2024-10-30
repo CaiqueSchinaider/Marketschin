@@ -6,28 +6,22 @@ import Loading from "../Loading";
 import Home from "../../pages/Home";
 
 function Header() {
-    
-   
   return (
     <header className={styles.Header}>
       <span>
-        <Link to="/">
-          Market Schin
-        </Link>
+        <Link to="/">Market Schin</Link>
       </span>
-      
+
       <nav>
-        
-        <a href="/" >
+        <a href="/">
           <img src="/pic/home.png" alt="Home" />
         </a>
-        <a href="/comprar" >
+        <a href="/comprar/all">
           <img src="/pic/cart.png" alt="Cart" />
         </a>
       </nav>
-    
     </header>
-)}
-  
+  );
+}
 
 export default Header;
