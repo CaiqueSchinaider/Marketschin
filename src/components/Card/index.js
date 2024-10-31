@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Container from "../Container";
 import styles from "./Card.module.css";
-import Product from "../Product";
 
 function Card({ item }) {
   const valorformatado = new Intl.NumberFormat("pt-BR", {
