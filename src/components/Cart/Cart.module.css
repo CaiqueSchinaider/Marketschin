@@ -13,20 +13,53 @@
   display: flex;
 
   flex-direction: column;
-  background-color: rgb(208, 46, 46) !important;
+  background-color: rgb(13, 15, 138) !important;
   margin: auto 0 auto auto;
-  height: 500px;
+  height: auto;
   width: 1200px;
+  border: 2px solid white;
 }
 .Cart section {
   display: flex;
-  background-color: rgb(123, 123, 123);
+  background-color: rgb(54, 54, 54);
   height: 115px;
   margin-left: 20px;
   margin-top: 10px;
   margin-right: 10px;
+  margin-bottom: 15px;
   border-radius: 10px;
+  border: 1px solid wheat;
   overflow: hidden;
+  justify-content: space-between;
+  box-shadow: 3px 3px 10px black;
+}
+.Cart section div {
+  display: flex;
+  flex-direction: row;
+}
+.Cart section div div {
+  display: flex;
+  flex-direction: column;
+}
+.Cart section div h2 {
+  margin: 0;
+}
+.Cart section div h3 {
+  margin: 10px 30px 0px 10px;
+}
+.Cart section button {
+  background-color: brown;
+  color: white;
+  height: 50px;
+  width: 100px;
+  border-radius: 20px;
+  margin-top: 25px;
+  margin-right: 20px;
+  border: 1px solid white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.562);
+}
+.Cart section button:hover {
+  transform: scale(1.1);
 }
 .Cart section picture {
   width: 115px;
@@ -45,7 +78,27 @@
   font-size: 1.7rem;
 }
 .Cart aside {
-  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(116, 32, 32);
   width: 380px;
   margin-right: auto;
+  color: white;
+  margin: 0px 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 10px black;
+}
+.Cart aside button {
+  background-color: rgb(43, 0, 160);
+  color: white;
+  height: 40px;
+  width: 130px;
+  border-radius: 20px;
+  margin: 20px auto;
+  border: 1px solid white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.562);
+}
+.Cart aside button:hover {
+  transform: scale(1.1);
 }

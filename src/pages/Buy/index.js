@@ -43,6 +43,13 @@ function Buy() {
     }
   }, [paramscategoria]);
 
+  useEffect(() => {
+    const posicionar = document.getElementById("ponto");
+    if (posicionar) {
+      posicionar.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+
   function filtrarPorCategoria(categoria) {
     const produtosFiltrados = produtosMock.filter(
       (produto) => produto.categoria === categoria
@@ -119,7 +126,7 @@ function Buy() {
         <Loading />
       ) : (
         <>
-          <div>
+          <div id="ponto">
             <input
               type="search"
               placeholder="Pesquisar..."

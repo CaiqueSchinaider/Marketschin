@@ -20,7 +20,12 @@ function Product() {
   useEffect(() => {
     setTimeout(() => setLoad(true), 800);
   }, []);
-
+  useEffect(() => {
+    const scrolar = document.getElementById("ponto");
+    if (scrolar) {
+      scrolar.scrollIntoView({ behavior: "smooth" });
+    }
+  });
   if (!load) {
     return <Loading />;
   }
@@ -29,7 +34,7 @@ function Product() {
     <>
       <Header />
       {produtoatual ? (
-        <div className={styles.Product}>
+        <div className={styles.Product} id="ponto">
           <aside>
             <figure>
               <a href={produtoatual.thumb} target="blank">
