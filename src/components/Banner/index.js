@@ -2,12 +2,12 @@ import Categoria from "../Categoria";
 import styles from "./Banner.module.css";
 import { useState } from "react";
 
-function Banner() {
-  // const [escrito, setEscrito] = useState("");
-  // function PegartextoEscrito(evento) {
-  //   setEscrito(evento.target.value);
-  // }
-  return <div className={styles.Banner}></div>;
+function Banner({ pagina }) {
+  return (
+    <div className={styles.Banner}>
+      <h2>{pagina}</h2>
+    </div>
+  );
 }
 
 export default Banner;

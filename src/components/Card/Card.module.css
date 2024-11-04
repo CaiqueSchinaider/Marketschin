@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Righteous&family=Rubik+Mono+One&display=swap");
 /* Para telas menores */
 @media screen and (min-width: 766px) and (max-width: 800px) {
   .Card img {
@@ -210,8 +209,6 @@
 .Card span {
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #121113;
-
-  font-family: "Plus Jakarta Sans", sans-serif;
 }
 /* .Card:hover {
   transform: scale(1.1);

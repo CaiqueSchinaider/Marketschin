@@ -131,7 +131,7 @@ var produtos = [
 
   {
     id: 11,
-    name: "Quadro Decorativo do Destino",
+    name: "Quadro do Destino",
     valor: "300.00",
     link: "https://example.com/quadro",
     thumb: "/categorias/categoria-saladeestar/quadro.jpg",

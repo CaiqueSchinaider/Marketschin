@@ -7,6 +7,7 @@ import produtosMock from "../../utils/produtosMock";
 import Categoria from "../../components/Categoria";
 import Loading from "../../components/Loading";
 import { useParams } from "react-router-dom";
+import produtos from "../../utils/produtosMock";
 
 function Buy() {
   const [loading1, setLoading1] = useState(true);
@@ -121,7 +122,7 @@ function Buy() {
   return (
     <section className={styles.Buy}>
       <Header />
-      <Banner />
+      <Banner pagina="Produtos" />
       {loading ? (
         <Loading />
       ) : (

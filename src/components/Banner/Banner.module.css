@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Protest+Strike&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Protest+Strike&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
 @media screen and (min-width: 1141px) {
   .Banner {
     background-size: 1960px;
@@ -18,7 +22,7 @@
   height: 347px;
   top: 75px;
   background-repeat: no-repeat;
-  align-items: baseline;
+  align-items: flex-end;
   border-bottom: 2px solid white;
 }
 
@@ -49,4 +53,26 @@
 .Banner div input::placeholder {
   color: rgb(0, 0, 0);
   padding-left: 3px;
+}
+@media screen and (min-width: 860px) {
+  .Banner h2 {
+    background-color: #001c39;
+    justify-content: end;
+    width: auto;
+    border-top: solid 2px white;
+    border-right: solid 2px white;
+    border-bottom: solid 2px white;
+    display: flex;
+
+    padding: 4px 15px 4px 35px;
+    border-radius: 0px 15px 15px 0px;
+    color: rgb(121, 15, 15);
+    font-family: "Protest Strike", serif;
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 859px) {
+  .Banner h2 {
+    display: none;
+  }
 }

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import produtos from "../../utils/produtosMock";
-import Header from "../Header";
+import Header from "../../components/Header";
 import styles from "./Product.module.css";
 import { Link, useParams } from "react-router-dom";
-import Loading from "../Loading";
+import Loading from "../../components/Loading";
 
 function Product() {
   const { id } = useParams();

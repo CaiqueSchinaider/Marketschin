@@ -26,7 +26,7 @@ function Home() {
   return (
     <>
       <Header />
-      <Banner />
+      <Banner pagina="Home" />
       {loading ? (
         <Loading />
       ) : (
@@ -73,7 +73,7 @@ function Home() {
               {produtos.map((produtosslide) => {
                 return (
                   <Link
-                    to={"/comprar/all"}
+                    to={`/comprar/${produtosslide.categoria}`}
                     style={{ boxShadow: "inset 2px 2px 10px black" }}
                   >
                     <div key={produtosslide.id}>
