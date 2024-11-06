@@ -19,6 +19,7 @@ function Cart() {
   const [apagarProdutos, setApagarProdutos] = useState();
   const [load, setLoad] = useState(false);
   const [notify, setNotify] = useState("block");
+  const [preçototal, setPreçototal] = useState();
 
   // useEffect que verifica qual é o item em questão
   useEffect(() => {
@@ -79,7 +80,13 @@ function Cart() {
       localStorage.setItem("lista", JSON.stringify(excluiProdutos));
     }
   }, [apagarProdutos]);
+  useEffect(() => {
+    const valortotal = listaRecebida.reduce(function (valorinicial, produto) {
+      return valorinicial + Number.parseFloat(produto.valor);
+    }, 0);
 
+    setPreçototal(valortotal);
+  }, [listaRecebida]);
   useEffect(() => {
     setTimeout(() => {
       setLoad(true);
@@ -101,32 +108,68 @@ function Cart() {
                 <p> Produto adicionado ao carrinho!</p>
               </div>
               <main>
-                <div className={styles.Paidetodas}>
-                  {listaRecebida.map((produto) => (
-                    <section key={produto.id}>
-                      <div>
-                        <picture>
-                          <img src={produto.thumb} alt={produto.name}></img>
-                        </picture>
-                        <div>
-                          <h2>{produto.name}</h2>
-                          <h3>{produto.valor}</h3>
-                        </div>
-                      </div>
-                      <button onClick={() => setApagarProduto(produto.id)}>
-                        Apagar
-                      </button>
-                    </section>
-                  ))}
-                </div>
                 <aside>
-                  <button onClick={() => setApagarProdutos("delete")}>
+                  <button
+                    onClick={() => setApagarProdutos("delete")}
+                    style={{ cursor: "pointer" }}
+                  >
                     Limpar carrinho
+                  </button>
+                  <button
+                    onClick={() => setApagarProdutos("delete")}
+                    style={{ cursor: "pointer" }}
+                  >
+                    Finalizar compras
                   </button>
                   <button>
                     <Link to="/comprar/all">Continuar compras</Link>
                   </button>
+                  <div className={styles.Precototal}>
+                    <p>
+                      <strong>Preço total</strong>
+                    </p>
+                    <p>
+                      {Number.parseFloat(preçototal).toLocaleString("pt-br", {
+                        style: "currency",
+                        currency: "BRL",
+                      })}
+                    </p>
+                  </div>
                 </aside>
+                <div className={styles.Paidetodas}>
+                  {listaRecebida.map((produto) => (
+                    <section key={produto.id}>
+                      <div>
+                        <Link
+                          to={`/produto/${produto.id}`}
+                          style={{ textDecoration: "none" }}
+                        >
+                          <picture>
+                            <img src={produto.thumb} alt={produto.name}></img>
+                          </picture>
+                        </Link>
+                        <div>
+                          <h2>{produto.name}</h2>
+                          <h3>
+                            {Number.parseFloat(produto.valor).toLocaleString(
+                              "pt-br",
+                              { style: "currency", currency: "BRL" }
+                            )}
+                          </h3>
+                        </div>
+                        <button
+                          className={styles.Xparatelefones}
+                          onClick={() => setApagarProduto(produto.id)}
+                          style={{ cursor: "pointer" }}
+                        ></button>
+                      </div>
+                      <button
+                        onClick={() => setApagarProduto(produto.id)}
+                        style={{ cursor: "pointer" }}
+                      ></button>
+                    </section>
+                  ))}
+                </div>
               </main>
             </div>
           ) : (

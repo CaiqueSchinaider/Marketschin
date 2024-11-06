@@ -9,15 +9,16 @@ function Card({ item }) {
   }).format(item.valor);
   return (
     <Container>
-      <section className={styles.Card}>
-        <Link to={`/produto/${item.id}`}>
+      <Link to={`/produto/${item.id}`} style={{ textDecoration: "none" }}>
+        <section className={styles.Card}>
           <img src={item.thumb}></img>
-        </Link>
-        <p>
-          <span>{item.name}</span>
-          <h2>{valorformatado}</h2>
-        </p>
-      </section>
+
+          <p>
+            <span>{item.name}</span>
+            <h2>{valorformatado}</h2>
+          </p>
+        </section>
+      </Link>
     </Container>
   );
 }
