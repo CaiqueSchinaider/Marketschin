@@ -6,45 +6,53 @@ import { useEffect, useState } from "react";
 import Loading from "../../components/Loading";
 
 function Cart() {
-  ////////////////////////////////////////////////////////
-
-  const possiveListaExistente = JSON.parse(localStorage.getItem("lista")); // Recebe uma possivel lista ja existente
-
-  ///////////////////////////////////////////////////////
-
-  // Todos useStates
+  const possiveListaExistente = JSON.parse(localStorage.getItem("lista"));
   const { produtocomprado } = useParams();
+
+  // Todos os useStates
   const [produtoSelecionado, setProdutoSelecionado] = useState();
   const [listaRecebida, setListaRecebida] = useState(
-    // Se houver lista, pega ela. Se não, []
     possiveListaExistente || []
   );
-  const [enviarSinal, setEnviarSinal] = useState("");
+  const [enviarSinal, setEnviarSinal] = useState(false);
   const [apagarProduto, setApagarProduto] = useState();
   const [apagarProdutos, setApagarProdutos] = useState();
   const [load, setLoad] = useState(false);
+  const [notify, setNotify] = useState("block");
 
   // useEffect que verifica qual é o item em questão
   useEffect(() => {
-    const acharProduto = produtos.find(
-      (produto) => produto.id === parseInt(produtocomprado)
-    );
-    setProdutoSelecionado(acharProduto);
+    if (produtocomprado == "none") {
+      setProdutoSelecionado(true);
+      setNotify("none");
+    } else {
+      setTimeout(() => {
+        setNotify("none");
+      }, 2800);
+
+      const acharProduto = produtos.find(
+        (produto) => produto.id === parseInt(produtocomprado)
+      );
+
+      setProdutoSelecionado(acharProduto);
+    }
   }, [produtocomprado]);
 
-  // useEffect que verifica se o item ja esta na lista do carrinho
+  // useEffect que verifica se o item já está na lista do carrinho
   useEffect(() => {
-    if (produtoSelecionado) {
+    if (produtoSelecionado && produtocomprado !== "none") {
       const jaPossui = listaRecebida.find(
         (prod) => prod.id === parseInt(produtoSelecionado.id)
       );
       if (!jaPossui) {
         setEnviarSinal(true);
       }
+    } else if (produtoSelecionado && produtocomprado == "none") {
+      setEnviarSinal(false);
     }
   }, [produtoSelecionado]);
 
-  // useEffect que verifica se o enviarSinal emitido acima é true ou false. (Em caso de true cria uma nova lista com o produto em questão, e guarda ela)
+  // useEffect que atualiza a lista com o novo produto
   useEffect(() => {
     if (enviarSinal) {
       const updateLista = [...listaRecebida, produtoSelecionado];
@@ -55,11 +63,13 @@ function Cart() {
 
   // useEffect para apagar produtos
   useEffect(() => {
-    const excluiProduto = listaRecebida.filter(
-      (produto) => produto.id !== apagarProduto
-    );
-    setListaRecebida(excluiProduto);
-    localStorage.setItem("lista", JSON.stringify(excluiProduto));
+    if (apagarProduto) {
+      const excluiProduto = listaRecebida.filter(
+        (produto) => produto.id !== apagarProduto
+      );
+      setListaRecebida(excluiProduto);
+      localStorage.setItem("lista", JSON.stringify(excluiProduto));
+    }
   }, [apagarProduto]);
 
   useEffect(() => {
@@ -69,12 +79,14 @@ function Cart() {
       localStorage.setItem("lista", JSON.stringify(excluiProdutos));
     }
   }, [apagarProdutos]);
+
   useEffect(() => {
     setTimeout(() => {
       setLoad(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }, 300);
-  });
+  }, []);
+
   return (
     <>
       {load ? (
@@ -82,44 +94,44 @@ function Cart() {
           <Header />
           {produtoSelecionado ? (
             <div className={styles.Cart}>
+              <div
+                className={styles.Notificação}
+                style={{ display: `${notify}` }}
+              >
+                <p> Produto adicionado ao carrinho!</p>
+              </div>
               <main>
                 <div className={styles.Paidetodas}>
-                  {listaRecebida ? (
-                    listaRecebida.map((produto) => (
-                      <section>
+                  {listaRecebida.map((produto) => (
+                    <section key={produto.id}>
+                      <div>
+                        <picture>
+                          <img src={produto.thumb} alt={produto.name}></img>
+                        </picture>
                         <div>
-                          <picture>
-                            <img src={produto.thumb}></img>
-                          </picture>
-                          <div>
-                            <h2>{produto.name}</h2>
-                            <h3>{produto.valor}</h3>
-                          </div>
+                          <h2>{produto.name}</h2>
+                          <h3>{produto.valor}</h3>
                         </div>
-                        <button onClick={() => setApagarProduto(produto.id)}>
-                          Apagar
-                        </button>
-                      </section>
-                    ))
-                  ) : (
-                    <Loading />
-                  )}
+                      </div>
+                      <button onClick={() => setApagarProduto(produto.id)}>
+                        Apagar
+                      </button>
+                    </section>
+                  ))}
                 </div>
                 <aside>
                   <button onClick={() => setApagarProdutos("delete")}>
-                    Limpar carrinho{" "}
+                    Limpar carrinho
                   </button>
                   <button>
                     <Link to="/comprar/all">Continuar compras</Link>
                   </button>
                 </aside>
               </main>
-
-              <aside>{/* aqui vai os dados dos itens  */}</aside>
             </div>
           ) : (
             <Loading />
-          )}{" "}
+          )}
         </>
       ) : (
         <Loading />

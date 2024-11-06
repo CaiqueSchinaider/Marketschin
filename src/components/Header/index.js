@@ -15,7 +15,7 @@ function Header() {
         <Link to="/comprar/all">
           <img src="/pic/sacola.png" alt="Perfil" />
         </Link>
-        <Link to="/comprar/all">
+        <Link to="/carrinho/none">
           <img src="/pic/cart.png" alt="Cart" />
         </Link>
         <Link to="#">

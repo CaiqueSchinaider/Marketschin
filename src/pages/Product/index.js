@@ -80,7 +80,7 @@ function Product() {
             >
               Ver relacionados
             </Link>
-            <Link to="#" style={{ textDecoration: "none" }}>
+            <Link to="/carrinho/none" style={{ textDecoration: "none" }}>
               Ver carrinho
             </Link>
             <Link to="#" style={{ textDecoration: "none" }}>

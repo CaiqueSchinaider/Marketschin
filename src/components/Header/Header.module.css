@@ -1,74 +1,101 @@
 /*Regras de reponsividade do Header*/
-@media screen and (max-width: 600px) {
-  .Header span {
-    font-size: 1.3rem;
-    nav a:nth-of-type(1) {
-      color: white;
-      width: 100px;
-      padding: 10px;
-      text-decoration: none;
-      padding-inline: 2.3rem;
-      transform: scale(0.4);
-    }
-  }
+@media screen and (max-width: 710px) {
   .Header nav a:nth-of-type(1) {
     color: white;
-    width: 100px;
-    padding: 10px;
+    width: auto;
     text-decoration: none;
-    padding-inline: 2.3rem;
+
     transform: scale(0.5);
   }
   .Header nav a:nth-of-type(2) {
     color: white;
-    width: 100px;
+    width: auto;
+
+    text-decoration: none;
+
+    transform: scale(0.3);
+  }
+  .Header nav a:nth-of-type(3) {
+    color: white;
+    width: auto;
     padding: 10px;
     text-decoration: none;
-    padding-inline: 2.3rem;
+
     transform: scale(0.4);
   }
-}
+  .Header nav a:nth-of-type(4) {
+    color: white;
+    width: auto;
 
+    text-decoration: none;
+
+    transform: scale(0.3) !important;
+  }
+
+  .Header span {
+    display: block;
+    width: auto !important;
+    font-size: 2rem;
+    margin: 10px !important;
+  }
+  .Header {
+    flex-direction: column;
+  }
+  .Header nav {
+    margin: auto !important;
+    justify-content: center !important;
+  }
+}
 /*-------------*/
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 711px) {
   .Header span {
     font-size: 3rem;
   }
+  .Header nav {
+    width: auto !important;
+    margin-right: 40px !important;
+    justify-content: space-evenly !important;
+    gap: 10px;
+  }
   .Header nav a:nth-of-type(1) {
     color: white;
-    width: 100px;
+    width: auto;
     padding: 10px;
     text-decoration: none;
-    padding-inline: 2.3rem;
+    padding-inline: 1rem;
     transform: scale(0.7);
   }
   .Header nav a:nth-of-type(2) {
     color: white;
-    width: 100px;
+    width: auto;
     padding: 10px;
     text-decoration: none;
-    padding-inline: 2.3rem;
-    transform: scale(0.5);
+    padding-inline: 0.3rem;
+    transform: scale(0.42);
   }
   .Header nav a:nth-of-type(3) {
+    display: flex;
+    justify-content: center;
+    color: white;
+    width: 30px;
+    padding: 10px;
+    text-decoration: none;
+    padding-inline: 2rem;
+    transform: scale(0.56);
+  }
+
+  .Header nav a:nth-of-type(4) {
+    display: flex;
+    justify-content: center;
     color: white;
     width: 30px;
     padding: 10px;
     text-decoration: none;
     padding-inline: 2.3rem;
-    transform: scale(0.7);
+    transform: scale(0.5);
   }
 }
-.Header nav a:nth-of-type(4) {
-  color: white;
-  width: 30px;
-  padding: 10px;
-  text-decoration: none;
-  padding-inline: 2.3rem;
-  transform: scale(0.6);
-}
-
 /*--------------------------------------------*/
 
 .Header {

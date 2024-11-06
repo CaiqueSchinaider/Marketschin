@@ -53,12 +53,12 @@ function Home() {
               <Link to={"/comprar/all"}>
                 <p>Comprar</p>
               </Link>
-              <a href="#">
+              <Link to={"/#"}>
                 <p>Vender</p>
-              </a>
-              <a href="#">
+              </Link>
+              <Link to={"/#"}>
                 <p>Ajuda</p>
-              </a>
+              </Link>
             </nav>
             <Carousel
               className="Carousel"
