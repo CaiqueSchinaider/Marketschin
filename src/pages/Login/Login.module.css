@@ -1,8 +1,53 @@
 .Login {
+  position: absolute;
+  display: flex;
+  width: 100%;
   color: white;
-}
-body {
   background-repeat: no-repeat;
   background-size: 100%;
-  background-image: url("/public/pic/login.jpg");
+  background-position: center 60%;
+  background-image: url("/public/pic/login.jpeg");
+  height: 100%;
+  margin: 0;
+}
+.Login header h1 {
+  font-size: 4.2rem;
+
+  color: rgb(255, 255, 255);
+
+  width: 100%;
+  border-radius: 20px;
+  align-items: center;
+  /*font-family: "Righteous", sans-serif;*/
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bolder;
+  padding: 0;
+  margin: 20px 25px 0px 25px;
+  padding: 10px;
+}
+.Login .Pai {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #060608a5;
+  height: 100%;
+  width: 400px;
+  border-right: 2px solid whitesmoke;
+}
+.Login aside {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 240px;
+  width: 270px;
+}
+.Login aside p {
+  color: rgb(187, 0, 0);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin: 15px 0px 0px 0px;
+}
+.Login aside p:hover {
+  text-shadow: 0px 0px 10px red;
 }

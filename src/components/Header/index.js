@@ -18,7 +18,7 @@ function Header() {
         <Link to="/carrinho/none">
           <img src="/pic/cart.png" alt="Cart" />
         </Link>
-        <Link to="#">
+        <Link to="/login">
           <img src="/pic/perfil.png" alt="Perfil" />
         </Link>
       </nav>

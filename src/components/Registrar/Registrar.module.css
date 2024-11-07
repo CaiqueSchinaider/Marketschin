@@ -1,0 +1,30 @@
+.Registrar div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.Registrar input {
+  width: 230px;
+  height: 22px;
+  border-radius: 3px;
+}
+.Registrar label {
+  padding: 5px 0px 10px 0px;
+}
+.Registrar nav {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px 0px 0px;
+}
+.Registrar nav button {
+  height: 28px;
+  background-color: brown;
+  color: white;
+  border: 1px solid rgb(49, 0, 0);
+  border-radius: 5px;
+  width: 100px;
+  transition: 0.3s ease;
+}
+.Registrar nav button:hover {
+  transform: scale(1.1);
+}
