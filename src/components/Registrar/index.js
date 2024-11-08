@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Registrar.module.css";
 
 function Registrar() {
@@ -12,7 +13,9 @@ function Registrar() {
         <input type="password" id="confirmpassword" />
       </div>
       <nav>
-        <button>Entrar</button>
+        <Link to="/">
+          <button>Entrar</button>
+        </Link>
       </nav>
     </section>
   );

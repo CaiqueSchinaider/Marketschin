@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Logar.module.css";
 
 function Logar() {
@@ -10,7 +11,9 @@ function Logar() {
         <input type="password" id="password" />
       </div>
       <nav>
-        <button>Entrar</button>
+        <Link to="/">
+          <button>Entrar</button>
+        </Link>
       </nav>
     </section>
   );

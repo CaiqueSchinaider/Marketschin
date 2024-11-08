@@ -45,7 +45,7 @@ function Home() {
           </section>
 
           <inside>
-            <h2 onClick={scrolar}>
+            <h2 onClick={scrolar} style={{ cursor: "pointer" }}>
               Confira nossos serviços &#9660; &#9660; &#9660;
             </h2>
 

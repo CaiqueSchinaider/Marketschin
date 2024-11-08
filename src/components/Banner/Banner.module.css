@@ -24,6 +24,19 @@
   background-repeat: no-repeat;
   align-items: flex-end;
   border-bottom: 2px solid white;
+  animation: mudar 40s step-start infinite;
+}
+
+@keyframes mudar {
+  0% {
+    background-image: url("/public/pic/banner.jpg");
+  }
+  50% {
+    background-image: url("/public/pic/banner2.png");
+  }
+  100% {
+    background-image: url("/public/pic/banner.jpg");
+  }
 }
 
 .Banner div {
@@ -48,6 +61,9 @@
 
 .Banner div input:hover {
   box-shadow: inset 4px 4px 8px 1px rgba(0, 0, 0, 0.233);
+}
+.Banner h2 {
+  cursor: default;
 }
 
 .Banner div input::placeholder {
