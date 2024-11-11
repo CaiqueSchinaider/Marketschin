@@ -196,7 +196,7 @@
 }
 
 .Categoria {
-  background-color: #29339b;
+  background-color: rgb(23 23 47 / 89%) !important;
   color: white;
   box-shadow: inset 5px 3px 20px 1px black;
   margin: 10px;

@@ -1,7 +1,22 @@
 .Home {
   display: flex;
+  background-color: rgb(23 23 47 / 89%) !important;
+  animation: aparecer 1s ease-in-out 1 forwards;
 }
-
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .Home nav {
   width: 500px;
   height: 50px;
@@ -35,8 +50,8 @@
 }
 
 .Home section {
-  background-color: #001c39;
-  border: 2px solid #1e2e3f;
+  background-color: #021122;
+  border: 2px solid #d1d1d1;
   border-radius: 22px;
   padding: 10px 20px;
 }
@@ -449,7 +464,7 @@
   .Home section {
     max-width: 500px;
     width: auto;
-    margin: 24px 45px 0px 45px;
+    margin: 24px 45px 200px 45px;
     box-shadow: 4px 4px 16px 5px #00000066;
   }
   .Home h1 {
@@ -542,7 +557,7 @@
   .Home section {
     max-width: 700px;
     width: auto;
-    margin: 24px 45px 0px 45px;
+    margin: 24px 45px 200px 45px;
     box-shadow: 4px 4px 16px 5px #00000066;
   }
   .Home h1 {

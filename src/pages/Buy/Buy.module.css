@@ -9,8 +9,23 @@
 }
 .Buy {
   display: relative;
-}
 
+  animation: aparecer 1s ease-in-out 1 forwards;
+}
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .Buy div:nth-of-type(2) input {
   width: 16.2rem;
   height: 2.3rem;

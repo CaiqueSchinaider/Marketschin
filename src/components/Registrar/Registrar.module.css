@@ -1,4 +1,4 @@
-.Registrar {
+.Logar {
   opacity: 0;
   animation: aparecer 0.4s ease 1 forwards;
 }
@@ -19,25 +19,25 @@
     opacity: 1;
   }
 }
-.Registrar div {
+.Logar div {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.Registrar input {
+.Logar input {
   width: 230px;
   height: 22px;
   border-radius: 3px;
 }
-.Registrar label {
+.Logar label {
   padding: 5px 0px 10px 0px;
 }
-.Registrar nav {
+.Logar nav {
   display: flex;
   justify-content: center;
   margin: 10px 0px 0px 0px;
 }
-.Registrar nav button {
+.Logar nav button {
   height: 28px;
   background-color: brown;
   color: white;
@@ -46,6 +46,23 @@
   width: 100px;
   transition: 0.3s ease;
 }
-.Registrar nav button:hover {
+.Logar nav button:hover {
   transform: scale(1.1);
+}
+
+.Msgerror {
+  visibility: hidden;
+
+  margin: 0px 0px 10px 0px !important;
+  color: red;
+  position: relative;
+  padding: 0px;
+  margin: 0px 0px 14px 0px;
+  margin-right: 50px;
+}
+@media screen and (max-width: 570px) {
+  .Msgerror {
+    font-size: 0.7rem !important;
+    margin-top: 4px !important;
+  }
 }

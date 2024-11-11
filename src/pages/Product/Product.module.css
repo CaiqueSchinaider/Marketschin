@@ -107,8 +107,22 @@
   transform: scale(1.1);
   text-shadow: 0px 0px 18px white;
   box-shadow: 0px 0px 8px white;
+  animation: aparecer 1s ease-in-out 1 forwards;
 }
-
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media screen and (min-width: 987px) and (max-width: 1270px) {
   .Product {
     display: flex;
@@ -675,4 +689,7 @@
     width: 130px !important;
     padding: 10px;
   }
+}
+.Product {
+  background-color: rgb(23 23 47 / 89%) !important;
 }

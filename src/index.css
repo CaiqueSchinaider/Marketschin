@@ -19,7 +19,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: #000544;
+  background-color: rgba(42, 42, 44, 0.89) !important;
 }
 
 code {

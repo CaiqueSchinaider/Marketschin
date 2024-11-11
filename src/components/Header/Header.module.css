@@ -99,7 +99,7 @@
 /*--------------------------------------------*/
 
 .Header {
-  background-color: rgba(5, 7, 109, 0.89);
+  background-color: rgb(23 23 47 / 89%);
   display: flex;
   position: fixed;
   top: 0;

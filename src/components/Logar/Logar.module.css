@@ -49,3 +49,18 @@
 .Logar nav button:hover {
   transform: scale(1.1);
 }
+
+.Msgerror {
+  visibility: hidden;
+  margin: 0px 0px 10px 0px !important;
+  color: red;
+  position: relative;
+  padding: 0px;
+  margin: 0px 0px 14px 0px;
+  margin-right: 50px;
+}
+@media screen and (max-width: 570px) {
+  .Msgerror {
+    font-size: 0.7rem !important;
+  }
+}
