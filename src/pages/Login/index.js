@@ -3,24 +3,22 @@ import Logar from "../../components/Logar";
 import styles from "./Login.module.css";
 import Registrar from "../../components/Registrar";
 import Loading from "../../components/Loading";
-import { Link } from "react-router-dom";
+
 import { LoginsContext } from "../../contexts/Logins";
 
 function Login() {
+  // Meu useContext, serve para quando o usuario registrar, mande sinal para ir para login
   const [login, setLogin] = useContext(LoginsContext);
-  const [registro, setRegistro] = useState("login");
-  const [quallog, setQuallog] = useState(true);
+
+  // Serve como sinal para identificar se o usuario quer ir para qual pagina de registro (login ou Registrar)
+  const [registro, setRegistro] = useState("sinal_Login");
+
+  // Usado para saber quando load deve ser chamado
   const [load, setLoad] = useState(true);
 
   /////////////////////////////////////////////////////////////
 
   useEffect(() => {
-    if (registro == "login") {
-      setQuallog(true);
-    } else {
-      setQuallog(false);
-    }
-
     setTimeout(function () {
       setLoad(false);
     }, 700);
@@ -38,15 +36,19 @@ function Login() {
         </header>
 
         {/* Variação de login e registro */}
-        {quallog || login ? <Logar /> : <Registrar />}
+        {registro == "sinal_Login" || login ? (
+          <Logar />
+        ) : registro == "sinal_Registrar" ? (
+          <Registrar />
+        ) : null}
 
         <aside>
           <p>Esqueci a senha</p>
-          {quallog ? (
-            <p onClick={() => setRegistro("registrar")}>Criar conta</p>
-          ) : (
-            <p onClick={() => setRegistro("login")}>Ja tenho conta</p>
-          )}
+          {registro == "sinal_Login" ? (
+            <p onClick={() => setRegistro("sinal_Registrar")}>Criar conta</p>
+          ) : registro == "sinal_Registrar" ? (
+            <p onClick={() => setRegistro("sinal_Login")}>Ja tenho conta</p>
+          ) : null}
         </aside>
       </section>
     </section>

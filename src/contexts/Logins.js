@@ -12,7 +12,7 @@ export default function LoginsProvider({ children }) {
 
   return (
     <LoginsContext.Provider value={[login, setLogin]}>
-      ]{children}
+      {children}
     </LoginsContext.Provider>
   );
 }
