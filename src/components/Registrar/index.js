@@ -149,13 +149,14 @@ function Registrar() {
               setMensagem_error_email("visible");
               setInput_error_email("2px solid red");
             } else {
-              setParamscode([
-                {
-                  message: "",
-                  destino: email,
-                  senha: password,
-                },
-              ]);
+              converte();
+              const codeFor = converte();
+              const senhaFormatada = String(password);
+              setParamscode({
+                message: codeFor,
+                destino: email,
+                senha: senhaFormatada,
+              });
               setCode(true);
               navigate("/code");
             }
@@ -164,6 +165,11 @@ function Registrar() {
     }
     setSinal(false);
   }, [sinal]);
+
+  function converte() {
+    const codeAleatorio = Math.floor(Math.random() * 1000);
+    return codeAleatorio.toString().padStart(3, "0");
+  }
 
   return (
     <form className={styles.Logar}>
