@@ -12,29 +12,67 @@ function Code() {
   const [paramscode, setParamscode] = useContext(ParamsCodeContext);
   const [numeroCode, setNumeroCode] = useState();
   const [userCode, setUserCode] = useState();
+  const [logcode, setLogcode] = useState();
+  const [confirmação, setConfimação] = useState();
 
   useEffect(() => {
-    if (code == "criarCode") {
-      const numero = Math.floor(Math.random() * 10);
-      setNumeroCode(String(numero));
-      const emailsend = (paramscode) => ({ ...paramscode, mensage: numero });
-      emailjs.send(
-        "service_4fgdqkh",
-        "template_4wzkgjr",
-        emailsend,
-        "EkUYr-ANKIPXaINm6"
-      );
+    if (code) {
+      const juntarnumeros = [];
+      while (juntarnumeros.length < 4) {
+        const numero = Math.floor(Math.random() * 10);
+        juntarnumeros.push(numero);
+      }
+      const numeros = juntarnumeros.join("");
+
+      // Pega os codigos ja no mock
+      axios
+        .get("https://67312aae7aaf2a9aff10029c.mockapi.io/codes")
+        .then((Response) => {
+          const verificando = Response.data.some((codes) => {
+            return codes.code == String(numeros); // Aqui você precisa retornar o resultado da comparação
+          });
+
+          // Se sim, da erro, se não coloca no mock api
+          if (verificando) {
+            alert("Erro ao gerar codigo, pegue outro");
+          } else {
+            axios
+              .post("https://67312aae7aaf2a9aff10029c.mockapi.io/codes", {
+                code: numeros,
+              })
+              .then(alert("enviado"))
+              .catch(alert("error"));
+            setLogcode(numeros);
+            const updateparam = [...paramscode];
+            updateparam[0].message = String(numeros);
+            emailjs.send(
+              "service_4fgdqkh",
+              "template_4wzkgjr",
+              updateparam,
+              "EkUYr-ANKIPXaINm6"
+            );
+          }
+        })
+        .catch(alert("error fatal"));
     }
-  });
-  function verificar() {
-    const email = paramscode.destinatario;
+  }, [code]);
+
+  function Verificar() {
+    // Pega o email e senha
+
+    const email = paramscode.destino;
     const password = paramscode.senha;
-    if (numeroCode == userCode) {
-      axios.post("https://67312aae7aaf2a9aff10029c.mockapi.io/users", {
-        name: email,
-        senha: password,
-      });
+
+    if (userCode == String(logcode)) {
+      axios.post("https://67312aae7aaf2a9aff10029c.mockapi.io/users", [
+        {
+          name: email,
+          senha: password,
+        },
+      ]);
       setLogin(true);
+    } else {
+      alert("Codigo errado!");
     }
   }
 
@@ -42,8 +80,12 @@ function Code() {
     <section className={styles.Code}>
       <div>
         <p>Digite seu codigo de confirmação</p>
-        <input type="text" onChange={setUserCode}></input>
-        <button onClick={() => verificar}>Confirmar</button>
+        <input
+          type="text"
+          onChange={(e) => setUserCode(e.target.value)}
+        ></input>
+
+        <button onClick={() => Verificar()}>Confirmar</button>
       </div>
     </section>
   );

@@ -40,7 +40,9 @@ function Login() {
           <Logar />
         ) : registro == "sinal_Registrar" ? (
           <Registrar />
-        ) : null}
+        ) : (
+          <> </>
+        )}
 
         <aside>
           <p>Esqueci a senha</p>

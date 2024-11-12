@@ -1,12 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Registrar.module.css";
 import { useState, useEffect, useContext } from "react";
 import users from "../../utils/usersMock";
 import axios from "axios";
 import { LoginsContext } from "../../contexts/Logins";
+import { ParamsCodeContext } from "../../contexts/ParamsCode";
+import { ConfirmCodeContext } from "../../contexts/ConfirmCode";
 
 function Registrar() {
+  const navigate = useNavigate();
   const [login, setLogin] = useContext(LoginsContext);
+  const [paramscode, setParamscode] = useContext(ParamsCodeContext);
+  const [code, setCode] = useContext(ConfirmCodeContext);
   // States que recebem os valores dos inputs
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -144,11 +149,15 @@ function Registrar() {
               setMensagem_error_email("visible");
               setInput_error_email("2px solid red");
             } else {
-              setLogin(true);
-              axios.post("https://67312aae7aaf2a9aff10029c.mockapi.io/users", {
-                name: email,
-                senha: password,
-              });
+              setParamscode([
+                {
+                  message: "",
+                  destino: email,
+                  senha: password,
+                },
+              ]);
+              setCode(true);
+              navigate("/code");
             }
           });
       }

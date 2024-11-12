@@ -9,12 +9,12 @@ import PageNotFound from "./pages/PageNotFound";
 import LoginsProvider from "./contexts/Logins";
 import Code from "./pages/Code";
 import ConfimCodeProvider from "./contexts/ConfirmCode";
-import { ParamsCodeContext } from "./contexts/ParamsCode";
+import ParamsCodeProvider, { ParamsCodeContext } from "./contexts/ParamsCode";
 
 function AppRoutes() {
   return (
     <BrowserRouter>
-      <ParamsCodeContext.Provider>
+      <ParamsCodeProvider>
         <ConfimCodeProvider>
           <LoginsProvider>
             <Routes>
@@ -33,7 +33,7 @@ function AppRoutes() {
             </Routes>
           </LoginsProvider>
         </ConfimCodeProvider>
-      </ParamsCodeContext.Provider>
+      </ParamsCodeProvider>
     </BrowserRouter>
   );
 }
