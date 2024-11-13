@@ -10,6 +10,7 @@ import LoginsProvider from "./contexts/Logins";
 import Code from "./pages/Code";
 import ConfimCodeProvider from "./contexts/ConfirmCode";
 import ParamsCodeProvider, { ParamsCodeContext } from "./contexts/ParamsCode";
+import User from "./pages/User";
 
 function AppRoutes() {
   return (
@@ -30,6 +31,7 @@ function AppRoutes() {
               <Route path="/login" element={<Login />}></Route>
               <Route path="*" element={<PageNotFound />}></Route>
               <Route path="/code" element={<Code />}></Route>
+              <Route path="/user" element={<User />}></Route>
             </Routes>
           </LoginsProvider>
         </ConfimCodeProvider>

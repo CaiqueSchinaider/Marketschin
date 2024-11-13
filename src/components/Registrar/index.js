@@ -135,36 +135,44 @@ function Registrar() {
         setMensagem_error_passwordConfimation("hidden");
         setInput_error_passwordConfimation("none");
       }
-
-      if (error_password && error_email && error_passwordConfimation) {
-        axios
-          .get("https://67312aae7aaf2a9aff10029c.mockapi.io/users")
-          .then((Response) => {
-            const dados_user = Response.data;
-            const localizar_usuario = dados_user.some(
-              (log_users) => log_users.name == email
-            );
-            if (localizar_usuario) {
-              setInfo_error_email("Essa conta já existe!");
-              setMensagem_error_email("visible");
-              setInput_error_email("2px solid red");
-            } else {
-              converte();
-              const codeFor = converte();
-              const senhaFormatada = String(password);
-              setParamscode({
-                message: codeFor,
-                destino: email,
-                senha: senhaFormatada,
-              });
-              setCode(true);
-              navigate("/code");
-            }
-          });
-      }
+    }
+    if (error_password && error_email && error_passwordConfimation) {
+      UsuarioVerificar();
     }
     setSinal(false);
   }, [sinal]);
+
+  async function UsuarioVerificar() {
+    if (error_password && error_email && error_passwordConfimation) {
+      try {
+        const Response = await axios.get(
+          "https://67312aae7aaf2a9aff10029c.mockapi.io/users"
+        );
+        const dados_user = Response.data;
+        const localizar_usuario = dados_user.some(
+          (log_users) => log_users.name == email
+        );
+        if (localizar_usuario) {
+          setInfo_error_email("Essa conta já existe!");
+          setMensagem_error_email("visible");
+          setInput_error_email("2px solid red");
+        } else {
+          converte();
+          const codeFor = converte();
+          const senhaFormatada = String(password);
+          setParamscode({
+            message: codeFor,
+            destino: email,
+            senha: senhaFormatada,
+          });
+          setCode(true);
+          navigate("/code");
+        }
+      } catch (erro) {
+        console.error("Aconteceu algum erro", erro.message);
+      }
+    }
+  }
 
   function converte() {
     const codeAleatorio = Math.floor(Math.random() * 1000);
