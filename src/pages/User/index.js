@@ -13,12 +13,22 @@ function User({ children }) {
           <p>***********</p>
         </aside>
         <nav className={styles.Navigation}>
-          <button> Compras </button>
-          <button> Vendas </button>
-          <button> Compras </button>
-          <button> Dados </button>
-          <button> Sair </button>
-        </nav>{" "}
+          <button>
+            <img src="/pic/market.png" /> <p>Compras</p>
+          </button>
+          <button>
+            <img src="/pic/Sell.png" /> <p>Vendas</p>
+          </button>
+          <button>
+            <img src="/pic/Person Security.png" /> <p>Conta</p>
+          </button>
+          <button>
+            <img src="/pic/Settings.png" /> <p>Configuração</p>
+          </button>
+          <button>
+            <img src="/pic/back.png" /> <p>Sair</p>
+          </button>
+        </nav>
       </div>
       <Header />
 

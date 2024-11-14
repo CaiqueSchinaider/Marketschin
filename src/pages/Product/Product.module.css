@@ -34,7 +34,7 @@
     width: 130px;
     height: 45px;
     margin: 20px auto;
-    background-color: rgb(29, 245, 0);
+
     color: white;
   }
 
@@ -88,9 +88,16 @@
 .Product nav:hover a:not(:hover) {
   opacity: 0.8;
 }
+
+.Product article {
+  background-color: #9b0202 !important;
+  border: 1px solid white;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.304);
+}
 .Product nav a {
-  background-color: #7c0a0a;
+  background-color: #9b0202;
   color: white;
+  font-weight: bold;
   text-align: center;
   border-radius: 8px;
   padding: 10px;
@@ -100,14 +107,32 @@
 .Product article button {
   cursor: pointer;
   transition: ease 0.3s;
-  animation: compra 3s infinite;
+
+  border: 2px solid white;
+  font-size: 1.7rem;
+  font-weight: bold !important;
+  font-family: "Bebas Neue", sans-serif;
+  color: rgb(255, 255, 255);
+  background-color: #e1c000 !important;
 }
 
 .Product article button:hover {
   transform: scale(1.1);
   text-shadow: 0px 0px 18px white;
   box-shadow: 0px 0px 8px white;
-  animation: aparecer 1s ease-in-out 1 forwards;
+}
+.Product section strong {
+  color: #e1c000;
+}
+.Product section h2 {
+  display: flex;
+  padding-left: 10px;
+  text-align: center;
+  border-radius: 2px 7px 7px 2px;
+  color: rgb(255, 255, 255);
+
+  background-color: #9b0202;
+  height: 40px;
 }
 @keyframes aparecer {
   0% {
@@ -148,17 +173,18 @@
     background-color: #7c0a0a;
     border-radius: 20px;
     width: 200px;
-    height: 210px;
+    height: 310px;
     margin-left: 40px;
   }
   .Product article h1 {
     font-size: 1rem;
+    text-align: center;
     color: aliceblue;
     margin: 10px auto;
   }
   .Product button {
     width: 100px;
-    height: 35px;
+    height: 40px;
     margin: 20px auto;
     background-color: rgb(29, 245, 0);
     color: white;
@@ -190,7 +216,7 @@
   }
   .Product section strong {
     font-size: 2.1rem;
-    color: #7c0a0a;
+    color: #e1c000;
   }
   .Product section p {
     font-size: 0.9rem;
@@ -205,7 +231,6 @@
     height: 220px;
   }
   .Product nav a {
-    background-color: #7c0a0a;
     color: white;
     text-align: center;
     border-radius: 8px;
@@ -322,14 +347,12 @@
     width: 600px;
   }
   .Product nav a {
-    background-color: #7c0a0a;
-    color: white;
-    text-align: center;
-    border-radius: 8px;
-    margin-inline: 5px;
-    height: 20px;
-    width: 300px;
-    padding: 10px;
+    display: flex;
+    height: 40px;
+    max-width: 120px;
+    min-width: 120px;
+    align-items: center;
+    justify-content: center;
   }
 }
 @media screen and (min-width: 715px) and (max-width: 816px) {
@@ -382,7 +405,8 @@
   }
   .Product article p:nth-of-type(1) {
     font-size: 1.7rem;
-    width: auto;
+    width: 80%;
+    text-align: center;
     max-width: 200px;
     color: white;
     background-color: #500808;
@@ -447,21 +471,19 @@
     width: 600px;
   }
   .Product nav a {
-    background-color: #7c0a0a;
-    color: white;
-    text-align: center;
-    border-radius: 8px;
-    margin-inline: 5px;
-    height: 20px;
-    width: 300px;
-    padding: 10px;
+    display: flex;
+    height: 40px;
+    max-width: 120px;
+    min-width: 120px;
+    align-items: center;
+    justify-content: center;
   }
 }
 @media screen and (min-width: 551px) and (max-width: 714px) {
   .Product {
     display: flex;
     flex-direction: row;
-    padding-top: 70px;
+    padding-top: 110px;
     flex-wrap: nowrap;
 
     height: 100vh; /* Altura da tela */
@@ -513,9 +535,10 @@
   }
   .Product article p:nth-of-type(1) {
     font-size: 1.8rem;
-    width: auto;
-    max-width: 400px;
+    width: 100%;
+    max-width: 200px;
     color: white;
+    text-align: center;
     background-color: #500808;
     padding: 6px;
     border-radius: 10px;
@@ -568,7 +591,6 @@
     width: 300px;
   }
   .Product nav a {
-    background-color: #7c0a0a;
     color: white;
     text-align: center;
     border-radius: 8px;
@@ -580,23 +602,32 @@
 }
 @media screen and (max-width: 550px) {
   .Product {
+    padding-top: 100px !important;
     display: flex;
     flex-direction: column;
     padding-top: 70px;
     align-items: center;
     flex-wrap: nowrap;
     padding-left: 0px;
-    height: 100vh; /* Altura da tela */
+    height: 110vh; /* Altura da tela */
   }
   .Product aside {
     display: flex;
     flex-direction: column;
+    align-items: center !important;
     margin-bottom: 0;
     width: 230px;
   }
   .Product figure {
-    width: 200px;
-    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 208px;
+    height: 204px;
+    border-radius: 5px;
+
+    padding-top: 3px;
+    background-color: #9b0202 !important;
   }
   .Product img {
     width: 200px;
@@ -615,12 +646,12 @@
     max-width: 180px;
     margin-left: 40px;
     height: 230px;
-
+    margin: 0 !important;
     padding: 10px;
   }
   .Product article h1 {
     font-size: 1.1rem;
-    color: aliceblue;
+    color: rgb(250, 250, 250);
     margin: 5px auto;
     text-align: center;
   }
@@ -633,9 +664,10 @@
   }
   .Product article p:nth-of-type(1) {
     font-size: 1.7rem;
-    width: auto;
+    width: 90%;
     max-width: 200px;
     color: white;
+    text-align: center;
     background-color: #500808;
     padding: 6px;
     border-radius: 10px;
@@ -675,12 +707,11 @@
     justify-content: space-around;
     align-items: center;
     padding: 20px;
-    margin: 0 0 0 40px !important;
+    margin: 0 !important;
     width: 130px;
     gap: 7px;
   }
   .Product nav a {
-    background-color: #7c0a0a;
     color: white;
     text-align: center;
     border-radius: 8px;
@@ -692,4 +723,11 @@
 }
 .Product {
   background-color: rgb(23 23 47 / 89%) !important;
+}
+.Product article button {
+  text-shadow: 0px 0px 20px white;
+  box-shadow: 0px 0px 10px white;
+}
+.Product {
+  background-color: transparent !important;
 }

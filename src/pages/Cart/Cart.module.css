@@ -14,7 +14,7 @@
     display: flex;
 
     flex-direction: column;
-    background-color: rgb(23 23 47 / 89%) !important;
+    background-color: #1d1c21 !important;
     margin: auto;
     height: 700px;
     width: 1200px;
@@ -92,19 +92,19 @@
     width: 380px;
     margin-right: auto;
     color: white;
-    margin: 0px 10px;
+    margin: 0px 20px;
 
     border-radius: 10px;
     box-shadow: inset 2px 2px 10px black;
   }
   .Cart .Precototal {
     display: flex;
-    background-color: rgba(43, 0, 160, 0.651);
+    background-color: #9b0202;
     justify-content: center;
     align-items: center;
     color: white;
     height: 70px;
-    width: 130px;
+    width: 100%;
     flex-direction: column;
     margin: 20px auto;
     border: 1px solid white;
@@ -114,10 +114,10 @@
     margin: 0 !important;
   }
   .Cart aside button {
-    background-color: rgb(43, 0, 160);
+    background-color: #9b0202;
     color: white;
     height: 40px;
-    width: 130px;
+    width: 80%;
     border-radius: 20px;
     margin: 20px auto;
     border: 1px solid white;
@@ -148,7 +148,7 @@
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: rgb(23 23 47 / 89%) !important;
+    background-color: #1d1c21 !important;
     margin: auto auto 10px auto;
     height: auto;
     width: auto;
@@ -293,6 +293,7 @@
     left: 20% !important;
   }
 }
+
 .Cart .Notificação {
   position: absolute;
   left: 50% !important;
@@ -351,5 +352,10 @@
 }
 
 .Cart aside {
-  background-color: rgb(46, 45, 49);
+  background-color: #1d1c21;
+  box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.587);
+  border: 2px solid white;
+}
+.Cart .Paidetodas {
+  box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.587);
 }

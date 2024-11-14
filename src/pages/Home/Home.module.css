@@ -1,6 +1,6 @@
 .Home {
   display: flex;
-  background-color: rgb(23 23 47 / 89%) !important;
+  background-image: linear-gradient(to bottom, #1a191d 40%, #000000);
   animation: aparecer 1s ease-in-out 1 forwards;
 }
 @keyframes aparecer {
@@ -32,28 +32,29 @@
 .Home h1 {
   font-family: Protest Strike, sans-serif;
   font-weight: 500;
-  color: #770101;
+  color: #9b0202;
 }
 
 .Home p {
-  color: #d39a9a;
+  color: #bcbcbc;
   font-family: "Courier Prime", monospace;
   font-weight: 400;
   padding: 0px 18px;
 }
 
 .Home strong {
-  color: rgba(189, 0, 0, 0.644);
+  color: #9b0202;
   font-family: "Bebas Neue", sans-serif;
   text-decoration: underline;
   font-size: 2.4rem;
 }
 
 .Home section {
-  background-color: #021122;
+  background-color: #070607;
   border: 2px solid #d1d1d1;
   border-radius: 22px;
   padding: 10px 20px;
+  box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.587) !important;
 }
 
 .Home inside {

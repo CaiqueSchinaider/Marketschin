@@ -115,14 +115,19 @@ function Cart() {
                   >
                     Limpar carrinho
                   </button>
-                  <button
-                    onClick={() => setApagarProdutos("delete")}
-                    style={{ cursor: "pointer" }}
-                  >
-                    Finalizar compras
-                  </button>
+
                   <button>
                     <Link to="/comprar/all">Continuar compras</Link>
+                  </button>
+                  <button
+                    onClick={() => setApagarProdutos("delete")}
+                    style={{
+                      cursor: "pointer",
+
+                      fontWeight: "bolder",
+                    }}
+                  >
+                    Finalizar compras
                   </button>
                   <div className={styles.Precototal}>
                     <p>

@@ -26,6 +26,10 @@ function Product() {
       scrolar.scrollIntoView({ behavior: "smooth" });
     }
   });
+  const valorformatado = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  }).format;
   if (!load) {
     return <Loading />;
   }
@@ -53,7 +57,7 @@ function Product() {
                 <button>Comprar</button>{" "}
               </Link>
               <p>Avaliação: ⭐⭐⭐⭐☆ (4.5)</p>
-              <h2>Especificações</h2>
+              <h2 style={{ color: "#9b0202" }}>Especificações</h2>
               <p>{produtoatual.especificacoes}</p>
             </article>
           </aside>
@@ -69,7 +73,7 @@ function Product() {
               </strong>
             </h3>
             <p>{produtoatual.descricao}</p>
-            <h3>Especificações</h3>
+            <h3 style={{ color: "#9b0202" }}>Especificações</h3>
             <p>{produtoatual.especificacoes}</p>
           </section>
 

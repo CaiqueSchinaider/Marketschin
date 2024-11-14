@@ -196,7 +196,7 @@
 }
 
 .Categoria {
-  background-color: rgb(23 23 47 / 89%) !important;
+  background-color: #1d1c21 !important;
   color: white;
   box-shadow: inset 5px 3px 20px 1px black;
   margin: 10px;
@@ -226,20 +226,21 @@
 }
 
 .Categoria nav {
-  background-color: #7c0a0a;
+  background-color: #111215;
+  border: 1px solid white;
   justify-content: space-evenly;
   flex-wrap: wrap;
   padding-top: 20px;
   color: #ffffff;
   text-align: center;
-  box-shadow: 5px 4px 8px #000000b5;
+  box-shadow: inset 5px 4px 8px #000000b5;
   border-radius: 10px;
   padding: 0;
   margin-top: 20px;
 }
 
 .Categoria nav p {
-  background-color: #a72608;
+  background-color: #9b0202;
   margin-top: 10px;
   margin-bottom: 10px;
   padding-top: 6px;

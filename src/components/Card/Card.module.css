@@ -195,10 +195,10 @@
   cursor: pointer;
   margin: 0px 10px;
   height: auto;
-  background-color: #ebe5e8;
+  background-color: #ffffff;
   transition: 0.8s ease;
   border-radius: 10px;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.375);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.726);
 }
 
 .Card h2 {
@@ -207,6 +207,7 @@
   color: #a72608;
 }
 .Card span {
+  font-weight: bold;
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #121113;
 }
