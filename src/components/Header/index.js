@@ -9,7 +9,7 @@ function Header() {
       </span>
 
       <nav>
-        <Link to="/">
+        <Link to="/home">
           <img src="/pic/home.png" alt="Home" />
         </Link>
         <Link to="/comprar/all">
@@ -18,7 +18,7 @@ function Header() {
         <Link to="/carrinho/none">
           <img src="/pic/cart.png" alt="Cart" />
         </Link>
-        <Link to="/login">
+        <Link to="/user">
           <img src="/pic/perfil.png" alt="Perfil" />
         </Link>
       </nav>

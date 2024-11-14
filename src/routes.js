@@ -22,13 +22,13 @@ function AppRoutes() {
               <Route path="/comprar/:paramscategoria" element={<Buy />}>
                 {" "}
               </Route>
-              <Route path="/" element={<Home />}></Route>
+              <Route path="/home" element={<Home />}></Route>
               <Route path="/produto/:id" element={<Product />}></Route>
               <Route
                 path="/carrinho/:produtocomprado"
                 element={<Cart />}
               ></Route>
-              <Route path="/login" element={<Login />}></Route>
+              <Route path="/" element={<Login />}></Route>
               <Route path="*" element={<PageNotFound />}></Route>
               <Route path="/code" element={<Code />}></Route>
               <Route path="/user" element={<User />}></Route>

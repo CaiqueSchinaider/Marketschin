@@ -7,6 +7,7 @@ function User({ children }) {
     <div className={styles.User}>
       <div>
         <aside>
+          <h1> Suas Informações</h1>
           <h2>Caique Schinaider</h2>
           <p>caiqueschinaiderrufinoviana@gmail.com</p>
           <p>***********</p>

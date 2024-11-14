@@ -87,7 +87,7 @@ function Logar() {
             );
 
             if (verificar) {
-              navigate("/");
+              navigate("/home");
             } else if (!log_verificar_email) {
               setInfo_error_email("Essa conta não existe!");
               setMensagem_error_email("visible");
