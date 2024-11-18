@@ -20,6 +20,7 @@ function Carroseul() {
 
       <Carousel
         className={styles.Juntante}
+        autoPlay
         infiniteLoop
         showThumbs={false}
         interval={5000}
@@ -38,6 +39,7 @@ function Carroseul() {
                   src={produtosslide.thumb}
                   style={{ width: "250px", height: "250px" }}
                 />
+
                 <section>
                   <h3>
                     {" "}

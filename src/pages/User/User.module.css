@@ -115,7 +115,7 @@ font-family: "Courier Prime", serif;
 
     height: auto;
     max-height: 720px;
-    margin: 30px 0px 0px 50px;
+    margin: 0;
   }
   .User aside {
     display: flex;
@@ -208,11 +208,11 @@ font-family: "Courier Prime", serif;
 @media screen and (max-width: 720px) {
   .User {
     display: flex;
-    height: 100vh;
+    height: 120vh;
     margin: 0;
     background-color: #111215;
-    flex-wrap: wrap;
-    padding-top: 80px;
+    flex-wrap: nowrap;
+    padding-top: 120px;
   }
   .User div {
     display: flex;
@@ -221,14 +221,14 @@ font-family: "Courier Prime", serif;
     align-items: center;
     width: 80%;
     height: auto;
-    max-height: 300px;
+    max-height: 500px;
     margin: auto;
   }
   .User aside {
     display: flex;
-
+    width: 80%;
     flex-direction: column;
-    height: 150px;
+    height: 100px;
     padding: 20px;
 
     background-color: transparent;
@@ -253,21 +253,19 @@ font-family: "Courier Prime", serif;
   }
   .User aside h2 {
     margin: 10px 0px 0px 0px;
-    font-size: 2rem;
+    font-size: 6vw;
     color: #f6f7f8;
     text-align: center;
     font-family: "Zilla Slab", serif;
   }
   .User aside p {
-    margin: 5px;
-    color: #f6f7f8;
-    text-align: center;
+    display: none;
   }
 
   .User section {
-    width: 100%;
-    height: 50vh;
-    margin: 0px 40px 0px 40px;
+    width: 80%;
+    height: 800px;
+
     background-color: #1d1c21;
     box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.587);
     border-radius: 10px;
@@ -278,9 +276,10 @@ font-family: "Courier Prime", serif;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    width: 100%;
+    width: 90%;
     height: auto;
-    margin: auto;
+    max-height: 180px;
+    margin: auto auto 20px auto;
     background-color: #1d1c21;
     box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.587);
     flex-wrap: wrap;
@@ -289,7 +288,7 @@ font-family: "Courier Prime", serif;
 
   .User .Navigation button {
     justify-content: center !important;
-    width: 15%;
+    width: 25%;
     height: 50px;
     margin: 3px;
 
