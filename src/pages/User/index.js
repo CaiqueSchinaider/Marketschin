@@ -1,6 +1,7 @@
 import { Children } from "react";
 import Header from "../../components/Header";
 import styles from "./User.module.css";
+import Carroseul from "../../components/Carroseul";
 
 function User({ children }) {
   return (
@@ -32,7 +33,9 @@ function User({ children }) {
       </div>
       <Header />
 
-      <section>{children}</section>
+      <section>
+        <Carroseul />
+      </section>
     </div>
   );
 }

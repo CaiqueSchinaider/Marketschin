@@ -1,9 +1,9 @@
 @media screen and (max-width: 325px) {
   .Categoria h1 {
-    font-size: 0.5rem !important;
     display: flex;
     flex-direction: column;
     padding: 20px;
+    font-size: 0.5rem !important;
   }
   .Categoria h1 span p {
     width: 200px !important;
@@ -18,11 +18,11 @@
     display: grid;
     flex-direction: column;
     width: 100px !important;
+    width: auto;
     max-width: 100px !important;
+    max-width: 680px;
 
     grid-template-columns: 60px 70px;
-    width: auto;
-    max-width: 680px;
     gap: 5px;
     min-width: 150px;
     justify-items: center;
@@ -48,12 +48,12 @@
   }
 
   .Categoria nav {
+    display: flex;
+    justify-content: space-evenly;
     width: auto;
     max-width: 555px;
     margin: auto;
     gap: 9px;
-    display: flex;
-    justify-content: space-evenly;
   }
 
   .Categoria nav p {
@@ -124,12 +124,12 @@
 }
 @media screen and (max-width: 700px) {
   .Categoria nav {
+    display: flex;
+    justify-content: space-evenly;
     width: auto;
     max-width: 600px;
     margin: auto;
     gap: 9px;
-    display: flex;
-    justify-content: space-evenly;
   }
 }
 @media screen and (min-width: 569px) and (max-width: 765px) {
@@ -143,12 +143,12 @@
   }
 
   .Categoria nav {
+    display: flex;
+    justify-content: space-evenly;
     width: auto;
     max-width: 600px;
     margin: auto;
     gap: 9px;
-    display: flex;
-    justify-content: space-evenly;
   }
   .Categoria nav p {
     width: 70px;
@@ -188,19 +188,19 @@
     font-size: 1.1rem;
   }
   .Categoria div {
+    justify-content: flex-start;
+    padding: 0px 50px 40px 50px;
     row-gap: 5px;
     column-gap: 30px;
-    padding: 0px 50px 40px 50px;
-    justify-content: flex-start;
   }
 }
 
 .Categoria {
-  background-color: #1d1c21 !important;
-  color: white;
-  box-shadow: inset 5px 3px 20px 1px black;
-  margin: 10px;
   width: auto;
+  margin: 10px;
+  color: white;
+  background-color: #1d1c21 !important;
+  box-shadow: inset 5px 3px 20px 1px black;
   border-radius: 50px;
   border: 2px solid #eee5e9;
   margin-bottom: 400px;
@@ -215,27 +215,27 @@
 .Categoria h1 {
   justify-content: center;
 
-  font-family: sans-serif;
+  margin: 0;
   font-size: 2em;
   font-weight: 700;
-  font-style: italic;
-  text-shadow: 4px 6px 12px rgba(255, 255, 255, 0.329);
   background-color: transparent;
 
-  margin: 0;
+  font-family: sans-serif;
+  font-style: italic;
+  text-shadow: 4px 6px 12px rgba(255, 255, 255, 0.329);
 }
 
 .Categoria nav {
-  background-color: #111215;
-  border: 1px solid white;
   justify-content: space-evenly;
-  flex-wrap: wrap;
-  padding-top: 20px;
+  padding: 0;
   color: #ffffff;
   text-align: center;
+  background-color: #111215;
   box-shadow: inset 5px 4px 8px #000000b5;
+  border: 1px solid white;
+  flex-wrap: wrap;
+  padding-top: 20px;
   border-radius: 10px;
-  padding: 0;
   margin-top: 20px;
 }
 

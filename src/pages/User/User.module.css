@@ -1,11 +1,11 @@
-@media screen and (min-width: 1001px) {
+@media screen and (min-width: 1152px) {
   .User {
     display: flex;
-    background-color: #111215;
 
     height: 100vh;
-    padding-top: 80px;
     margin: 0;
+    background-color: #111215;
+    padding-top: 80px;
   }
   .User div {
     display: flex;
@@ -18,13 +18,13 @@
   }
   .User aside {
     display: flex;
-    margin-bottom: 20px;
     flex-direction: column;
+    width: 300px;
+    height: 200px;
+    padding: 20px;
 
     background-color: transparent;
-    padding: 20px;
-    height: 200px;
-    width: 300px;
+    margin-bottom: 20px;
     overflow: hidden;
   }
   /* Fontes importadas
@@ -36,53 +36,56 @@ font-family: "Courier Prime", serif;
  font-family: "Zilla Slab", serif;
 */
   .User aside h1 {
+    margin: 0;
+    font-size: 2rem;
     color: #9b0202;
     text-align: center;
-    font-size: 2rem;
-    margin: 0;
     border-bottom: 3px solid rgb(129, 0, 0);
     font-family: "Bebas Neue", sans-serif;
   }
   .User aside h2 {
     margin: 10px 0px 0px 0px;
+    font-size: 2rem;
+    color: #f6f7f8;
     text-align: center;
     font-family: "Zilla Slab", serif;
-    color: #f6f7f8;
-    font-size: 2rem;
   }
   .User aside p {
+    margin: 5px;
     color: #f6f7f8;
     text-align: center;
-    margin: 5px;
   }
 
   .User section {
+    display: flex !important;
+
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 86vh;
+    margin: 0px 80px 0px 40px;
     background-color: #1d1c21;
     box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.587);
     border-radius: 10px;
     border: 2px solid white;
-    margin: 0px 80px 0px 40px;
-    width: 100%;
-    height: 86vh;
   }
   .User .Navigation {
-    background-color: #1d1c21;
-    box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.587);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-
-    border: 2px solid rgba(255, 255, 255, 0.753);
     width: 300px;
     height: 500px;
+    background-color: #1d1c21;
+    box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.587);
+    border: 2px solid rgba(255, 255, 255, 0.753);
   }
 
   .User .Navigation button {
-    background-color: black;
-    color: #f6f7f8;
     flex-direction: row !important;
     justify-content: space-evenly !important;
     height: 45px;
+    color: #f6f7f8;
+    background-color: black;
     margin-inline: 50px;
     border: 2px solid white;
     border-radius: 20px;
@@ -95,35 +98,33 @@ font-family: "Courier Prime", serif;
     transform: scale(1.1);
   }
 }
-@media screen and (max-width: 1000px) and (min-width: 721px) {
+@media screen and (max-width: 1151px) {
   .User {
     display: flex;
-    background-color: #111215;
-    flex-wrap: wrap;
+    flex-direction: column;
     height: 100vh;
-    padding-top: 80px;
     margin: 0;
+    background-color: #111215;
+    padding-top: 80px;
   }
   .User div {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center !important;
     align-items: center;
-    width: 100%;
+
     height: auto;
     max-height: 720px;
-    margin: 30px 60px 0px auto;
+    margin: 30px 0px 0px 50px;
   }
   .User aside {
     display: flex;
-    margin-bottom: 20px;
-    margin-right: 30px;
     flex-direction: column;
-
+    width: 300px;
+    height: 170px;
+    margin: auto;
     background-color: transparent;
-    padding: 20px;
-    height: 200px;
-    width: 400px;
+
     overflow: hidden;
   }
   /* Fontes importadas
@@ -135,76 +136,83 @@ font-family: "Courier Prime", serif;
  font-family: "Zilla Slab", serif;
 */
   .User aside h1 {
+    margin: 0;
+    font-size: 2rem;
     color: #9b0202;
     text-align: center;
-    font-size: 2rem;
-    margin: 0;
     border-bottom: 3px solid rgb(129, 0, 0);
     font-family: "Bebas Neue", sans-serif;
   }
   .User aside h2 {
     margin: 10px 0px 0px 0px;
+    font-size: 2rem;
+    color: #f6f7f8;
     text-align: center;
     font-family: "Zilla Slab", serif;
-    color: #f6f7f8;
-    font-size: 2rem;
   }
   .User aside p {
+    margin: 5px;
     color: #f6f7f8;
     text-align: center;
-    margin: 5px;
   }
 
   .User section {
+    display: flex !important;
+
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 86vh;
+    margin: auto;
     background-color: #1d1c21;
     box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.587);
     border-radius: 10px;
     border: 2px solid white;
-    margin: 0px 40px 0px 40px;
-    width: 100%;
-    height: 50vh;
   }
   .User .Navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: auto;
+    max-width: 740px;
+    height: auto;
+    padding: 10px 10px;
     background-color: #1d1c21;
     box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.587);
-    display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-right: 30px;
+    gap: 10px;
     border: 2px solid rgba(255, 255, 255, 0.753);
-    width: 50%;
-    height: auto;
-    gap: 5px;
-    padding: 10px 0px 10px 0px;
   }
 
   .User .Navigation button {
-    display: flex;
-    background-color: black;
-    color: #f6f7f8;
-    height: 45px;
-    flex-direction: row;
+    margin-left: 10px;
+    flex-direction: row !important;
     justify-content: space-evenly !important;
-    min-width: 100px;
-    margin: 3px;
+    height: 45px;
+    padding: 5px;
+    color: #f6f7f8;
+    background-color: black;
     border: 2px solid white;
     border-radius: 20px;
     transition: 0.3s ease;
-    width: 70%;
+  }
+  .User .Navigation button p {
+    display: none;
+    text-align: start !important;
   }
   .User .Navigation button:hover {
     transform: scale(1.1);
   }
 }
+
 @media screen and (max-width: 720px) {
   .User {
     display: flex;
+    height: 100vh;
+    margin: 0;
     background-color: #111215;
     flex-wrap: wrap;
-    height: 100vh;
     padding-top: 80px;
-    margin: 0;
   }
   .User div {
     display: flex;
@@ -220,10 +228,10 @@ font-family: "Courier Prime", serif;
     display: flex;
 
     flex-direction: column;
+    height: 150px;
+    padding: 20px;
 
     background-color: transparent;
-    padding: 20px;
-    height: 150px;
 
     overflow: hidden;
   }
@@ -236,58 +244,58 @@ font-family: "Courier Prime", serif;
  font-family: "Zilla Slab", serif;
 */
   .User aside h1 {
+    margin: 0;
+    font-size: 2rem;
     color: #9b0202;
     text-align: center;
-    font-size: 2rem;
-    margin: 0;
     border-bottom: 3px solid rgb(129, 0, 0);
     font-family: "Bebas Neue", sans-serif;
   }
   .User aside h2 {
     margin: 10px 0px 0px 0px;
+    font-size: 2rem;
+    color: #f6f7f8;
     text-align: center;
     font-family: "Zilla Slab", serif;
-    color: #f6f7f8;
-    font-size: 2rem;
   }
   .User aside p {
+    margin: 5px;
     color: #f6f7f8;
     text-align: center;
-    margin: 5px;
   }
 
   .User section {
+    width: 100%;
+    height: 50vh;
+    margin: 0px 40px 0px 40px;
     background-color: #1d1c21;
     box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.587);
     border-radius: 10px;
     border: 2px solid white;
-    margin: 0px 40px 0px 40px;
-    width: 100%;
-    height: 50vh;
   }
   .User .Navigation {
-    background-color: #1d1c21;
-    box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.587);
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    margin: auto;
-    border: 2px solid rgba(255, 255, 255, 0.753);
     width: 100%;
     height: auto;
+    margin: auto;
+    background-color: #1d1c21;
+    box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.587);
+    flex-wrap: wrap;
+    border: 2px solid rgba(255, 255, 255, 0.753);
   }
 
   .User .Navigation button {
-    background-color: black;
-    color: #f6f7f8;
-    height: 50px;
     justify-content: center !important;
     width: 15%;
+    height: 50px;
     margin: 3px;
 
     font-size: 0.8rem;
+    color: #f6f7f8;
+    background-color: black;
     border: 2px solid white;
     border-radius: 20px;
     transition: 0.3s ease;
@@ -305,14 +313,14 @@ font-family: "Courier Prime", serif;
 }
 .User .Navigation button {
   display: flex;
-  background-color: #9b0202 !important ;
-  font-weight: bold;
 
   align-items: center;
+  font-weight: bold;
+  background-color: #9b0202 !important ;
 }
 .User .Navigation button p {
+  max-width: 120px;
   margin: 0;
   text-align: center;
-  max-width: 120px;
   min-width: 120px;
 }

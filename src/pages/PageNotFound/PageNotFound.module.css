@@ -1,10 +1,10 @@
 .PageNotFound {
   display: flex;
-  color: white;
   flex-direction: column;
-  font-size: 3rem;
-  text-align: center;
   align-items: center;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
 }
 .PageNotFound a {
   font-size: 1.6rem;

@@ -1,8 +1,8 @@
 .Loading {
-  position: relative;
-  margin: auto;
   width: 40px;
   height: 40px;
+  margin: auto;
+  position: relative;
   top: 150px;
   border-radius: 40px;
   border-top: 5px solid rgb(121, 11, 11);

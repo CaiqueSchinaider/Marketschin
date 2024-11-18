@@ -1,0 +1,32 @@
+{
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "order/properties-order": [
+      [
+        {
+          "properties": [
+            "display",
+            "flex-direction",
+            "justify-content",
+            "align-items"
+          ]
+        },
+        {
+          "properties": ["width", "max-width", "height", "max-height"]
+        },
+        {
+          "properties": ["margin", "padding"]
+        },
+        {
+          "properties": ["font-size", "font-weight", "color", "text-align"]
+        },
+        {
+          "properties": ["background", "background-color", "box-shadow"]
+        }
+      ]
+    ]
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  }
+}
