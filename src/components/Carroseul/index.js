@@ -20,8 +20,8 @@ function Carroseul() {
 
       <Carousel
         className={styles.Juntante}
-        autoPlay
-        infiniteLoop
+        autoPlay={true}
+        infiniteLoop={true}
         showThumbs={false}
         interval={5000}
         showArrows={false}

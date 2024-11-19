@@ -3,6 +3,7 @@
   .Carroseul a {
     text-decoration: none;
   }
+
   .Carroseul {
     display: flex;
     flex-direction: column;
@@ -10,7 +11,7 @@
     align-items: center;
     width: 100%;
     max-width: 700px;
-    height: 100%;
+    height: 80%;
     max-height: 500px;
     margin: 0;
     background-color: #4b4a50;
@@ -60,7 +61,7 @@
     flex-direction: row;
     justify-content: center;
     width: 630px;
-    height: 300px;
+    height: 300px !important;
     margin: auto;
     padding: 0px 0px;
     background-image: linear-gradient(to right, #9b0202, #630808);
@@ -70,15 +71,18 @@
   /* Imagem */
   .Carroseul div img {
     transform: scale(1.2);
+    margin-top: 20px;
   }
 
   /* Encobre Valor e Nome */
   .Carroseul section {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 300px !important;
     height: 95%;
-    margin: 0px 0px 0px 35px;
+    margin: 10px 0px 10px 35px;
+    padding: 10px;
     background-color: #1d1c21;
     border-radius: 10px;
   }
@@ -145,7 +149,7 @@ font-family: "Courier Prime", serif;
 */
 }
 
-@media screen and (max-width: 1151px) {
+@media screen and (max-width: 1151px) and (min-width: 721px) {
   /* Link encobrindo todo elemento */
   .Carroseul a {
     text-decoration: none;
@@ -155,7 +159,7 @@ font-family: "Courier Prime", serif;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60vw;
+    width: 65vw;
 
     max-width: 700px;
     height: 100%;
@@ -220,19 +224,18 @@ font-family: "Courier Prime", serif;
   /* Imagem */
   .Carroseul div img {
     transform: scale(1.2);
-    border-radius: 10px;
-    border-right: 2px solid white;
-    border-left: 2px solid white;
+    margin-top: 25px;
   }
 
   /* Encobre Valor e Nome */
   .Carroseul section {
     display: flex;
     flex-direction: column;
-    width: 20vw !important;
-    max-width: 300px;
+    align-items: center;
+    width: 30vw !important;
     height: 95%;
-    margin: 0px 0px 0px 35px;
+    margin: 10px 5px 10px 35px;
+    padding: 20px;
     background-color: #1d1c21;
     border-radius: 10px;
   }
@@ -308,12 +311,12 @@ font-family: "Zilla Slab", serif;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60vw;
-    padding: 0px 10px;
+    width: 95vw;
     max-width: 720px;
-    height: 100%;
-    max-height: 600px;
+    height: 70%;
+    max-height: 680px;
     margin: 0;
+    padding: 0px 10px;
     background-color: #4b4a50;
     box-shadow: inset 0px 0px 15px rgb(0, 0, 0);
   }
@@ -362,10 +365,11 @@ font-family: "Zilla Slab", serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
+    height: 570px;
     max-height: auto;
-    height: 700px;
-    margin: auto;
+
     padding: 0px 0px;
     background-image: linear-gradient(to right, #9b0202, #630808);
     border: 1px solid white;
@@ -373,7 +377,8 @@ font-family: "Zilla Slab", serif;
 
   /* Imagem */
   .Carroseul div img {
-    transform: scale(1.67);
+    justify-content: center;
+    transform: scale(1.77);
     z-index: 1;
     border-radius: 17px;
     margin: 4px 0px 4px 0px;
@@ -383,10 +388,10 @@ font-family: "Zilla Slab", serif;
   .Carroseul section {
     display: flex;
     flex-direction: column;
-    width: 60vw !important;
+    width: 95vw !important;
     z-index: 2;
     max-width: 700px;
-    height: 95%;
+    height: 40%;
     margin: 0 !important;
     background-color: #1d1c21;
     border-radius: 10px;
@@ -399,9 +404,8 @@ font-family: "Zilla Slab", serif;
     justify-content: center;
     align-items: center;
     width: 100% !important;
-    height: auto;
-    padding: 20px 0px;
-    font-size: 1.4rem !important;
+
+    font-size: 7vw !important;
     color: rgb(255, 255, 255);
     background-color: #9b0202;
     box-shadow: inset 0px 0px 15px black;

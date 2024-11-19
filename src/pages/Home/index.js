@@ -11,6 +11,7 @@ import Slider from "react-slick";
 import { Autoplay } from "swiper/modules";
 import produtos from "../../utils/produtosMock";
 import { Link } from "react-router-dom";
+import Carroseul from "../../components/Carroseul";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -30,84 +31,25 @@ function Home() {
       {loading ? (
         <Loading />
       ) : (
-        <section className={styles.Home}>
-          <section>
+        <main className={styles.Home}>
+          {/* Falar um pouco sobre a loja */}
+          <section className={styles.Descrição}>
             <h1>Você já conhece a nossa loja?</h1>
             <p>
               A <strong>Market Schin</strong> foi fundada com o compromisso de
               fortalecer a relação entre consumidores e produtores.
-            </p>{" "}
+            </p>
             <p>
-              {" "}
               Atuamos como intermediários confiáveis, assegurando um transporte
               eficiente, pagamentos seguros e a qualidade de nossos produtos!
             </p>
           </section>
 
-          <inside>
-            <h2 onClick={scrolar} style={{ cursor: "pointer" }}>
-              Confira nossos serviços &#9660; &#9660; &#9660;
-            </h2>
-
-            <nav>
-              <Link to={"/comprar/all"}>
-                <p>Comprar</p>
-              </Link>
-              <Link to={"/#"}>
-                <p>Vender</p>
-              </Link>
-              <Link to={"/#"}>
-                <p>Ajuda</p>
-              </Link>
-            </nav>
-            <Carousel
-              className="Carousel"
-              autoPlay
-              infiniteLoop
-              showThumbs={false}
-              interval={5000}
-              showArrows={false}
-              showStatus={false}
-              showIndicators={false}
-            >
-              {produtos.map((produtosslide) => {
-                return (
-                  <Link
-                    to={`/comprar/${produtosslide.categoria}`}
-                    style={{ boxShadow: "inset 2px 2px 10px black" }}
-                  >
-                    <div key={produtosslide.id}>
-                      <img
-                        src={produtosslide.thumb}
-                        style={{ width: "250px", height: "250px" }}
-                      />
-                      <section>
-                        <h3>
-                          {" "}
-                          {Number.parseFloat(
-                            produtosslide.valor
-                          ).toLocaleString("pt-BR", {
-                            style: "currency",
-                            currency: "BRL",
-                          })}
-                        </h3>
-                        <p
-                          style={{
-                            width: "200px",
-                            display: "inline",
-                            fontSize: "1.4rem",
-                          }}
-                        >
-                          {produtosslide.name}
-                        </p>
-                      </section>
-                    </div>
-                  </Link>
-                );
-              })}
-            </Carousel>
-          </inside>
-        </section>
+          {/* Slides de item disponiveis para compras  */}
+          <section className={styles.Carousel}>
+            <Carroseul />
+          </section>
+        </main>
       )}
       <Footer />
     </>
