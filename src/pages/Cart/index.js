@@ -113,10 +113,12 @@ function Cart() {
                     onClick={() => setApagarProdutos("delete")}
                     style={{ cursor: "pointer" }}
                   >
-                    Limpar carrinho
+                    <img src="/pic/excluir.png" />
+                    <p>Limpar carrinho </p>
                   </button>
 
                   <button>
+                    <img src="/pic/market.png" />
                     <Link to="/comprar/all">Continuar compras</Link>
                   </button>
                   <button
@@ -127,7 +129,8 @@ function Cart() {
                       fontWeight: "bolder",
                     }}
                   >
-                    Finalizar compras
+                    <img src="/pic/confirm.png" />
+                    <p> Finalizar compras</p>
                   </button>
                   <div className={styles.Precototal}>
                     <p>

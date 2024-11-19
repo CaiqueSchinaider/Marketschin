@@ -1,6 +1,7 @@
 @media screen and (min-width: 1073px) {
   .Home {
     display: flex;
+    justify-content: space-around;
     flex-direction: row;
     background-image: linear-gradient(to bottom, #28272c, #111215);
   }
@@ -28,15 +29,20 @@
     font-size: 2vw;
     font-family: "Courier Prime", serif;
   }
-  .Home strong {
+  .Home .LojaCitar {
     font-size: 3vw;
     color: #9b0202;
+    font-family: "Bebas Neue";
+  }
+  .Home strong {
+    font-size: 2.2vw;
+    color: #bfbfbf;
     font-family: "Bebas Neue";
   }
 
   /* Slides de produtos  */
   .Home .Carousel {
-    transform: scale(0.8);
+    transform: scale(0.9);
   }
 }
 @media screen and (max-width: 1072px) and (min-width: 721px) {
@@ -70,9 +76,14 @@
     font-size: 2.6vw;
     font-family: "Courier Prime", serif;
   }
-  .Home strong {
+  .Home .LojaCitar {
     font-size: 3vw;
     color: #9b0202;
+    font-family: "Bebas Neue";
+  }
+  .Home strong {
+    font-size: 2.2vw;
+    color: #bfbfbf;
     font-family: "Bebas Neue";
   }
 
@@ -87,6 +98,7 @@
     flex-direction: column;
     align-items: center;
     background-image: linear-gradient(to bottom, #28272c, #111215);
+    padding-bottom: 0px !important;
   }
   /* Falando sobre a loja */
   .Home .Descrição {
@@ -96,30 +108,36 @@
     color: white;
     background-color: #1d1c21;
     border-radius: 20px;
-    margin-left: 20px;
     margin-top: 20px;
-    margin-right: 0px;
     border: 2px solid white;
   }
   .Home h1 {
-    margin-left: 20px;
+    margin-left: 7px;
 
-    font-size: 5vw;
+    font-size: 8vw;
     color: #9b0202;
     font-family: "Protest Strike", serif;
   }
   .Home p {
-    font-size: 2.6vw;
+    font-size: 4vw;
     font-family: "Courier Prime", serif;
   }
-  .Home strong {
-    font-size: 3vw;
+  .Home .LojaCitar {
+    font-size: 5vw;
     color: #9b0202;
+    font-family: "Bebas Neue";
+  }
+  .Home strong {
+    font-size: 4vw;
+    color: #bfbfbf;
     font-family: "Bebas Neue";
   }
 
   /* Slides de produtos  */
   .Home .Carousel {
-    transform: scale(0.6);
+    transform: scale(0.8);
   }
+}
+.Home {
+  padding-bottom: 100px;
 }

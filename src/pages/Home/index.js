@@ -36,12 +36,15 @@ function Home() {
           <section className={styles.Descrição}>
             <h1>Você já conhece a nossa loja?</h1>
             <p>
-              A <strong>Market Schin</strong> foi fundada com o compromisso de
-              fortalecer a relação entre consumidores e produtores.
+              A <strong className={styles.LojaCitar}>Market Schin</strong> foi
+              fundada com o compromisso de fortalecer a relação entre{" "}
+              <strong>consumidores</strong> e <strong>produtores</strong>.
             </p>
             <p>
-              Atuamos como intermediários confiáveis, assegurando um transporte
-              eficiente, pagamentos seguros e a qualidade de nossos produtos!
+              Atuamos como intermediários <strong>confiáveis</strong>,
+              assegurando um transporte
+              <strong> eficiente</strong>, pagamentos <strong>seguros</strong> e
+              a <strong>qualidade</strong> de nossos produtos!
             </p>
           </section>
 
