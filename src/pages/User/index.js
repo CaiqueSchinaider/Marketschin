@@ -2,6 +2,7 @@ import { Children } from "react";
 import Header from "../../components/Header";
 import styles from "./User.module.css";
 import Carroseul from "../../components/Carroseul";
+import Data from "../../components/Data";
 
 function User({ children }) {
   return (
@@ -38,7 +39,8 @@ function User({ children }) {
 
       {/* Slides de produtos disponiveis  */}
       <section className={styles.Caroseul}>
-        <Carroseul />
+        <Data />
+        {/* <Carroseul /> */}
       </section>
     </div>
   );

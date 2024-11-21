@@ -157,7 +157,6 @@ function Registrar() {
           setMensagem_error_email("visible");
           setInput_error_email("2px solid red");
         } else {
-          converte();
           const codeFor = converte();
           const senhaFormatada = String(password);
           setParamscode({

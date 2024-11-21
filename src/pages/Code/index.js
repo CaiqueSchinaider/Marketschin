@@ -9,21 +9,29 @@ import { useNavigate } from "react-router-dom";
 
 function Code() {
   const navigate = useNavigate();
-  const [code, setCode] = useContext(ConfirmCodeContext);
-  const [login, setLogin] = useContext(LoginsContext);
-  const [paramscode, setParamscode] = useContext(ParamsCodeContext);
-  const [numeroCode, setNumeroCode] = useState();
   const [userCode, setUserCode] = useState();
-  const [logcode, setLogcode] = useState();
-  const [confirmação, setConfimação] = useState();
+  const [metCode, setMetCode] = useState();
+  //////////////////////////////////////////////////
+  // Estados passados para continuação do codigo
+  const [code, setCode] = useContext(ConfirmCodeContext);
+  const [paramscode, setParamscode] = useContext(ParamsCodeContext); // Parametros do email
+
+  //////////////////////////////////////////////////
+  // Muda a pagina para logar
+  const [login, setLogin] = useContext(LoginsContext);
+  //////////////////////////////////////////////////
+  // Efeito de Error
   const [inputerror, setInputerror] = useState("2px solid white");
   const [mensageerror, setMensageerror] = useState(
     "Digite seu código de confirmação"
   );
   const [color_mensagem_error, setColor_mensagem_error] = useState("white");
+  //////////////////////////////////////////////////
   useEffect(() => {
     if (code) {
+      setMetCode(paramscode.message);
       emailjs.init("EkUYr-ANKIPXaINm6");
+
       try {
         emailjs
           .send(
@@ -45,20 +53,23 @@ function Code() {
     }
   }, [code]);
   function Verificar() {
-    const code = paramscode.message;
-    const email = paramscode.destino;
-    const password = paramscode.senha;
-    if (userCode == code) {
+    if (userCode == metCode) {
+      //////////////////////////////////////////////////
+      // Confirma o Lgoin, e adiciona usuario ao mock
       setLogin(true);
       axios.post("https://67312aae7aaf2a9aff10029c.mockapi.io/users", {
-        name: email,
-        senha: password,
+        name: paramscode.destino,
+        senha: paramscode.senha,
       });
+      //////////////////////////////////////////////////
+      // Vai para login
       navigate("/login");
-      setInputerror("2px solid red");
+      setInputerror("2px solid white");
       setMensageerror("Digite seu código de confirmação");
       setColor_mensagem_error("white");
     } else {
+      //////////////////////////////////////////////////
+      // Exibe error
       setInputerror("2px solid red");
       setMensageerror("Codigo errado!");
       setColor_mensagem_error("red");

@@ -1,0 +1,23 @@
+.Data {
+  background-color: rgb(74, 50, 22);
+  color: white;
+  width: 70vw;
+  height: 100%;
+}
+.Data h1 {
+  text-align: center;
+  font-size: 5vw;
+  color: #9b0202;
+}
+.Dados {
+  margin-left: 5vw;
+}
+.Dados h2 {
+  font-size: 3vw;
+}
+.Dados h3 {
+  margin-left: 3px;
+}
+.Dados p {
+  margin-left: 3vw;
+}
