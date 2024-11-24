@@ -1,0 +1,75 @@
+.Relembrar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+.Relembrar main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 300px;
+  gap: 10px;
+}
+.Relembrar main label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vw;
+  color: #9b0202;
+  font-family: "Protest Strike", serif;
+}
+.Relembrar input {
+  width: 300px;
+  margin-top: 10px;
+  height: 30px;
+  color: white;
+  text-align: center;
+  background-color: black;
+  border: 2px solid white;
+}
+.Relembrar button {
+  width: 200px;
+  height: 50px;
+  font-size: 1.3rem;
+  font-family: "Jura";
+  border-radius: 8px;
+  font-weight: bold;
+  color: white;
+
+  background-color: black;
+  border: 2px solid white;
+}
+.Relembrar .InputCode {
+  height: 60px;
+  font-size: 5vw;
+  color: white;
+}
+.VerPassword h2 {
+  margin: 0px;
+  font-size: clamp(30px, 5vw, 5vw);
+  color: #9b0202;
+}
+.VerPassword p {
+  margin: 0px;
+  font-size: clamp(20px, 3vw, 3vw);
+  color: white;
+  font-family: "Jura", sans-serif;
+}
+.VerPassword a {
+  padding: 6px 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  font-size: clamp(17px, 2vw, 3vw);
+  color: #9b0202;
+  text-decoration: none;
+  border: 1px solid #9b0202;
+  transition: 0.4s ease;
+}
+.VerPassword a:hover {
+  transform: scale(1.06);
+}

@@ -1,12 +1,14 @@
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import styles from "./Logar.module.css";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import users from "../../utils/usersMock";
 import axios from "axios";
+import { ParamsCodeContext } from "../../contexts/ParamsCode";
 
 function Logar() {
   const navigate = useNavigate();
   const [password, setPassword] = useState("");
+  const [paramscode, setParamscode] = useContext(ParamsCodeContext);
   const [email, setEmail] = useState("");
   const [mensagem_error_password, setMensagem_error_password] =
     useState("hidden");
@@ -88,6 +90,11 @@ function Logar() {
 
             if (verificar) {
               navigate("/home");
+              setParamscode({
+                message: "",
+                destino: email,
+                senha: password,
+              });
             } else if (!log_verificar_email) {
               setInfo_error_email("Essa conta não existe!");
               setMensagem_error_email("visible");

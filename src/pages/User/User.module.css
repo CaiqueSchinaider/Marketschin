@@ -1,4 +1,4 @@
-@media screen and (min-width: 835px) {
+@media screen and (min-width: 834px) {
   .User {
     display: flex;
     padding-top: 80px;
@@ -74,7 +74,7 @@
     transform: scale(0.8);
   }
 }
-@media screen and (max-width: 831px) {
+@media screen and (max-width: 833px) {
   .User {
     display: flex;
     flex-direction: column;

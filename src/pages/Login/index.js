@@ -5,6 +5,7 @@ import Registrar from "../../components/Registrar";
 import Loading from "../../components/Loading";
 
 import { LoginsContext } from "../../contexts/Logins";
+import { Link } from "react-router-dom";
 
 function Login() {
   // Meu useContext, serve para quando o usuario registrar, mande sinal para ir para login
@@ -45,7 +46,9 @@ function Login() {
         )}
 
         <aside>
-          <p>Esqueci a senha</p>
+          <Link to="/relembrar">
+            <p>Esqueci a senha</p>
+          </Link>
           {registro == "sinal_Login" ? (
             <p onClick={() => setRegistro("sinal_Registrar")}>Criar conta</p>
           ) : registro == "sinal_Registrar" ? (

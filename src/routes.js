@@ -11,6 +11,9 @@ import Code from "./pages/Code";
 import ConfimCodeProvider from "./contexts/ConfirmCode";
 import ParamsCodeProvider, { ParamsCodeContext } from "./contexts/ParamsCode";
 import User from "./pages/User";
+import Addcard from "./pages/Addcard";
+import Redefinir from "./pages/Relembrar";
+import Relembrar from "./pages/Relembrar";
 
 function AppRoutes() {
   return (
@@ -32,6 +35,8 @@ function AppRoutes() {
               <Route path="*" element={<PageNotFound />}></Route>
               <Route path="/code" element={<Code />}></Route>
               <Route path="/user" element={<User />}></Route>
+              <Route path="/addcard" element={<Addcard />}></Route>
+              <Route path="/relembrar" element={<Relembrar />}></Route>
             </Routes>
           </LoginsProvider>
         </ConfimCodeProvider>

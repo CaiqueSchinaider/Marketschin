@@ -63,7 +63,7 @@ function Code() {
       });
       //////////////////////////////////////////////////
       // Vai para login
-      navigate("/login");
+      navigate("/");
       setInputerror("2px solid white");
       setMensageerror("Digite seu código de confirmação");
       setColor_mensagem_error("white");
