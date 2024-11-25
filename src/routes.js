@@ -12,7 +12,7 @@ import ConfimCodeProvider from "./contexts/ConfirmCode";
 import ParamsCodeProvider, { ParamsCodeContext } from "./contexts/ParamsCode";
 import User from "./pages/User";
 import Addcard from "./pages/Addcard";
-import Redefinir from "./pages/Relembrar";
+
 import Relembrar from "./pages/Relembrar";
 
 function AppRoutes() {

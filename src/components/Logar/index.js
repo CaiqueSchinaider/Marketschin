@@ -13,8 +13,9 @@ function Logar() {
   const [mensagem_error_password, setMensagem_error_password] =
     useState("hidden");
   const [mensagem_error_email, setMensagem_error_email] = useState("hidden");
-  const [input_error_password, setInput_error_password] = useState("none");
-  const [input_error_email, setInput_error_email] = useState("none");
+  const [input_error_password, setInput_error_password] =
+    useState("1px solid white");
+  const [input_error_email, setInput_error_email] = useState("1px solid white");
   const [error_password, setError_password] = useState();
   const [error_email, setError_email] = useState();
   const [sinal, setSinal] = useState(false);
@@ -62,14 +63,14 @@ function Logar() {
         setInput_error_password("2px solid red");
       } else {
         setMensagem_error_password("hidden");
-        setInput_error_password("none");
+        setInput_error_password("1px solid white");
       }
       if (!error_email) {
         setMensagem_error_email("visible");
         setInput_error_email("2px solid red");
       } else {
         setMensagem_error_email("hidden");
-        setInput_error_email("none");
+        setInput_error_email("1px solid white");
       }
       if (error_email && error_password) {
         axios
@@ -117,9 +118,12 @@ function Logar() {
         <input
           type="email"
           id="email"
+          autoComplete="on"
           onChange={(e) => setEmail(e.target.value)}
           required
-          style={{ border: `${input_error_email}` }}
+          style={{
+            border: `${input_error_email}`,
+          }}
         />
         <p
           className={styles.Msgerror}

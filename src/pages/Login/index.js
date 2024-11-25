@@ -46,7 +46,7 @@ function Login() {
         )}
 
         <aside>
-          <Link to="/relembrar">
+          <Link to="/relembrar" style={{ textDecoration: "none" }}>
             <p>Esqueci a senha</p>
           </Link>
           {registro == "sinal_Login" ? (
