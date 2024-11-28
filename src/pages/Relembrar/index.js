@@ -16,7 +16,7 @@ function Relembrar() {
   const [messagecode, setMessagecode] = useState();
   const [newData, setNewData] = useState();
   const [userID, setUserID] = useState();
-
+  const [sinalStates, setSinalStates] = useState();
   console.log(sinal);
 
   /////////////////////////////////
@@ -33,7 +33,11 @@ function Relembrar() {
         .then(console.log("Email enviado!"))
         .catch((error) => console.error("Email não enviado", error.name));
     }
-  }, [sinal, sinalEmail]);
+    if (sinalStates) {
+      setMockdados(sinalStates.find((user) => user.name == email)); // Pega o usuario correspondente ao email do user
+      setSenhanew({ senha: senhaRed }); // Prepara a senha que o usuario deseja redefinir
+    }
+  }, [sinal, sinalEmail, sinalStates]);
   ///////////////////////////////////////////////////////////
 
   ///////////////////////////////////////////////////////////
@@ -83,17 +87,16 @@ function Relembrar() {
 
       setSinal("redefinir"); // Sinaliza para exibit inputs para redefinir
 
-      const dados = await identificarID(); // Chama a função para obter os dados do array de users
-
-      setMockdados(dados.find((user) => user.name == email)); // Pega o usuario correspondente ao email do user
-      setSenhanew({ senha: senhaRed }); // Prepara a senha que o usuario deseja redefinir
+      const dados = await identificarID();
+      console.log(dados); // Chama a função para obter os dados do array de users
+      setSinalStates(dados);
     }
   }
 
   //////////////////////////////////////////////////
   // Vai iniciar o patch com a nova senha
   async function AtualizarUser(userID, newData) {
-    console.log("opa", mockdados.id);
+    console.log("opa", mockdados);
     // "UserID" é o Mockdados.id, "newData" é o indice "senha" atualizado]
 
     try {
@@ -144,7 +147,15 @@ function Relembrar() {
             Crie uma nova senha
             <input type="text" onChange={(e) => setSenhaRed(e.target.value)} />
           </label>
-          <button onClick={() => AtualizarUser(mockdados.id, senhanew)}>
+          <button
+            onClick={() => {
+              if (mockdados && mockdados.id) {
+                AtualizarUser(mockdados.id, senhanew);
+              } else {
+                console.log(mockdados);
+              }
+            }}
+          >
             Confirmar
           </button>
         </main>
