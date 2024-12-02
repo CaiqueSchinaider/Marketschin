@@ -26,10 +26,12 @@ function Code() {
     "Digite seu código de confirmação"
   );
   const [color_mensagem_error, setColor_mensagem_error] = useState("white");
+
   //////////////////////////////////////////////////
   useEffect(() => {
     if (code) {
       setMetCode(paramscode.message);
+
       emailjs.init("EkUYr-ANKIPXaINm6");
 
       try {
@@ -68,6 +70,7 @@ function Code() {
       setMensageerror("Digite seu código de confirmação");
       setColor_mensagem_error("white");
     } else {
+      console.log(metCode);
       //////////////////////////////////////////////////
       // Exibe error
       setInputerror("2px solid red");

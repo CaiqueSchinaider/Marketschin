@@ -20,7 +20,7 @@ function Data() {
           <p>
             <strong> Senha:</strong> {paramscode.senha}
           </p>
-          <Link to="/relembrar">Redefinir senha</Link>
+          <Link to="/emailverification">Redefinir senha</Link>
         </section>
         <section className={styles.DadosBancarios}>
           <h2>Dados Bancarios</h2>

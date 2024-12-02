@@ -75,6 +75,10 @@ function Registrar() {
       setError_password(false);
       setInfo_error_password("A senha deve conter letra minusculas");
 
+      // Se a senha tem no minimo um número
+    } else if (!/[0-9]/.test(password)) {
+      setError_password(false);
+      setInfo_error_password("A senha deve conter números");
       // Se tudo estiver ok
     } else {
       setError_password(true);
@@ -165,7 +169,9 @@ function Registrar() {
             senha: senhaFormatada,
           });
           setCode(true);
-          navigate("/code");
+          const codeAleatorio = Math.floor(Math.random() * 1000);
+          const codeFormatado = codeAleatorio.toString().padStart(3, "0");
+          navigate(`/codeverification/createuser`);
         }
       } catch (erro) {
         console.error("Aconteceu algum erro", erro.message);

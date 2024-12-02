@@ -12,8 +12,10 @@ import ConfimCodeProvider from "./contexts/ConfirmCode";
 import ParamsCodeProvider, { ParamsCodeContext } from "./contexts/ParamsCode";
 import User from "./pages/User";
 import Addcard from "./pages/Addcard";
-import Redefinir from "./pages/Relembrar";
-import Relembrar from "./pages/Relembrar";
+
+import PassCodeVerification from "./pages/PassCodeVerification";
+import SendEmailVerification from "./pages/SendEmailVerification";
+import Redefinir from "./pages/Redefinir";
 
 function AppRoutes() {
   return (
@@ -36,7 +38,15 @@ function AppRoutes() {
               <Route path="/code" element={<Code />}></Route>
               <Route path="/user" element={<User />}></Route>
               <Route path="/addcard" element={<Addcard />}></Route>
-              <Route path="/relembrar" element={<Relembrar />}></Route>
+              <Route
+                path="/codeverification/:status"
+                element={<PassCodeVerification />}
+              ></Route>
+              <Route
+                path="/emailverification"
+                element={<SendEmailVerification />}
+              ></Route>
+              <Route path="/redefinirpass" element={<Redefinir />}></Route>
             </Routes>
           </LoginsProvider>
         </ConfimCodeProvider>

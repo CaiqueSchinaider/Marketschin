@@ -78,11 +78,11 @@ function Logar() {
             const dados = response.data;
             const verificar = dados.some(
               (usersdata) =>
-                usersdata.name == email && usersdata.senha == String(password)
+                usersdata.email == email && usersdata.senha == String(password)
             );
 
             const log_verificar_email = dados.some(
-              (logdados) => logdados.name == email
+              (logdados) => logdados.email == email
             );
             const log_verificar_senha = dados.some(
               (logdados) => logdados.password == password
