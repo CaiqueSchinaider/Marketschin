@@ -1,5 +1,5 @@
-import ParamsCodeProvider from "./contexts/ParamsCode";
-import AppRoutes from "./routes";
+import ParamsCodeProvider from './contexts/ParameterUtils';
+import AppRoutes from './routes';
 
 function App() {
   return (

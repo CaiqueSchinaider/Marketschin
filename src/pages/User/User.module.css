@@ -1,7 +1,8 @@
-@media screen and (min-width: 834px) {
+@media screen and (width >= 834px) {
   .User {
     display: flex;
     padding-top: 80px;
+    height: 100vh;
   }
 
   /* Agrupa info e Botões  */
@@ -17,27 +18,31 @@
     flex-direction: column;
     align-items: center;
   }
+
   .User .Infos h1 {
     display: flex;
     justify-content: center;
-    width: 250px;
-    margin: 20px 0px 0px 0px;
+    width: 20vw;
+    margin: 20px 0 0;
     font-size: 2.4vw;
     color: #9b0202;
-    font-family: "Protest Strike", serif;
+    font-family: 'Protest Strike', serif;
     border-bottom: 3px solid #9b0202;
   }
+
   .User .Infos h2 {
-    margin: 8px 0px 0px 0px;
+    margin: 8px 0 0;
     font-size: 1.8vw;
     color: white;
-    font-family: "Zilla Slab";
+    font-family: 'Zilla Slab';
   }
+
   .User .Infos p {
-    margin: 12px 0px 0px 0px;
+    margin: 12px 0 0;
     font-size: 1.2vw;
     color: white;
   }
+
   /* Botões de navegações  */
   .User .Navigation {
     display: flex;
@@ -52,29 +57,31 @@
   .User .Navigation button {
     display: flex;
     flex-direction: row !important;
-
     justify-content: space-evenly !important;
     align-items: center;
     width: 20vw;
     height: 50px;
     color: white;
     background-color: #9b0202;
-
     border: 1px solid white;
     border-radius: 10px;
   }
+
   .User .Navigation button p {
     width: 70px;
     text-align: start !important;
   }
+
   .User .Navigation button img {
     transform: scale(0.7);
   }
+
   .User .Caroseul {
     transform: scale(0.8);
   }
 }
-@media screen and (max-width: 833px) {
+
+@media screen and (width <= 833px) {
   .User {
     display: flex;
     flex-direction: column;
@@ -85,7 +92,6 @@
   /* Agrupa info e Botões  */
   .User .Agrupamento {
     display: flex;
-
     flex-direction: column;
   }
 
@@ -94,27 +100,31 @@
     flex-direction: column;
     align-items: center;
   }
+
   .User .Infos h1 {
     display: flex;
     justify-content: center;
-    width: 250px;
-    margin: 20px 0px 0px 0px;
+    width: 70vw;
+    margin: 20px 0 0;
     font-size: 8vw;
     color: #9b0202;
-    font-family: "Protest Strike", serif;
+    font-family: 'Protest Strike', serif;
     border-bottom: 3px solid #9b0202;
   }
+
   .User .Infos h2 {
-    margin: 8px 0px 0px 0px;
+    margin: 8px 0 0;
     font-size: 5vw;
     color: white;
-    font-family: "Zilla Slab";
+    font-family: 'Zilla Slab';
   }
+
   .User .Infos p {
-    margin: 12px 0px 0px 0px;
+    margin: 12px 0 0;
     font-size: 3vw;
     color: white;
   }
+
   /* Botões de navegações  */
   .User .Navigation {
     display: flex;
@@ -129,32 +139,34 @@
   .User .Navigation button {
     display: flex;
     flex-direction: row !important;
-
     justify-content: center !important;
     align-items: center;
     width: 13vw;
     height: 45px;
     color: white;
     background-color: #9b0202;
-
     border: 1px solid white;
     border-radius: 10px;
   }
+
   .User .Navigation button p {
     display: none;
-
     text-align: start !important;
   }
+
   .User .Navigation button img {
     transform: scale(0.5);
   }
+
   .User .Caroseul {
     transform: scale(0.8);
   }
 }
+
 .User .Navigation button {
   transition: 0.3s ease;
 }
+
 .User .Navigation button:hover {
   transform: scale(1.1);
 }

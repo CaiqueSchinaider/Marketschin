@@ -1,8 +1,7 @@
-@media screen and (min-width: 1271px) {
+@media screen and (width >= 1271px) {
   .Product {
     display: flex;
     padding-top: 70px;
-
     height: 100vh; /* Altura da tela */
   }
 
@@ -10,6 +9,7 @@
     width: 300px;
     height: 300px;
   }
+
   .Product img {
     width: 300px;
     height: 300px;
@@ -22,19 +22,19 @@
     width: 300px;
     height: 260px;
     background-color: #7c0a0a;
-    flex-wrap: wrap;
     border-radius: 20px;
     margin-left: 40px;
   }
+
   .Product article h1 {
     margin: 10px auto;
     color: aliceblue;
   }
+
   .Product button {
     width: 130px;
     height: 45px;
     margin: 20px auto;
-
     color: white;
   }
 
@@ -44,40 +44,46 @@
     font-size: 2rem;
     color: white;
     background-color: #500808;
-    box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.493);
+    box-shadow: inset 2px 2px 10px rgb(0 0 0 / 49.3%);
     border-radius: 10px;
   }
+
   .Product article p:nth-of-type(2) {
     font-size: 1rem;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
   }
+
   .Product article h2 {
     display: none;
   }
+
   .Product article p:nth-of-type(3) {
     display: none;
   }
+
   .Product section {
     width: auto;
     max-width: 700px;
     height: 400px;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
     margin-top: 60px;
   }
+
   .Product section p {
     font-size: 1rem;
   }
+
   .Product section strong {
     font-size: 2.1rem;
     color: #7c0a0a;
   }
 }
+
 .Product nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 220px;
-
   margin: 70px auto;
   padding: 20px;
 }
@@ -85,6 +91,7 @@
 .Product nav a:hover {
   transform: scale(1.1);
 }
+
 .Product nav:hover a:not(:hover) {
   opacity: 0.8;
 }
@@ -92,8 +99,9 @@
 .Product article {
   background-color: #9b0202 !important;
   border: 1px solid white;
-  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.304);
+  box-shadow: 2px 2px 10px rgb(255 255 255 / 30.4%);
 }
+
 .Product nav a {
   padding: 10px;
   font-weight: bold;
@@ -104,55 +112,60 @@
   cursor: pointer;
   transition: ease 0.3s;
 }
+
 .Product article button {
   cursor: pointer;
   transition: ease 0.3s;
-
   border: 2px solid white;
   font-size: 1.7rem;
   font-weight: bold !important;
-  font-family: "Bebas Neue", sans-serif;
-  color: rgb(255, 255, 255);
+  font-family: 'Bebas Neue', sans-serif;
+  color: rgb(255 255 255);
   background-color: #e1c000 !important;
 }
 
 .Product article button:hover {
   transform: scale(1.1);
-  text-shadow: 0px 0px 18px white;
-  box-shadow: 0px 0px 8px white;
+  text-shadow: 0 0 18px white;
+  box-shadow: 0 0 8px white;
 }
+
 .Product section strong {
   color: #e1c000;
 }
+
 .Product section h2 {
   display: flex;
   height: 40px;
-  color: rgb(255, 255, 255);
+  color: rgb(255 255 255);
   text-align: center;
-
   background-color: #9b0202;
   padding-left: 10px;
   border-radius: 2px 7px 7px 2px;
 }
+
 @keyframes aparecer {
   0% {
     opacity: 0;
   }
+
   40% {
     opacity: 0.3;
   }
+
   70% {
     opacity: 0.7;
   }
+
   100% {
     opacity: 1;
   }
 }
-@media screen and (min-width: 987px) and (max-width: 1270px) {
+
+@media screen and (width >= 987px) and (width <= 1270px) {
   .Product {
     display: flex;
     padding-top: 70px;
-
     height: 100vh; /* Altura da tela */
   }
 
@@ -160,6 +173,7 @@
     width: 200px;
     height: 200px;
   }
+
   .Product img {
     width: 200px;
     height: 200px;
@@ -167,69 +181,78 @@
 
   .Product article {
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     align-items: center;
     width: 200px;
     height: 310px;
     background-color: #7c0a0a;
-    flex-wrap: wrap;
     border-radius: 20px;
     margin-left: 40px;
   }
+
   .Product article h1 {
     margin: 10px auto;
     font-size: 1rem;
     color: aliceblue;
     text-align: center;
   }
+
   .Product button {
     width: 100px;
     height: 40px;
     margin: 20px auto;
     color: white;
-    background-color: rgb(29, 245, 0);
+    background-color: rgb(29 245 0);
   }
+
   .Product article p:nth-of-type(1) {
     margin: 0;
     padding: 6px;
     font-size: 1.7rem;
     color: white;
     background-color: #500808;
-    box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.493);
+    box-shadow: inset 2px 2px 10px rgb(0 0 0 / 49.3%);
     border-radius: 10px;
   }
+
   .Product article p:nth-of-type(2) {
     font-size: 0.8rem;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
   }
+
   .Product article h2 {
     display: none;
   }
+
   .Product article p:nth-of-type(3) {
     display: none;
   }
+
   .Product section {
     width: 530px;
     height: 400px;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
     margin-top: 60px;
   }
+
   .Product section strong {
     font-size: 2.1rem;
     color: #e1c000;
   }
+
   .Product section p {
     font-size: 0.9rem;
   }
+
   .Product nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 220px;
-
     margin: 70px auto;
     padding: 20px;
   }
+
   .Product nav a {
     padding: 10px;
     color: white;
@@ -237,22 +260,25 @@
     border-radius: 8px;
   }
 }
-@media screen and (min-width: 817px) and (max-width: 986px) {
+
+@media screen and (width >= 817px) and (width <= 986px) {
   .Product {
     display: flex;
     padding-top: 70px;
     flex-wrap: wrap;
-
     height: 100vh; /* Altura da tela */
   }
+
   .Product aside {
     display: flex;
     margin-bottom: 0;
   }
+
   .Product figure {
     width: 400px;
     height: 400px;
   }
+
   .Product img {
     width: 400px;
     height: 400px;
@@ -265,24 +291,27 @@
     width: auto;
     max-width: 350px;
     height: 410px;
-    margin: 0 30px 0px 10px;
+    margin: 0 30px 0 10px;
     padding: 10px;
     background-color: #7c0a0a;
     flex-wrap: wrap;
     border-radius: 20px;
   }
+
   .Product article h1 {
     margin: 10px auto;
     font-size: 1.1rem;
     color: aliceblue;
   }
+
   .Product button {
     width: 150px;
     height: 45px;
     margin: 5px auto;
     color: white;
-    background-color: rgb(29, 245, 0);
+    background-color: rgb(29 245 0);
   }
+
   .Product article p:nth-of-type(1) {
     width: auto;
     max-width: 200px;
@@ -291,18 +320,21 @@
     font-size: 1.7rem;
     color: white;
     background-color: #500808;
-    box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.493);
+    box-shadow: inset 2px 2px 10px rgb(0 0 0 / 49.3%);
     border-radius: 10px;
   }
+
   .Product article p:nth-of-type(2) {
-    margin: 0px 85px 0px 85px;
+    margin: 0 85px;
     font-size: 0.8rem;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
   }
+
   .Product article h2 {
     margin: 0;
     color: white;
   }
+
   .Product article p:nth-of-type(3) {
     color: white;
     margin-top: 0;
@@ -315,37 +347,42 @@
     width: auto;
     height: auto;
     padding: 40px;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
     position: relative;
   }
+
   .Product section h2 {
     display: none;
   }
+
   .Product section h3 {
     display: none;
   }
+
   .Product section strong {
     display: none;
     font-size: 2.1rem;
     color: #7c0a0a;
   }
+
   .Product section p:nth-of-type(2) {
     font-size: 0.9rem;
     color: aqua;
   }
+
   .Product section p:nth-of-type(2) {
     display: none;
   }
+
   .Product nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
     width: 600px;
-
     margin: 0 auto;
     padding: 20px;
   }
+
   .Product nav a {
     display: flex;
     justify-content: center;
@@ -355,22 +392,25 @@
     min-width: 120px;
   }
 }
-@media screen and (min-width: 715px) and (max-width: 816px) {
+
+@media screen and (width >= 715px) and (width <= 816px) {
   .Product {
     display: flex;
     padding-top: 70px;
     flex-wrap: wrap;
-
     height: 100vh; /* Altura da tela */
   }
+
   .Product aside {
     display: flex;
     margin-bottom: 0;
   }
+
   .Product figure {
     width: 400px;
     height: 400px;
   }
+
   .Product img {
     width: 400px;
     height: 400px;
@@ -378,54 +418,59 @@
 
   .Product article {
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     width: auto;
     max-width: 350px;
     height: 410px;
-    margin: 0 30px 0px 10px;
+    margin: 0 30px 0 10px;
     padding: 10px;
     background-color: #7c0a0a;
-    flex-wrap: wrap;
     border-radius: 20px;
   }
+
   .Product article h1 {
     margin: 5px auto;
     font-size: 1.2rem;
     color: aliceblue;
     text-align: center;
   }
+
   .Product button {
     width: 120px;
     height: 40px;
     margin: 10px auto;
     color: white;
-    background-color: rgb(29, 245, 0);
+    background-color: rgb(29 245 0);
   }
+
   .Product article p:nth-of-type(1) {
     width: 80%;
     max-width: 200px;
-    margin: 10px 0px;
+    margin: 10px 0;
     padding: 6px;
     font-size: 1.7rem;
     color: white;
     text-align: center;
     background-color: #500808;
-    box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.493);
+    box-shadow: inset 2px 2px 10px rgb(0 0 0 / 49.3%);
     border-radius: 10px;
   }
+
   .Product article p:nth-of-type(2) {
     width: 130px;
-    margin: 0px 85px 0px 85px;
-    margin: 3px 0px;
+    margin: 0 85px;
+    margin: 3px 0;
     font-size: 0.7rem;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
   }
+
   .Product article h2 {
     margin: 0;
     color: white;
   }
+
   .Product article p:nth-of-type(3) {
     height: 120px;
     color: white;
@@ -434,42 +479,48 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .Product section {
     display: flex;
     width: auto;
     height: auto;
     padding: 40px;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
     position: relative;
   }
+
   .Product section h2 {
     display: none;
   }
+
   .Product section h3 {
     display: none;
   }
+
   .Product section strong {
     display: none;
     font-size: 2.1rem;
     color: #7c0a0a;
   }
+
   .Product section p:nth-of-type(2) {
     font-size: 0.9rem;
     color: aqua;
   }
+
   .Product section p:nth-of-type(2) {
     display: none;
   }
+
   .Product nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
     width: 600px;
-
     margin: 0 auto;
     padding: 20px;
   }
+
   .Product nav a {
     display: flex;
     justify-content: center;
@@ -479,25 +530,27 @@
     min-width: 120px;
   }
 }
-@media screen and (min-width: 551px) and (max-width: 714px) {
+
+@media screen and (width >= 551px) and (width <= 714px) {
   .Product {
     display: flex;
-    flex-direction: row;
+    flex-flow: row nowrap;
     padding-top: 110px;
-    flex-wrap: nowrap;
-
     height: 100vh; /* Altura da tela */
   }
+
   .Product aside {
     display: flex;
     flex-direction: column;
     margin-bottom: 0;
     width: 230px;
   }
+
   .Product figure {
     width: 300px;
     height: 300px;
   }
+
   .Product img {
     width: 300px;
     height: 300px;
@@ -505,53 +558,56 @@
 
   .Product article {
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     width: 480px;
     max-width: 580px;
     height: 210px;
-
     padding: 13px;
     background-color: #7c0a0a;
-    flex-wrap: wrap;
     border-radius: 20px;
     margin-left: 40px;
     margin-top: 5px;
   }
+
   .Product article h1 {
     margin: 10px auto;
     font-size: 1.3rem;
     color: aliceblue;
     text-align: center;
   }
+
   .Product button {
     width: 200px;
     height: 55px;
     margin: 0 auto;
     font-size: 1.5rem;
     color: white;
-    background-color: rgb(29, 245, 0);
+    background-color: rgb(29 245 0);
   }
+
   .Product article p:nth-of-type(1) {
     width: 100%;
     max-width: 200px;
-    margin: 10px 0px;
+    margin: 10px 0;
     padding: 6px;
     font-size: 1.8rem;
     color: white;
     text-align: center;
     background-color: #500808;
-    box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.493);
+    box-shadow: inset 2px 2px 10px rgb(0 0 0 / 49.3%);
     border-radius: 10px;
   }
+
   .Product article p:nth-of-type(2) {
     width: 130px;
-    margin: 0px 85px 0px 85px;
+    margin: 0 85px;
     margin: 3px 4px;
     font-size: 1.5rem;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
   }
+
   .Product article h2 {
     display: flex;
     position: absolute;
@@ -559,6 +615,7 @@
     left: 40px;
     color: white;
   }
+
   .Product article p:nth-of-type(3) {
     display: flex;
     position: absolute;
@@ -567,29 +624,33 @@
     left: 40px;
     margin-right: 40px;
   }
+
   .Product section {
     display: none;
     width: 530px;
     height: 400px;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
     margin-top: 60px;
   }
+
   .Product section strong {
     font-size: 2.1rem;
     color: #7c0a0a;
   }
+
   .Product section p {
     font-size: 0.9rem;
   }
+
   .Product nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     width: 300px;
     margin: 40px 0 0 110px !important;
-    padding: 5px 10px 10px 10px;
+    padding: 5px 10px 10px;
   }
+
   .Product nav a {
     width: 130px;
     height: 20px;
@@ -600,17 +661,17 @@
     margin-inline: 5px;
   }
 }
-@media screen and (max-width: 550px) {
+
+@media screen and (width <= 550px) {
   .Product {
     padding-top: 100px !important;
     display: flex;
-    flex-direction: column;
-    padding-top: 70px;
+    flex-flow: column nowrap;
     align-items: center;
-    flex-wrap: nowrap;
-    padding-left: 0px;
+    padding-left: 0;
     height: 110vh; /* Altura da tela */
   }
+
   .Product aside {
     display: flex;
     flex-direction: column;
@@ -618,6 +679,7 @@
     margin-bottom: 0;
     width: 230px;
   }
+
   .Product figure {
     display: flex;
     justify-content: center;
@@ -625,10 +687,10 @@
     width: 208px;
     height: 204px;
     border-radius: 5px;
-
     padding-top: 3px;
     background-color: #9b0202 !important;
   }
+
   .Product img {
     width: 200px;
     height: 200px;
@@ -636,7 +698,7 @@
 
   .Product article {
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     width: auto;
@@ -645,62 +707,71 @@
     margin: 0 !important;
     padding: 10px;
     background-color: #7c0a0a;
-    flex-wrap: wrap;
     border-radius: 20px;
     margin-left: 40px;
   }
+
   .Product article h1 {
     margin: 5px auto;
     font-size: 1.1rem;
-    color: rgb(250, 250, 250);
+    color: rgb(250 250 250);
     text-align: center;
   }
+
   .Product button {
     width: 100px;
     height: 35px;
     margin: 10px auto;
     color: white;
-    background-color: rgb(29, 245, 0);
+    background-color: rgb(29 245 0);
   }
+
   .Product article p:nth-of-type(1) {
     width: 90%;
     max-width: 200px;
-    margin: 10px 0px;
+    margin: 10px 0;
     padding: 6px;
     font-size: 1.7rem;
     color: white;
     text-align: center;
     background-color: #500808;
-    box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.493);
+    box-shadow: inset 2px 2px 10px rgb(0 0 0 / 49.3%);
     border-radius: 10px;
   }
+
   .Product article p:nth-of-type(2) {
     width: 130px;
-    margin: 0px 85px 0px 85px;
-    margin: 3px 0px;
+    margin: 0 85px;
+    margin: 3px 0;
     font-size: 0.7rem;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
   }
+
   .Product article h2 {
     display: none;
   }
+
   .Product article p:nth-of-type(3) {
     display: none;
   }
+
   .Product section {
     display: none;
     width: 530px;
     height: 400px;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
     margin-top: 60px;
   }
+
   .Product section strong {
     font-size: 2.1rem;
     color: #7c0a0a;
   }
+
   .Product section p {
     font-size: 0.9rem;
   }
+
   .Product nav {
     display: flex;
     flex-direction: column;
@@ -711,6 +782,7 @@
     padding: 20px;
     gap: 7px;
   }
+
   .Product nav a {
     width: 130px !important;
     height: 20px;
@@ -721,13 +793,16 @@
     margin-inline: 5px;
   }
 }
+
 .Product {
   background-color: rgb(23 23 47 / 89%) !important;
 }
+
 .Product article button {
-  text-shadow: 0px 0px 20px white;
-  box-shadow: 0px 0px 10px white;
+  text-shadow: 0 0 20px white;
+  box-shadow: 0 0 10px white;
 }
+
 .Product {
   background-color: transparent !important;
 }

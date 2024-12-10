@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Protest+Strike&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Protest+Strike&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Jura:wght@300..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Protest+Strike&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
-
-@media screen and (min-width: 1141px) {
+@media screen and (width >= 1141px) {
   .Banner {
     background-size: 1960px;
     background-position: center 63%;
   }
 }
-@media screen and (max-width: 1140px) {
+
+@media screen and (width <= 1140px) {
   .Banner {
     background-size: 1150px;
     background-position: bottom;
@@ -20,7 +20,7 @@
   align-items: flex-end;
   width: 100%;
   height: 347px;
-  background-image: url("/public/pic/banner.jpg");
+  background-image: url('/public/pic/banner.jpg');
   top: 75px;
   background-repeat: no-repeat;
   border-bottom: 2px solid white;
@@ -29,13 +29,15 @@
 
 @keyframes mudar {
   0% {
-    background-image: url("/public/pic/banner.jpg");
+    background-image: url('/public/pic/banner.jpg');
   }
+
   50% {
-    background-image: url("/public/pic/banner2.png");
+    background-image: url('/public/pic/banner2.png');
   }
+
   100% {
-    background-image: url("/public/pic/banner.jpg");
+    background-image: url('/public/pic/banner.jpg');
   }
 }
 
@@ -46,48 +48,51 @@
   position: sticky;
   top: 70px;
 }
+
 .Banner div input {
   width: 16rem;
   height: 2.2rem;
   color: #121113;
   background-color: #eee5e9;
-  box-shadow: 4px 4px 11px 1px rgba(0, 0, 0, 0.096);
+  box-shadow: 4px 4px 11px 1px rgb(0 0 0 / 9.6%);
   margin-right: 24px;
   margin-top: 8px;
-  border: 2px solid rgb(29, 0, 134);
+  border: 2px solid rgb(29 0 134);
   border-radius: 5px 5px 10px 10px;
   transition: 1 ease;
 }
 
 .Banner div input:hover {
-  box-shadow: inset 4px 4px 8px 1px rgba(0, 0, 0, 0.233);
+  box-shadow: inset 4px 4px 8px 1px rgb(0 0 0 / 23.3%);
 }
+
 .Banner h2 {
   cursor: default;
 }
 
 .Banner div input::placeholder {
-  color: rgb(0, 0, 0);
+  color: rgb(0 0 0);
   padding-left: 3px;
 }
-@media screen and (min-width: 860px) {
+
+@media screen and (width >= 860px) {
   .Banner h2 {
     display: flex;
     justify-content: end;
     width: auto;
-
     padding: 4px 15px 4px 35px;
     font-size: 3rem;
-    color: rgb(121, 15, 15);
+    color: rgb(121 15 15);
     background-color: #001c39;
     border-top: solid 2px white;
     border-right: solid 2px white;
     border-bottom: solid 2px white;
-    border-radius: 0px 15px 15px 0px;
-    font-family: "Protest Strike", serif;
+    border-radius: 0 15px 15px 0;
+    font-family: 'Protest Strike', serif;
   }
 }
-@media screen and (max-width: 859px) {
+
+@media screen and (width <= 859px) {
   .Banner h2 {
     display: none;
   }

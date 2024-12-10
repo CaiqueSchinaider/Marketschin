@@ -1,59 +1,57 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
-import styles from "./SendEmailVerification.module.css";
-import { useContext, useEffect, useState } from "react";
-
-import emailjs from "emailjs-com";
-import axios from "axios";
-import { ParamsCodeContext } from "../../contexts/ParamsCode";
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import styles from './SendEmailVerification.module.css';
+import { useContext, useEffect, useState } from 'react';
+import { ParameterUtilsContext } from '../../contexts/ParameterUtils';
+import emailjs from 'emailjs-com';
+import axios from 'axios';
 
 function SendEmailVerification() {
-  const navigate = useNavigate("");
-  const [sinalEmail, setSinalEmail] = useState();
-  const [sendemail, setSendemail] = useState();
-  const [paramscode, setParamscode] = useContext(ParamsCodeContext);
+  const navigate = useNavigate('');
+  const [signalEmail, setSignalEmail] = useState();
+  const [templateEmail, setTemplateEmail] = useState();
+  const [, setParameterUtils] = useContext(ParameterUtilsContext);
   const [email, setEmail] = useState();
   const [code, setCode] = useState();
-  const [inputerror, setInputerror] = useState("2px solid white");
-  const [messageerror, setMessageerror] = useState("");
-  const [nextstep, setNextstep] = useState();
+  const [inputError, setInputError] = useState('2px solid white');
+  const [infoError, setInfoError] = useState('');
 
   // 1° Passo - Definindo parametros de Email
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // Definindo parametros de email
-  async function ObterUsers() {
+  async function getUsers() {
     try {
       const response = await axios.get(
-        "https://67312aae7aaf2a9aff10029c.mockapi.io/users"
+        'https://67312aae7aaf2a9aff10029c.mockapi.io/users',
       );
-      console.log("Dados Users pego", response.data);
+      console.log('Dados Users pego', response.data);
       return response.data;
     } catch (error) {
-      console.error("Erro ao pegar dados", error.name);
+      console.error('Erro ao pegar dados', error.name);
     }
   }
 
-  async function VerificarUsers() {
-    const usermock = await ObterUsers();
-    const user = await usermock.find((users) => users.email == email);
+  async function checkUsers() {
+    const listUsers = await getUsers();
+    const user = await listUsers.find((users) => users.email === email);
     if (user) {
-      Enviar();
+      sendEmail();
     } else {
-      setInputerror("2px solid red");
-      setMessageerror("- Não existe usuario com esse email -");
+      setInputError('2px solid red');
+      setInfoError('- Não existe usuario com esse email -');
     }
   }
-  function Enviar() {
-    const codeAleatorio = Math.floor(Math.random() * 1000);
-    const codeFormatado = codeAleatorio.toString().padStart(3, "0");
-    console.log(codeFormatado);
+  function sendEmail() {
+    const getCode = Math.floor(Math.random() * 1000);
+    const formattedCode = getCode.toString().padStart(3, '0');
+    console.log(formattedCode);
 
-    if (codeFormatado) {
-      setSendemail({
+    if (formattedCode) {
+      setTemplateEmail({
         destino: email,
-        message: codeFormatado,
+        message: formattedCode,
       });
-      setCode(codeFormatado);
-      setSinalEmail(true);
+      setCode(formattedCode);
+      setSignalEmail(true);
     }
   }
   // Definiu o Email
@@ -62,25 +60,25 @@ function SendEmailVerification() {
   // 2° Passo - Enviando Email
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////
   useEffect(() => {
-    if (sinalEmail) {
+    if (signalEmail) {
       emailjs
         .send(
-          "service_4fgdqkh",
-          "template_p7dxe3r",
-          sendemail,
-          "EkUYr-ANKIPXaINm6"
+          'service_4fgdqkh',
+          'template_p7dxe3r',
+          templateEmail,
+          'EkUYr-ANKIPXaINm6',
         )
         .then(
           console.log(
-            "Email enviado!",
+            'Email enviado!',
 
-            setParamscode({ message: code, destino: email }),
-            navigate(`/codeverification/forgout`)
-          )
+            setParameterUtils({ message: code, destino: email }),
+            navigate(`/codeverification/forgout`),
+          ),
         )
-        .catch((error) => console.error("Email não enviado", error.name));
+        .catch((error) => console.error('Email não enviado', error.name));
     }
-  }, [sinalEmail]);
+  }, [signalEmail]);
 
   // Enviou email, além de definir o Usuario
   ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -88,14 +86,14 @@ function SendEmailVerification() {
     <section className={styles.SendEmailVerification}>
       <div className={styles.EmailInput}>
         <h2>Digite seu Email</h2>
-        <p>{messageerror}</p>
+        <p>{infoError}</p>
         <input
           type="text"
           onChange={(e) => setEmail(e.target.value)}
-          style={{ border: inputerror }}
+          style={{ border: inputError }}
         />
 
-        <button onClick={() => VerificarUsers()}>Enviar</button>
+        <button onClick={() => checkUsers()}>Enviar</button>
       </div>
     </section>
   );

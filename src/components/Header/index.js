@@ -1,5 +1,5 @@
-import styles from "./Header.module.css";
-import { Link } from "react-router-dom"; // Corrigido o caminho do import
+import styles from './Header.module.css';
+import { Link } from 'react-router-dom'; // Corrigido o caminho do import
 
 function Header() {
   return (
@@ -10,16 +10,16 @@ function Header() {
 
       <nav>
         <Link to="/home">
-          <img src="/pic/home.png" alt="Home" />
+          <img src="/pic/home.png" alt="pic home" />
         </Link>
         <Link to="/comprar/all">
-          <img src="/pic/sacola.png" alt="Perfil" />
+          <img src="/pic/sacola.png" alt="pic market" />
         </Link>
         <Link to="/carrinho/none">
-          <img src="/pic/cart.png" alt="Cart" />
+          <img src="/pic/cart.png" alt="pic cart" />
         </Link>
         <Link to="/user">
-          <img src="/pic/perfil.png" alt="Perfil" />
+          <img src="/pic/perfil.png" alt="pic profile" />
         </Link>
       </nav>
     </header>

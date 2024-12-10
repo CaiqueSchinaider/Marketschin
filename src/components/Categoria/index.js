@@ -1,7 +1,4 @@
-import styles from "./Categoria.module.css";
-import produtosMock from "../../utils/produtosMock";
-import { useState } from "react";
-import Banner from "../Banner";
+import styles from './Categoria.module.css';
 
 function Categoria({ Need_AlgumaCategoria, children, navegação }) {
   return (
@@ -9,7 +6,7 @@ function Categoria({ Need_AlgumaCategoria, children, navegação }) {
       <h1>
         <span>
           <p>{Need_AlgumaCategoria}</p>
-        </span>{" "}
+        </span>
         <nav>{navegação}</nav>
       </h1>
       <div>{children}</div>

@@ -1,96 +1,94 @@
-import { Link, useParams } from "react-router-dom";
-import Header from "../../components/Header";
-import styles from "./Cart.module.css";
-import produtos from "../../utils/produtosMock";
-import { useEffect, useState } from "react";
-import Loading from "../../components/Loading";
+import { Link, useParams } from 'react-router-dom';
+import Header from '../../components/Header';
+import styles from './Cart.module.css';
+import { useContext, useEffect, useState } from 'react';
+import Loading from '../../components/Loading';
+import { listProductsContext } from '../../contexts/MockProdutos';
 
 function Cart() {
-  const possiveListaExistente = JSON.parse(localStorage.getItem("lista"));
-  const { produtocomprado } = useParams();
+  const [listProducts] = useContext(listProductsContext);
+  const whatSomeList = JSON.parse(localStorage.getItem('lista'));
+  const { productPurchased } = useParams();
 
   // Todos os useStates
-  const [produtoSelecionado, setProdutoSelecionado] = useState();
-  const [listaRecebida, setListaRecebida] = useState(
-    possiveListaExistente || []
-  );
-  const [enviarSinal, setEnviarSinal] = useState(false);
-  const [apagarProduto, setApagarProduto] = useState();
-  const [apagarProdutos, setApagarProdutos] = useState();
+  const [productSelected, setProductSelected] = useState();
+  const [catchList, setCatchList] = useState(whatSomeList || []);
+  const [sendSignal, setSendSignal] = useState(false);
+  const [deleteProductID, setDeleteProductID] = useState();
+  const [deleteAllProducts, setDeleteAllProducts] = useState();
   const [load, setLoad] = useState(false);
-  const [notify, setNotify] = useState("block");
-  const [preçototal, setPreçototal] = useState();
+  const [notification, setNotification] = useState('block');
+  const [priceTotal, setPriceTotal] = useState();
 
   // useEffect que verifica qual é o item em questão
   useEffect(() => {
-    if (produtocomprado == "none") {
-      setProdutoSelecionado(true);
-      setNotify("none");
+    if (productPurchased === 'none') {
+      setProductSelected(true);
+      setNotification('none');
     } else {
       setTimeout(() => {
-        setNotify("none");
+        setNotification('none');
       }, 2800);
-
-      const acharProduto = produtos.find(
-        (produto) => produto.id === parseInt(produtocomprado)
-      );
-
-      setProdutoSelecionado(acharProduto);
+      if (listProducts) {
+        const findProduct = listProducts.find(
+          (product) => product.id === parseInt(productPurchased),
+        );
+        setProductSelected(findProduct);
+      }
     }
-  }, [produtocomprado]);
+  }, [productPurchased, listProducts]);
 
   // useEffect que verifica se o item já está na lista do carrinho
   useEffect(() => {
-    if (produtoSelecionado && produtocomprado !== "none") {
-      const jaPossui = listaRecebida.find(
-        (prod) => prod.id === parseInt(produtoSelecionado.id)
+    if (productSelected && productPurchased !== 'none') {
+      const haveThisProduct = catchList.find(
+        (product) => product.id === parseInt(productSelected.id),
       );
-      if (!jaPossui) {
-        setEnviarSinal(true);
+      if (!haveThisProduct) {
+        setSendSignal(true);
       }
-    } else if (produtoSelecionado && produtocomprado == "none") {
-      setEnviarSinal(false);
+    } else if (productSelected && productPurchased === 'none') {
+      setSendSignal(false);
     }
-  }, [produtoSelecionado]);
+  }, [productSelected]);
 
   // useEffect que atualiza a lista com o novo produto
   useEffect(() => {
-    if (enviarSinal) {
-      const updateLista = [...listaRecebida, produtoSelecionado];
-      setListaRecebida(updateLista);
-      localStorage.setItem("lista", JSON.stringify(updateLista));
+    if (sendSignal) {
+      const updateList = [...catchList, productSelected];
+      setCatchList(updateList);
+      localStorage.setItem('lista', JSON.stringify(updateList));
     }
-  }, [enviarSinal]);
+  }, [sendSignal]);
 
   // useEffect para apagar produtos
   useEffect(() => {
-    if (apagarProduto) {
-      const excluiProduto = listaRecebida.filter(
-        (produto) => produto.id !== apagarProduto
+    if (deleteProductID) {
+      const productRemainder = catchList.filter(
+        (product) => product.id !== deleteProductID,
       );
-      setListaRecebida(excluiProduto);
-      localStorage.setItem("lista", JSON.stringify(excluiProduto));
+      setCatchList(productRemainder);
+      localStorage.setItem('lista', JSON.stringify(productRemainder));
     }
-  }, [apagarProduto]);
+  }, [deleteProductID]);
 
   useEffect(() => {
-    if (apagarProdutos === "delete") {
-      const excluiProdutos = [];
-      setListaRecebida(excluiProdutos);
-      localStorage.setItem("lista", JSON.stringify(excluiProdutos));
+    if (deleteAllProducts === 'delete') {
+      const listClear = [];
+      setCatchList(listClear);
+      localStorage.setItem('lista', JSON.stringify(listClear));
     }
-  }, [apagarProdutos]);
+  }, [deleteAllProducts]);
   useEffect(() => {
-    const valortotal = listaRecebida.reduce(function (valorinicial, produto) {
-      return valorinicial + Number.parseFloat(produto.valor);
+    const whatPrice = catchList.reduce(function (initialValue, product) {
+      return initialValue + Number.parseFloat(product.valor);
     }, 0);
-
-    setPreçototal(valortotal);
-  }, [listaRecebida]);
+    setPriceTotal(whatPrice);
+  }, [catchList]);
   useEffect(() => {
     setTimeout(() => {
       setLoad(true);
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 300);
   }, []);
 
@@ -99,37 +97,38 @@ function Cart() {
       {load ? (
         <>
           <Header />
-          {produtoSelecionado ? (
+          {productSelected ? (
             <div className={styles.Cart}>
               <div
                 className={styles.Notificação}
-                style={{ display: `${notify}` }}
+                style={{ display: `${notification}` }}
               >
                 <p> Produto adicionado ao carrinho!</p>
               </div>
               <main>
                 <aside>
                   <button
-                    onClick={() => setApagarProdutos("delete")}
-                    style={{ cursor: "pointer" }}
+                    onClick={() => setDeleteAllProducts('delete')}
+                    style={{ cursor: 'pointer' }}
                   >
-                    <img src="/pic/excluir.png" />
+                    <img src="/pic/excluir.png" alt="pic excluir" />
+
                     <p>Limpar carrinho </p>
                   </button>
 
                   <button>
-                    <img src="/pic/market.png" />
+                    <img src="/pic/market.png" alt="pic market" />
                     <Link to="/comprar/all">Continuar compras</Link>
                   </button>
                   <button
-                    onClick={() => setApagarProdutos("delete")}
+                    onClick={() => setDeleteAllProducts('delete')}
                     style={{
-                      cursor: "pointer",
+                      cursor: 'pointer',
 
-                      fontWeight: "bolder",
+                      fontWeight: 'bolder',
                     }}
                   >
-                    <img src="/pic/confirm.png" />
+                    <img src="/pic/confirm.png" alt="pic confirm" />
                     <p> Finalizar compras</p>
                   </button>
                   <div className={styles.Precototal}>
@@ -137,43 +136,43 @@ function Cart() {
                       <strong>Preço total</strong>
                     </p>
                     <p>
-                      {Number.parseFloat(preçototal).toLocaleString("pt-br", {
-                        style: "currency",
-                        currency: "BRL",
+                      {Number.parseFloat(priceTotal).toLocaleString('pt-br', {
+                        style: 'currency',
+                        currency: 'BRL',
                       })}
                     </p>
                   </div>
                 </aside>
                 <div className={styles.Paidetodas}>
-                  {listaRecebida.map((produto) => (
-                    <section key={produto.id}>
+                  {catchList.map((product) => (
+                    <section key={product.id}>
                       <div>
                         <Link
-                          to={`/produto/${produto.id}`}
-                          style={{ textDecoration: "none" }}
+                          to={`/produto/${product.id}`}
+                          style={{ textDecoration: 'none' }}
                         >
                           <picture>
-                            <img src={produto.thumb} alt={produto.name}></img>
+                            <img src={product.thumb} alt={product.name}></img>
                           </picture>
                         </Link>
                         <div>
-                          <h2>{produto.name}</h2>
+                          <h2>{product.name}</h2>
                           <h3>
-                            {Number.parseFloat(produto.valor).toLocaleString(
-                              "pt-br",
-                              { style: "currency", currency: "BRL" }
+                            {Number.parseFloat(product.valor).toLocaleString(
+                              'pt-br',
+                              { style: 'currency', currency: 'BRL' },
                             )}
                           </h3>
                         </div>
                         <button
                           className={styles.Xparatelefones}
-                          onClick={() => setApagarProduto(produto.id)}
-                          style={{ cursor: "pointer" }}
+                          onClick={() => setDeleteProductID(product.id)}
+                          style={{ cursor: 'pointer' }}
                         ></button>
                       </div>
                       <button
-                        onClick={() => setApagarProduto(produto.id)}
-                        style={{ cursor: "pointer" }}
+                        onClick={() => setDeleteProductID(product.id)}
+                        style={{ cursor: 'pointer' }}
                       ></button>
                     </section>
                   ))}

@@ -1,10 +1,12 @@
-@media screen and (min-width: 1073px) {
+@media screen and (width >= 1073px) {
   .Home {
     display: flex;
-    justify-content: space-around;
     flex-direction: row;
+    justify-content: space-around;
+
     background-image: linear-gradient(to bottom, #28272c, #111215);
   }
+
   /* Falando sobre a loja */
   .Home .Descrição {
     width: 50vw;
@@ -15,29 +17,32 @@
     border-radius: 20px;
     margin-left: 20px;
     margin-top: 20px;
-    margin-right: 0px;
+    margin-right: 0;
     border: 2px solid white;
   }
+
   .Home h1 {
     margin-left: 20px;
-
     font-size: 4vw;
     color: #9b0202;
-    font-family: "Protest Strike", serif;
+    font-family: 'Protest Strike', serif;
   }
+
   .Home p {
     font-size: 2vw;
-    font-family: "Courier Prime", serif;
+    font-family: 'Courier Prime', serif;
   }
+
   .Home .LojaCitar {
     font-size: 3vw;
     color: #9b0202;
-    font-family: "Bebas Neue";
+    font-family: 'Bebas Neue';
   }
+
   .Home strong {
     font-size: 2.2vw;
     color: #bfbfbf;
-    font-family: "Bebas Neue";
+    font-family: 'Bebas Neue';
   }
 
   /* Slides de produtos  */
@@ -45,13 +50,15 @@
     transform: scale(0.9);
   }
 }
-@media screen and (max-width: 1072px) and (min-width: 721px) {
+
+@media screen and (width <= 1072px) and (width >= 721px) {
   .Home {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-image: linear-gradient(to bottom, #28272c, #111215);
   }
+
   /* Falando sobre a loja */
   .Home .Descrição {
     width: 70vw;
@@ -62,29 +69,32 @@
     border-radius: 20px;
     margin-left: 20px;
     margin-top: 20px;
-    margin-right: 0px;
+    margin-right: 0;
     border: 2px solid white;
   }
+
   .Home h1 {
     margin-left: 20px;
-
     font-size: 5vw;
     color: #9b0202;
-    font-family: "Protest Strike", serif;
+    font-family: 'Protest Strike', serif;
   }
+
   .Home p {
     font-size: 2.6vw;
-    font-family: "Courier Prime", serif;
+    font-family: 'Courier Prime', serif;
   }
+
   .Home .LojaCitar {
     font-size: 3vw;
     color: #9b0202;
-    font-family: "Bebas Neue";
+    font-family: 'Bebas Neue';
   }
+
   .Home strong {
     font-size: 2.2vw;
     color: #bfbfbf;
-    font-family: "Bebas Neue";
+    font-family: 'Bebas Neue';
   }
 
   /* Slides de produtos  */
@@ -92,14 +102,16 @@
     transform: scale(0.9);
   }
 }
-@media screen and (max-width: 720px) {
+
+@media screen and (width <= 720px) {
   .Home {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-image: linear-gradient(to bottom, #28272c, #111215);
-    padding-bottom: 0px !important;
+    padding-bottom: 0 !important;
   }
+
   /* Falando sobre a loja */
   .Home .Descrição {
     width: 70vw;
@@ -111,26 +123,29 @@
     margin-top: 20px;
     border: 2px solid white;
   }
+
   .Home h1 {
     margin-left: 7px;
-
     font-size: 8vw;
     color: #9b0202;
-    font-family: "Protest Strike", serif;
+    font-family: 'Protest Strike', serif;
   }
+
   .Home p {
     font-size: 4vw;
-    font-family: "Courier Prime", serif;
+    font-family: 'Courier Prime', serif;
   }
+
   .Home .LojaCitar {
     font-size: 5vw;
     color: #9b0202;
-    font-family: "Bebas Neue";
+    font-family: 'Bebas Neue';
   }
+
   .Home strong {
     font-size: 4vw;
     color: #bfbfbf;
-    font-family: "Bebas Neue";
+    font-family: 'Bebas Neue';
   }
 
   /* Slides de produtos  */
@@ -138,6 +153,7 @@
     transform: scale(0.8);
   }
 }
+
 .Home {
   padding-bottom: 100px;
 }

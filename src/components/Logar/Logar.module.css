@@ -2,65 +2,106 @@
   opacity: 0;
   animation: aparecer 0.4s ease 1 forwards;
 }
+
 @keyframes aparecer {
   0% {
     opacity: 0.2;
   }
+
   25% {
     opacity: 0.4;
   }
+
   50% {
     opacity: 0.6;
   }
+
   75% {
     opacity: 0.8;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 .Logar div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .Logar input {
-  width: 230px;
-  height: 22px;
-  border-radius: 3px;
+  width: 280px;
+  text-align: center;
+  color: white;
+  height: 33px;
+  background-color: transparent;
+  border-radius: 4px;
 }
+
+.Logar input:focus {
+  background-color: white !important;
+  border: none !important;
+  color: black;
+}
+
 .Logar label {
-  padding: 5px 0px 10px 0px;
+  padding: 5px 0 10px;
 }
+
 .Logar nav {
   display: flex;
   justify-content: center;
-  margin: 10px 0px 0px 0px;
+  margin: 10px 0 0;
 }
+
 .Logar nav button {
-  width: 100px;
-  height: 28px;
+  width: 130px;
+  height: 36px;
   color: white;
   background-color: brown;
-  border: 1px solid rgb(49, 0, 0);
+  border: 1px solid rgb(49 0 0);
   border-radius: 5px;
   transition: 0.3s ease;
 }
+
 .Logar nav button:hover {
   transform: scale(1.1);
 }
 
 .Msgerror {
-  margin: 0px 0px 10px 0px !important;
-  margin: 0px 0px 14px 0px;
-  padding: 0px;
+  margin: 0 0 10px !important;
+  padding: 0;
   color: red;
   visibility: hidden;
   position: relative;
   margin-right: 50px;
 }
-@media screen and (max-width: 570px) {
+
+@media screen and (width <= 570px) {
   .Msgerror {
     font-size: 0.7rem !important;
+  }
+
+  .Logar input {
+    width: 70vw;
+    text-align: center;
+    color: white;
+    height: 43px;
+    margin-inline: 10px;
+    background-color: transparent;
+    border-radius: 4px;
+  }
+
+  .Logar nav button {
+    width: 150px;
+    height: 50px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: brown;
+    border: 1px solid rgb(49 0 0);
+    border-radius: 5px;
+    transition: 0.3s ease;
   }
 }

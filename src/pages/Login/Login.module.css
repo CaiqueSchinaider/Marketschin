@@ -1,4 +1,4 @@
-@media screen and (min-width: 950px) {
+@media screen and (width >= 950px) {
   .Login {
     display: flex;
     width: 100%;
@@ -10,38 +10,43 @@
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center 60%;
-    background-image: url("/public/pic/login.jpeg");
+    background-image: url('/public/pic/login.jpeg');
     animation: aparecer 1s ease-in-out 1 forwards;
   }
+
   @keyframes aparecer {
     0% {
       opacity: 0;
     }
+
     40% {
       opacity: 0.3;
     }
+
     70% {
       opacity: 0.7;
     }
+
     100% {
       opacity: 1;
     }
   }
+
   .Login header h1 {
     align-items: center;
-
     width: 100%;
-    margin: 20px 25px 0px 25px;
+    margin: 20px 25px 0;
     padding: 0;
     padding: 10px;
     font-size: 4.2rem;
     font-weight: bolder;
-
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
     border-radius: 20px;
-    /*font-family: "Righteous", sans-serif;*/
-    font-family: "Bebas Neue", sans-serif;
+
+    /* font-family: "Righteous", sans-serif; */
+    font-family: 'Bebas Neue', sans-serif;
   }
+
   .Login .Pai {
     display: flex;
     flex-direction: column;
@@ -52,26 +57,29 @@
     background-color: #060608a5;
     border-right: 2px solid whitesmoke;
   }
+
   .Login aside {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
     width: 270px;
   }
+
   .Login aside p {
-    margin: 15px 0px 0px 0px;
+    margin: 15px 0 0;
     font-weight: bold;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
     cursor: pointer;
     transition: 0.3s ease;
   }
+
   .Login aside p:hover {
-    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+    text-shadow: 0 0 10px rgb(255 255 255);
   }
 }
 
 /* Aqui perde o background image para um com cor */
-@media screen and (max-width: 949px) {
+@media screen and (width <= 949px) {
   .Login {
     display: flex;
     width: 100%;
@@ -86,40 +94,45 @@
     background-image: linear-gradient(
       to bottom,
       black 5%,
-      rgb(28, 24, 43),
-      rgb(20, 10, 66)
+      rgb(28 24 43),
+      rgb(20 10 66)
     );
     animation: aparecer 1s ease-in-out 1 forwards;
   }
+
   @keyframes aparecer {
     0% {
       opacity: 0;
     }
+
     40% {
       opacity: 0.3;
     }
+
     70% {
       opacity: 0.7;
     }
+
     100% {
       opacity: 1;
     }
   }
+
   .Login header h1 {
     align-items: center;
-
     width: 100%;
-    margin: 20px 25px 0px 25px;
+    margin: 20px 25px 0;
     padding: 0;
     padding: 10px;
     font-size: 4.2rem;
     font-weight: bolder;
-
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
     border-radius: 20px;
-    /*font-family: "Righteous", sans-serif;*/
-    font-family: "Bebas Neue", sans-serif;
+
+    /* font-family: "Righteous", sans-serif; */
+    font-family: 'Bebas Neue', sans-serif;
   }
+
   .Login .Pai {
     display: flex;
     flex-direction: column;
@@ -132,25 +145,29 @@
     border-right: 2px solid whitesmoke;
     border-left: 2px solid whitesmoke;
   }
+
   .Login aside {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
     width: 270px;
   }
+
   .Login aside p {
-    margin: 15px 0px 0px 0px;
+    margin: 15px 0 0;
     font-weight: bold;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
     cursor: pointer;
     transition: 0.3s ease;
   }
+
   .Login aside p:hover {
-    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+    text-shadow: 0 0 10px rgb(255 255 255);
   }
 }
+
 /* Aqui diminui o pai e perde o background image para um com cor */
-@media screen and (max-width: 570px) {
+@media screen and (width <= 570px) {
   .Login {
     display: flex;
     width: 100%;
@@ -162,45 +179,51 @@
     background-repeat: no-repeat;
     overflow: hidden;
     min-height: 100vh !important;
-
-    background-position: center 60%, left 30%;
+    background-position:
+      center 60%,
+      left 30%;
     background-image: linear-gradient(
       to bottom,
       black 5%,
-      rgb(28, 24, 43),
-      rgb(20, 10, 66)
+      rgb(28 24 43),
+      rgb(20 10 66)
     );
     animation: aparecer 1s ease-in-out 1 forwards;
   }
+
   @keyframes aparecer {
     0% {
       opacity: 0;
     }
+
     40% {
       opacity: 0.3;
     }
+
     70% {
       opacity: 0.7;
     }
+
     100% {
       opacity: 1;
     }
   }
+
   .Login header h1 {
     align-items: center;
     width: 200px;
     margin: 2px !important;
-    padding: 0px 10px 0px 10px !important;
+    padding: 0 10px !important;
     font-size: 2.5rem;
     font-weight: bolder;
-
-    color: rgb(255, 255, 255);
-
+    color: rgb(255 255 255);
     text-align: center;
     border-radius: 20px;
-    /*font-family: "Righteous", sans-serif;*/
-    font-family: "Bebas Neue", sans-serif;
+
+    /* font-family: "Righteous", sans-serif; */
+    font-family: 'Bebas Neue', sans-serif;
   }
+
   .Login .Pai {
     display: flex;
     flex-direction: column;
@@ -214,20 +237,23 @@
     border-right: 2px solid whitesmoke;
     border-left: 2px solid whitesmoke;
   }
+
   .Login aside {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
     width: 270px;
   }
+
   .Login aside p {
-    margin: 15px 0px 0px 0px;
+    margin: 15px 0 0;
     font-weight: bold;
-    color: rgb(255, 255, 255);
+    color: rgb(255 255 255);
     cursor: pointer;
     transition: 0.3s ease;
   }
+
   .Login aside p:hover {
-    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+    text-shadow: 0 0 10px rgb(255 255 255);
   }
 }

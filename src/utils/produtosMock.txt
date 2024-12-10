@@ -1,0 +1,9 @@
+import { useContext } from 'react';
+import { MockProdutosContext } from '../contexts/MockProdutos';
+
+function Produtos() {
+  const [mock_produtos, setMock_produtos] = useContext(MockProdutosContext);
+  return mock_produtos;
+}
+
+export default Produtos;

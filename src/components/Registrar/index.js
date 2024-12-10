@@ -1,191 +1,188 @@
-import { Link, useNavigate } from "react-router-dom";
-import styles from "./Registrar.module.css";
-import { useState, useEffect, useContext } from "react";
-import users from "../../utils/usersMock";
-import axios from "axios";
-import { LoginsContext } from "../../contexts/Logins";
-import { ParamsCodeContext } from "../../contexts/ParamsCode";
-import { ConfirmCodeContext } from "../../contexts/ConfirmCode";
-
+import { useNavigate } from 'react-router-dom';
+import styles from './Registrar.module.css';
+import { useState, useEffect, useContext } from 'react';
+import axios from 'axios';
+import { ParameterUtilsContext } from '../../contexts/ParameterUtils';
 function Registrar() {
+  const [, setParameterUtils] = useContext(ParameterUtilsContext);
   const navigate = useNavigate();
-  const [login, setLogin] = useContext(LoginsContext);
-  const [paramscode, setParamscode] = useContext(ParamsCodeContext);
-  const [code, setCode] = useContext(ConfirmCodeContext);
   // States que recebem os valores dos inputs
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [passwordConfimation, setPasswordConfimation] = useState("");
+  const [nickname, setNickname] = useState();
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [passwordConfimation, setPasswordConfimation] = useState('');
   ////
 
   // States que recebem valores de styles para mostra mensagem de error
-  const [mensagem_error_password, setMensagem_error_password] =
-    useState("hidden");
-  const [mensagem_error_email, setMensagem_error_email] = useState("hidden");
-  const [
-    mensagem_error_passwordConfimation,
-    setMensagem_error_passwordConfimation,
-  ] = useState("hidden");
+  const [statusErrorPassword, setStatusErrorPassword] = useState('hidden');
+  const [statusErrorEmail, setStatusErrorEmail] = useState('hidden');
+  const [statusErrorPasswordCheck, setStatusErrorPasswordCheck] =
+    useState('hidden');
   ////
 
   // States que recebem valores de styles para os inputs em caso de erro
-  const [input_error_password, setInput_error_password] = useState("none");
-  const [input_error_email, setInput_error_email] = useState("none");
-  const [input_error_passwordConfimation, setInput_error_passwordConfimation] =
-    useState("none");
+  const [ErrorPassword, setErrorPassword] = useState('2px solid white');
+  const [ErrorEmail, setErrorEmail] = useState('2px solid white');
+  const [ErrorPasswordCheck, setErrorPasswordCheck] =
+    useState('2px solid white');
   ////
 
   // States que recebem valores se tem erro (boleanos)
-  const [error_password, setError_password] = useState();
-  const [error_email, setError_email] = useState();
-  const [error_passwordConfimation, setError_passwordConfimation] = useState();
+  const [haveErrorPassword, setHaveErrorPassword] = useState();
+  const [haveErrorEmail, setHaveErrorEmail] = useState();
+  const [haveErrorPasswordCheck, setHaveErrorPasswordCheck] = useState();
   ////
 
   // States que determina a mensagem que sera exibida de erro
-  const [info_error_email, setInfo_error_email] = useState();
-  const [info_error_password, setInfo_error_password] = useState();
-  const [info_error_passwordConfirmation, setInfo_error_passwordConfimation] =
-    useState();
+  const [infoErrorEmail, setInfoErrorEmail] = useState();
+  const [infoErrorPassword, setInfoErrorPassword] = useState();
+  const [infoErrorPasswordCheck, setInfoErrorPasswordCheck] = useState();
   /////
 
   // State que serve para enviar sinal para o useEffect
-  const [sinal, setSinal] = useState(false);
+  const [signal, setSignal] = useState(false);
   /////
 
   // Verificação de email e senhas
 
-  const verificar = () => {
+  const checkUser = () => {
     // Se a senha foi digitada
-    if (password == "") {
-      setError_password(false);
-      setInfo_error_password("A senha é obrigatoria");
+    if (password === '') {
+      setHaveErrorPassword(false);
+      setInfoErrorPassword('A senha é obrigatoria');
 
       // Se a senha tem no minimo 8 caracteres
     } else if (password.length < 8) {
-      setError_password(false);
-      setInfo_error_password("A senha deve conter no mínimo 8 caracteres");
+      setHaveErrorPassword(false);
+      setInfoErrorPassword('A senha deve conter no mínimo 8 caracteres');
 
       // Se a senha tem no minimo uma letra maisucula
     } else if (!/[A-Z]/.test(password)) {
-      setError_password(false);
-      setInfo_error_password("A senha deve conter letra maiusculas");
+      setHaveErrorPassword(false);
+      setInfoErrorPassword('A senha deve conter letra maiusculas');
 
       // Se a senha tem no minimo uma letra minuscula
     } else if (!/[a-z]/.test(password)) {
-      setError_password(false);
-      setInfo_error_password("A senha deve conter letra minusculas");
+      setHaveErrorPassword(false);
+      setInfoErrorPassword('A senha deve conter letra minusculas');
 
       // Se a senha tem no minimo um número
     } else if (!/[0-9]/.test(password)) {
-      setError_password(false);
-      setInfo_error_password("A senha deve conter números");
+      setHaveErrorPassword(false);
+      setInfoErrorPassword('A senha deve conter números');
       // Se tudo estiver ok
     } else {
-      setError_password(true);
+      setHaveErrorPassword(true);
     }
 
     /////////////////////////////////////////////////////////////////////////////
 
     // Se o email foi digitado
-    if (email == "") {
-      setError_email(false);
-      setInfo_error_email("O email é obrigatorio!");
+    if (email === '') {
+      setHaveErrorEmail(false);
+      setInfoErrorEmail('O email é obrigatorio!');
 
       // Se contém @gmail.com no final do email, e se é maior que 11 caracteres
-    } else if (!email.endsWith("@gmail.com") || email.length < 11) {
-      setError_email(false);
-      setInfo_error_email("O email não é valido");
-
-      // Se tudo estiver ok
+    } else if (!email.endsWith('@gmail.com') || email.length < 11) {
+      setHaveErrorEmail(false);
+      setInfoErrorEmail('O email não é valido');
     } else {
-      setError_email(true);
+      // Se tudo estiver ok
+      setHaveErrorEmail(true);
     }
 
-    if (passwordConfimation == "") {
-      setError_passwordConfimation(false);
-      setInfo_error_passwordConfimation("Confime a senha!");
+    if (passwordConfimation === '') {
+      setHaveErrorPasswordCheck(false);
+      setInfoErrorPasswordCheck('Confime a senha!');
     } else if (passwordConfimation !== password) {
-      setError_passwordConfimation(false);
-      setInfo_error_passwordConfimation("As senhas não coincidem!");
+      setHaveErrorPasswordCheck(false);
+      setInfoErrorPasswordCheck('As senhas não coincidem!');
     } else {
-      setError_passwordConfimation(true);
+      setHaveErrorPasswordCheck(true);
     }
     //Sinaliza o inicio das mensagens
-    setSinal(true);
+    setSignal(true);
   };
 
   useEffect(() => {
-    if (sinal) {
-      if (!error_password) {
-        setMensagem_error_password("visible");
-        setInput_error_password("2px solid red");
+    if (signal) {
+      if (!haveErrorPassword) {
+        setStatusErrorPassword('visible');
+        setErrorPassword('2px solid red');
       } else {
-        setMensagem_error_password("hidden");
-        setInput_error_password("none");
+        setStatusErrorPassword('hidden');
+        setErrorPassword('none');
       }
       ////////
-      if (!error_email) {
-        setMensagem_error_email("visible");
-        setInput_error_email("2px solid red");
+      if (!haveErrorEmail) {
+        setStatusErrorEmail('visible');
+        setErrorEmail('2px solid red');
       } else {
-        setMensagem_error_email("hidden");
-        setInput_error_email("none");
+        setStatusErrorEmail('hidden');
+        setErrorEmail('none');
       }
       ////////
-      if (!error_passwordConfimation) {
-        setMensagem_error_passwordConfimation("visible");
-        setInput_error_passwordConfimation("2px solid red");
+      if (!haveErrorPasswordCheck) {
+        setStatusErrorPasswordCheck('visible');
+        setErrorPasswordCheck('2px solid red');
       } else {
-        setMensagem_error_passwordConfimation("hidden");
-        setInput_error_passwordConfimation("none");
+        setStatusErrorPasswordCheck('hidden');
+        setErrorPasswordCheck('none');
       }
     }
-    if (error_password && error_email && error_passwordConfimation) {
-      UsuarioVerificar();
+    if (haveErrorEmail && haveErrorPassword && haveErrorPasswordCheck) {
+      userRegister();
     }
-    setSinal(false);
-  }, [sinal]);
+    setSignal(false);
+  }, [signal]);
 
-  async function UsuarioVerificar() {
-    if (error_password && error_email && error_passwordConfimation) {
-      try {
-        const Response = await axios.get(
-          "https://67312aae7aaf2a9aff10029c.mockapi.io/users"
-        );
-        const dados_user = Response.data;
-        const localizar_usuario = dados_user.some(
-          (log_users) => log_users.name == email
-        );
-        if (localizar_usuario) {
-          setInfo_error_email("Essa conta já existe!");
-          setMensagem_error_email("visible");
-          setInput_error_email("2px solid red");
-        } else {
-          const codeFor = converte();
-          const senhaFormatada = String(password);
-          setParamscode({
-            message: codeFor,
-            destino: email,
-            senha: senhaFormatada,
-          });
-          setCode(true);
-          const codeAleatorio = Math.floor(Math.random() * 1000);
-          const codeFormatado = codeAleatorio.toString().padStart(3, "0");
-          navigate(`/codeverification/createuser`);
-        }
-      } catch (erro) {
-        console.error("Aconteceu algum erro", erro.message);
+  async function userRegister() {
+    try {
+      const Response = await axios.get(
+        'https://67312aae7aaf2a9aff10029c.mockapi.io/users',
+      );
+      const dados_user = Response.data;
+      const localizar_usuario = await dados_user.some(
+        (log_users) => log_users.email === email,
+      );
+      if (localizar_usuario) {
+        setInfoErrorEmail('Essa conta já existe!');
+        setStatusErrorEmail('visible');
+        setErrorEmail('2px solid red');
+      } else {
+        const codeFormatted = converte();
+        const passwordFormatted = String(password);
+        setParameterUtils({
+          nickname: nickname,
+          message: codeFormatted,
+          destino: email,
+          senha: passwordFormatted,
+        });
+
+        navigate(`/codeverification/createuser`);
       }
+    } catch (erro) {
+      console.error('Aconteceu algum erro', erro.message);
     }
   }
 
   function converte() {
-    const codeAleatorio = Math.floor(Math.random() * 1000);
-    return codeAleatorio.toString().padStart(3, "0");
+    const createCode = Math.floor(Math.random() * 1000);
+    return createCode.toString().padStart(3, '0');
   }
 
   return (
-    <form className={styles.Logar}>
+    <form className={styles.Registrar}>
+      <div className={styles.nicknamediv}>
+        <label htmlFor="nickname">Nickname</label>
+        <input
+          type="text"
+          id="text"
+          onChange={(e) => setNickname(e.target.value)}
+          required
+          style={{ border: '2px solid white' }}
+        />
+      </div>
       <div className={styles.emaildiv}>
         <label htmlFor="email">Email</label>
         <input
@@ -193,13 +190,13 @@ function Registrar() {
           id="email"
           onChange={(e) => setEmail(e.target.value)}
           required
-          style={{ border: `${input_error_email}` }}
+          style={{ border: `${ErrorEmail}` }}
         />
         <p
           className={styles.Msgerror}
-          style={{ visibility: `${mensagem_error_email}` }}
+          style={{ visibility: `${statusErrorEmail}` }}
         >
-          {info_error_email}
+          {infoErrorEmail}
         </p>
       </div>
 
@@ -209,13 +206,13 @@ function Registrar() {
           type="password"
           id="password"
           onChange={(e) => setPassword(e.target.value)}
-          style={{ border: `${input_error_password}` }}
+          style={{ border: `${ErrorPassword}` }}
         />
         <p
           className={styles.Msgerror}
-          style={{ visibility: `${mensagem_error_password}` }}
+          style={{ visibility: `${statusErrorPassword}` }}
         >
-          {info_error_password}
+          {infoErrorPassword}
         </p>
       </div>
       <div>
@@ -224,20 +221,20 @@ function Registrar() {
           type="password"
           id="confirmpassword"
           onChange={(e) => setPasswordConfimation(e.target.value)}
-          style={{ border: `${input_error_passwordConfimation}` }}
+          style={{ border: `${ErrorPasswordCheck}` }}
         />
         <p
           className={styles.Msgerror}
-          style={{ visibility: `${mensagem_error_passwordConfimation}` }}
+          style={{ visibility: `${statusErrorPasswordCheck}` }}
         >
-          {info_error_passwordConfirmation}
+          {infoErrorPasswordCheck}
         </p>
       </div>
       <nav>
         <button
           type="button"
-          style={{ cursor: "pointer" }}
-          onClick={() => verificar()}
+          style={{ cursor: 'pointer' }}
+          onClick={() => checkUser()}
         >
           Criar
         </button>

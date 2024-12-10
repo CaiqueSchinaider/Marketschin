@@ -1,5 +1,5 @@
 /* Para telas menores */
-@media screen and (min-width: 766px) and (max-width: 800px) {
+@media screen and (width >= 766px) and (width <= 800px) {
   .Card img {
     width: 99px;
     height: 99px;
@@ -13,8 +13,9 @@
     padding-top: 0;
     padding-left: 10px;
   }
+
   .Card span {
-    padding-top: 0px;
+    padding-top: 0;
     padding-left: 10px;
     margin-top: 0;
     display: inline-block;
@@ -27,7 +28,7 @@
   .Card {
     display: flex;
     flex-direction: row-reverse;
-    width: 300px;
+
     max-width: 300px;
     height: auto;
     max-height: 80px;
@@ -38,7 +39,8 @@
     gap: 30px;
   }
 }
-@media screen and (min-width: 569px) and (max-width: 765px) {
+
+@media screen and (width >= 569px) and (width <= 765px) {
   .Card {
     display: flex;
     flex-direction: row-reverse;
@@ -47,8 +49,7 @@
     height: auto;
     max-height: 80px;
     margin: 10px;
-    padding: 7px 10px 25px 10px;
-    padding-left: 0;
+    padding: 7px 10px 25px;
     padding-top: 7px;
     padding-bottom: 25px;
     gap: 30px;
@@ -56,7 +57,7 @@
   }
 
   .Card span {
-    padding-top: 0px;
+    padding-top: 0;
     margin-top: 0;
     display: inline-block;
     width: 270px;
@@ -65,6 +66,7 @@
     overflow: hidden;
     font-size: 1.4rem;
   }
+
   .Card img {
     width: 99px;
     height: 99px;
@@ -78,39 +80,42 @@
     padding-top: 0;
   }
 }
-@media screen and (max-width: 364px) {
+
+@media screen and (width <= 364px) {
   .Card {
     display: flex;
-
     flex-direction: row-reverse;
     width: 200px;
-
     height: auto;
     max-height: 80px;
     grid-template-columns: 10px 10px;
   }
+
   .Card p {
     padding-left: 20px;
     margin-top: 15px;
     font-size: 0.6rem;
   }
+
   .Card h2 {
     font-size: 1rem;
   }
+
   .Card img {
     width: 44px;
     height: 44px;
     position: relative;
-
     border-radius: 6px;
   }
+
   .Card a {
     width: 48px;
     height: 44px;
     padding: 10px 7px 10px 2px;
   }
 }
-@media screen and (max-width: 568px) and (min-width: 365px) {
+
+@media screen and (width <= 568px) and (width >= 365px) {
   .Card {
     display: flex;
     flex-direction: column;
@@ -120,6 +125,7 @@
     height: 180px;
     font-size: 0.5rem;
   }
+
   .Card img {
     display: flex;
     width: 70px;
@@ -145,17 +151,20 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .Card span {
     width: 80px;
     font-size: 0.7rem;
     color: black;
   }
+
   .Card section p {
     margin-top: 13px;
   }
 }
+
 /* Para telas maiores */
-@media screen and (min-width: 801px) {
+@media screen and (width >= 801px) {
   .Card {
     display: flex;
     justify-content: space-between;
@@ -164,12 +173,14 @@
     flex-wrap: wrap;
     gap: 30px;
   }
+
   .Card img {
     width: 260px;
     height: 260px;
     padding: 22px;
     border-radius: 50px;
   }
+
   .Card h2 {
     font-size: 1.5rem;
     padding-top: 0;
@@ -182,9 +193,11 @@
     padding-bottom: 15px;
     padding-top: 0;
   }
+
   .Card span {
     font-size: 1.2rem;
   }
+
   .Card section p {
     margin-top: 13px;
   }
@@ -192,9 +205,9 @@
 
 .Card {
   height: auto;
-  margin: 0px 10px;
-  background-color: #ffffff;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.726);
+  margin: 0 10px;
+  background-color: #fff;
+  box-shadow: 1px 1px 10px rgb(0 0 0 / 72.6%);
   cursor: pointer;
   transition: 0.8s ease;
   border-radius: 10px;
@@ -205,11 +218,13 @@
   font-weight: bolder;
   color: #a72608;
 }
+
 .Card span {
   font-weight: bold;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   color: #121113;
 }
+
 /* .Card:hover {
   transform: scale(1.1);
   padding: 10px 17px;

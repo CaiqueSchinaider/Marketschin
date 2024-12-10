@@ -6,6 +6,7 @@
   height: 100vh;
   color: white;
 }
+
 .EmailInput {
   display: flex;
   flex-direction: column;
@@ -13,35 +14,41 @@
   align-items: center;
   margin: auto;
 }
+
 .EmailInput h1 {
   font-size: clamp(20px, 4vw, 4vw);
   margin-bottom: 0;
   font-weight: lighter;
-  font-family: "Protest Strike";
-  color: rgb(255, 255, 255);
+  font-family: 'Protest Strike';
+  color: rgb(255 255 255);
   animation: show 2s ease-in-out;
 }
+
 @keyframes show {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 .EmailInput h2 {
   font-size: clamp(20px, 6vw, 6vw);
   font-weight: lighter;
-  font-family: "Protest Strike";
+  font-family: 'Protest Strike';
   color: #9b0202;
 }
+
 .EmailInput p {
   font-size: clamp(10px, 3vw, 3vw);
   font-weight: lighter;
-  font-family: "Jura", sans-serif;
-  color: #ff0000;
+  font-family: Jura, sans-serif;
+  color: #f00;
   margin-top: 0;
 }
+
 .EmailInput input {
   width: clamp(200px, 50vw, 50vw);
   height: 30px;
@@ -50,15 +57,15 @@
   background-color: black;
   border: 2px solid white;
 }
+
 .EmailInput button {
   width: clamp(100px, 20vw, 20vw);
   height: clamp(30px, 6vw, 6vw);
-
   font-size: clamp(20px, 4vw, 4vw);
   color: white;
   background-color: #9b0202;
-  font-family: "Bebas Neue", sans-serif;
-  border: 2px solid rgb(0, 0, 0);
+  font-family: 'Bebas Neue', sans-serif;
+  border: 2px solid rgb(0 0 0);
   border-radius: 10px;
   margin-top: 10px;
 }

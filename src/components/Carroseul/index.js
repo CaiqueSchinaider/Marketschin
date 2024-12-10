@@ -1,19 +1,21 @@
-import styles from "./Carroseul.module.css";
-import produtos from "../../utils/produtosMock";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Link } from "react-router-dom";
+import styles from './Carroseul.module.css';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { listProductsContext } from '../../contexts/MockProdutos';
 function Carroseul() {
+  const [listProducts] = useContext(listProductsContext);
   return (
     <inside className={styles.Carroseul}>
       <nav>
-        <Link to={"/comprar/all"}>
+        <Link to={'/comprar/all'}>
           <p>Produtos</p>
         </Link>
-        <Link to={"/#"}>
+        <Link to={'/#'}>
           <p>Vender</p>
         </Link>
-        <Link to={"/#"}>
+        <Link to={'/#'}>
           <p>Ajuda</p>
         </Link>
       </nav>
@@ -26,39 +28,37 @@ function Carroseul() {
         showStatus={false}
         showIndicators={false}
       >
-        {produtos.map((produtosslide) => {
+        {listProducts.map((products) => {
           return (
             <Link
-              to={`/comprar/${produtosslide.categoria}`}
-              style={{ boxShadow: "inset 2px 2px 10px black" }}
+              to={`/comprar/${products.categoria}`}
+              style={{ boxShadow: 'inset 2px 2px 10px black' }}
             >
-              <div key={produtosslide.id}>
+              <div key={products.id}>
                 <img
-                  src={produtosslide.thumb}
-                  style={{ width: "250px", height: "250px" }}
+                  src={products.thumb}
+                  alt="foto de produto"
+                  style={{ width: '250px', height: '250px' }}
                 />
 
                 <section>
                   <h3>
-                    {" "}
-                    {Number.parseFloat(produtosslide.valor).toLocaleString(
-                      "pt-BR",
-                      {
-                        style: "currency",
-                        currency: "BRL",
-                      }
-                    )}
+                    {' '}
+                    {Number.parseFloat(products.valor).toLocaleString('pt-BR', {
+                      style: 'currency',
+                      currency: 'BRL',
+                    })}
                   </h3>
                   <p
                     style={{
-                      width: "200px",
-                      display: "inline",
-                      fontSize: "1.4rem",
+                      width: '200px',
+                      display: 'inline',
+                      fontSize: '1.4rem',
                     }}
                   >
-                    {produtosslide.name}
+                    {products.name}
                   </p>
-                  <Link to={`/produto/${produtosslide.id}`}>Comprar</Link>
+                  <Link to={`/produto/${products.id}`}>Comprar</Link>
                 </section>
               </div>
             </Link>

@@ -1,8 +1,8 @@
-@media screen and (min-width: 834px) {
+@media screen and (width >= 834px) {
   .Data {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 70vw;
     height: 100%;
     color: white;
@@ -11,79 +11,92 @@
     border: 2px solid white;
     border-radius: 4px;
   }
+
   .Data h1 {
     width: 270px;
-    margin: 30px auto 0px auto;
+    margin: 30px auto 0;
     font-size: 6vw;
     font-weight: normal;
     color: #9b0202;
     text-align: center;
     border-bottom: 3px solid #9b0202;
-    margin-bottom: 0px;
-    font-family: "Protest Strike", serif;
+    margin-bottom: 0;
+    font-family: 'Protest Strike', serif;
   }
+
   .LineDatas {
     display: flex;
     flex-direction: row;
   }
+
   .DadosPessoais {
     margin-left: 5vw;
   }
+
   .DadosPessoais h2 {
     text-wrap: nowrap;
     font-size: 3vw;
     font-weight: lighter;
     padding-left: 10px;
-    color: #eeeeee;
+    color: #eee;
     background-color: #9b0202;
-    font-family: "Protest Strike", serif;
+    font-family: 'Protest Strike', serif;
   }
+
   .DadosPessoais h3 {
     margin-left: 3px;
     padding-bottom: 5px;
     text-align: center;
     border-bottom: 2px solid white;
   }
+
   .DadosPessoais p {
     margin-left: 3vw;
   }
+
   .DadosPessoais p strong {
     margin-right: 8px;
   }
+
   .DadosPessoais a {
     font-size: 1.2rem;
     font-weight: bold;
     color: #9b0202;
     margin-left: 20px;
-    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     text-decoration: none;
   }
 
   .DadosBancarios {
     margin-left: 5vw;
   }
+
   .DadosBancarios h2 {
     font-size: 3vw;
     text-wrap: nowrap;
     font-weight: lighter;
     padding-right: 40px;
     padding-left: 10px;
-    color: #eeeeee;
+    color: #eee;
     background-color: #9b0202;
-    font-family: "Protest Strike", serif;
+    font-family: 'Protest Strike', serif;
   }
+
   .DadosBancarios h3 {
     margin-left: 3px;
     padding-bottom: 5px;
     text-align: center;
     border-bottom: 2px solid white;
   }
+
   .DadosBancarios p {
     margin-left: 3vw;
   }
+
   .DadosBancarios p strong {
     margin-right: 8px;
   }
+
   .DadosBancarios a {
     display: flex;
     flex-direction: row;
@@ -93,15 +106,17 @@
     font-weight: bold;
     color: #9b0202;
     margin-left: 20px;
-    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     text-decoration: none;
   }
+
   .DadosBancarios img {
     transform: scale(0.7);
     filter: invert(20) saturate(70);
   }
 }
-@media screen and (max-width: 833px) {
+
+@media screen and (width <= 833px) {
   .Data {
     display: flex;
     flex-direction: column;
@@ -109,30 +124,32 @@
     width: 100vw;
     height: 100%;
     color: white;
-
     background-color: #1d1c21;
     border: 2px solid white;
     border-radius: 4px;
     overflow: hidden;
   }
+
   .Data h1 {
     width: 270px;
-
     font-size: 6vw;
     font-weight: normal;
     color: #9b0202;
     text-align: center;
     border-bottom: 3px solid #9b0202;
-    margin-bottom: 0px;
-    font-family: "Protest Strike", serif;
+    margin-bottom: 0;
+    font-family: 'Protest Strike', serif;
   }
+
   .LineDatas {
     display: flex;
     flex-direction: column;
   }
+
   .DadosPessoais {
     width: 95;
   }
+
   .DadosPessoais h2 {
     display: flex;
     align-items: center;
@@ -140,12 +157,13 @@
     height: 40px;
     font-size: 5vw;
     font-weight: lighter;
-    color: #eeeeee;
+    color: #eee;
     background-color: #9b0202;
     text-wrap: nowrap;
     padding-left: 10px;
-    font-family: "Protest Strike", serif;
+    font-family: 'Protest Strike', serif;
   }
+
   .DadosPessoais h3 {
     margin-left: 3px;
     font-size: clamp(15px, 5vw, 5vw);
@@ -153,26 +171,28 @@
     text-align: center;
     border-bottom: 2px solid white;
   }
+
   .DadosPessoais p {
     margin-left: 3vw;
     text-wrap: nowrap;
     overflow: hidden;
   }
+
   .DadosPessoais p strong {
     margin-right: 8px;
   }
+
   .DadosPessoais a {
     font-size: 1.2rem;
     font-weight: bold;
     color: #9b0202;
     margin-left: 20px;
-    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     text-decoration: none;
   }
 
   .DadosBancarios h2 {
     display: flex;
-
     align-items: center;
     height: 40px;
     font-size: 5vw;
@@ -180,22 +200,26 @@
     font-weight: lighter;
     padding-right: 40px;
     padding-left: 10px;
-    color: #eeeeee;
+    color: #eee;
     background-color: #9b0202;
-    font-family: "Protest Strike", serif;
+    font-family: 'Protest Strike', serif;
   }
+
   .DadosBancarios h3 {
     margin-left: 3px;
     padding-bottom: 5px;
     text-align: center;
     border-bottom: 2px solid white;
   }
+
   .DadosBancarios p {
     margin-left: 3vw;
   }
+
   .DadosBancarios p strong {
     margin-right: 8px;
   }
+
   .DadosBancarios a {
     display: flex;
     flex-direction: row;
@@ -205,9 +229,10 @@
     font-weight: bold;
     color: #9b0202;
     margin-left: 20px;
-    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     text-decoration: none;
   }
+
   .DadosBancarios img {
     transform: scale(0.7);
     filter: invert(20) saturate(70);

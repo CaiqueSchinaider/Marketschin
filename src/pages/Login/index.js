@@ -1,18 +1,20 @@
-import { useContext, useEffect, useState } from "react";
-import Logar from "../../components/Logar";
-import styles from "./Login.module.css";
-import Registrar from "../../components/Registrar";
-import Loading from "../../components/Loading";
+import { useContext, useEffect, useState } from 'react';
+import Logar from '../../components/Logar';
+import styles from './Login.module.css';
+import Registrar from '../../components/Registrar';
+import Loading from '../../components/Loading';
 
-import { LoginsContext } from "../../contexts/Logins";
-import { Link } from "react-router-dom";
+import { LoginsContext } from '../../contexts/SignalLogins';
+import { Link } from 'react-router-dom';
+import { ParameterUtilsContext } from '../../contexts/ParameterUtils';
 
 function Login() {
+  const [, setParameterUtils] = useContext(ParameterUtilsContext);
   // Meu useContext, serve para quando o usuario registrar, mande sinal para ir para login
-  const [login, setLogin] = useContext(LoginsContext);
+  const [login] = useContext(LoginsContext);
 
-  // Serve como sinal para identificar se o usuario quer ir para qual pagina de registro (login ou Registrar)
-  const [registro, setRegistro] = useState("sinal_Login");
+  // Serve como sinal para identificar se o usuario quer ir para qual pagina de register (login ou Registrar)
+  const [register, setRegister] = useState('signalLogin');
 
   // Usado para saber quando load deve ser chamado
   const [load, setLoad] = useState(true);
@@ -22,8 +24,9 @@ function Login() {
   useEffect(() => {
     setTimeout(function () {
       setLoad(false);
+      setParameterUtils({});
     }, 700);
-  }, [registro]);
+  }, [register]);
 
   /////////////////////////////////////////////////////////////
 
@@ -35,24 +38,23 @@ function Login() {
         <header>
           <h1> Market Schin</h1>
         </header>
-
-        {/* Variação de login e registro */}
-        {registro == "sinal_Login" || login ? (
+        {/* Variação de login e register */}
+        {register === 'signalLogin' || login ? (
           <Logar />
-        ) : registro == "sinal_Registrar" ? (
+        ) : register === 'signalRegister' ? (
           <Registrar />
         ) : (
           <> </>
         )}
 
         <aside>
-          <Link to="/emailverification" style={{ textDecoration: "none" }}>
+          <Link to="/emailverification/" style={{ textDecoration: 'none' }}>
             <p>Esqueci a senha</p>
           </Link>
-          {registro == "sinal_Login" ? (
-            <p onClick={() => setRegistro("sinal_Registrar")}>Criar conta</p>
-          ) : registro == "sinal_Registrar" ? (
-            <p onClick={() => setRegistro("sinal_Login")}>Ja tenho conta</p>
+          {register === 'signalLogin' ? (
+            <p onClick={() => setRegister('signalRegister')}>Criar conta</p>
+          ) : register === 'signalRegister' ? (
+            <p onClick={() => setRegister('signalLogin')}>Ja tenho conta</p>
           ) : null}
         </aside>
       </section>

@@ -5,13 +5,15 @@
   position: relative;
   top: 150px;
   border-radius: 40px;
-  border-top: 5px solid rgb(121, 11, 11);
+  border-top: 5px solid rgb(121 11 11);
   animation: spin 1s linear infinite;
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

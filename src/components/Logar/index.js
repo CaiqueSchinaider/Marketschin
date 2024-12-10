@@ -1,114 +1,124 @@
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import styles from "./Logar.module.css";
-import { useContext, useEffect, useRef, useState } from "react";
-import users from "../../utils/usersMock";
-import axios from "axios";
-import { ParamsCodeContext } from "../../contexts/ParamsCode";
+import { useNavigate } from 'react-router-dom';
+import styles from './Logar.module.css';
+import { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
+import { ParameterUtilsContext } from '../../contexts/ParameterUtils';
 
 function Logar() {
   const navigate = useNavigate();
-  const [password, setPassword] = useState("");
-  const [paramscode, setParamscode] = useContext(ParamsCodeContext);
-  const [email, setEmail] = useState("");
-  const [mensagem_error_password, setMensagem_error_password] =
-    useState("hidden");
-  const [mensagem_error_email, setMensagem_error_email] = useState("hidden");
-  const [input_error_password, setInput_error_password] = useState("none");
-  const [input_error_email, setInput_error_email] = useState("none");
-  const [error_password, setError_password] = useState();
-  const [error_email, setError_email] = useState();
-  const [sinal, setSinal] = useState(false);
-  const [info_error_password, setInfo_error_password] = useState();
-  const [info_error_email, setInfo_error_email] = useState();
+  const [password, setPassword] = useState('');
+  const [, setParameterUtils] = useContext(ParameterUtilsContext);
+  const [email, setEmail] = useState('');
+
+  // Exibe ou não o erro nos inputs de dados (parametros de style)
+  const [statusErrorPassword, setStatusErrorPassword] = useState('hidden');
+  const [statusErrorEmail, setStatusErrorEmail] = useState('hidden');
+
+  // Exibe bordas vermelhas nos inputs (parametros de style)
+  const [ErrorPassword, setErrorPassword] = useState('2px solid white');
+  const [ErrorEmail, setErrorEmail] = useState('2px solid white');
+
+  // Sinais que checam erros (boolean)
+  const [haveErrorPassword, setHaveErrorPassword] = useState();
+  const [haveErrorEmail, setHaveErrorEmail] = useState();
+
+  // Exibe a informação do error  ("")
+  const [infoErrorPassword, setInfoErrorPassword] = useState();
+  const [infoErrorEmail, setInfoErrorEmail] = useState();
+
+  // Sinaliza para começar a fazer login (boolean)
+  const [signal, setSignal] = useState(false);
 
   // Verificação de email e senha
-
-  const verificar = () => {
+  const checkLogin = () => {
     // Se a senha foi digitada
-    if (password == "") {
-      setError_password(false);
-      setInfo_error_password("A senha é obrigatoria");
+    if (password === '') {
+      setHaveErrorPassword(false);
+      setInfoErrorPassword('A senha é obrigatoria');
     }
     // Se tudo estiver ok
     else {
-      setError_password(true);
+      setHaveErrorPassword(true);
     }
 
     /////////////////////////////////////////////////////////////////////////////
 
     // Se o email foi digitado
-    if (email == "") {
-      setError_email(false);
-      setInfo_error_email("O email é obrigatorio!");
+    if (email === '') {
+      setHaveErrorEmail(false);
+      setInfoErrorEmail('O email é obrigatorio!');
 
       // Se contém @gmail.com no final do email, e se é maior que 11 caracteres
-    } else if (!email.endsWith("@gmail.com") || email.length < 11) {
-      setError_email(false);
-      setInfo_error_email("O email não é valido");
+    } else if (!email.endsWith('@gmail.com') || email.length < 11) {
+      setHaveErrorEmail(false);
+      setInfoErrorEmail('O email não é valido');
 
       // Se tudo estiver ok
     } else {
-      setError_email(true);
+      setHaveErrorEmail(true);
     }
 
-    //Sinaliza o inicio das mensagens
-    setSinal(true);
+    //signaliza o inicio das mensagens
+    setSignal(true);
   };
 
   useEffect(() => {
-    if (sinal) {
-      if (!error_password) {
-        setMensagem_error_password("visible");
-        setInput_error_password("2px solid red");
+    if (signal) {
+      if (!haveErrorPassword) {
+        setStatusErrorPassword('visible');
+        setErrorPassword('2px solid red');
       } else {
-        setMensagem_error_password("hidden");
-        setInput_error_password("none");
+        setStatusErrorPassword('hidden');
+        setErrorPassword('none');
       }
-      if (!error_email) {
-        setMensagem_error_email("visible");
-        setInput_error_email("2px solid red");
+      if (!haveErrorEmail) {
+        setStatusErrorEmail('visible');
+        setErrorEmail('2px solid red');
       } else {
-        setMensagem_error_email("hidden");
-        setInput_error_email("none");
+        setStatusErrorEmail('hidden');
+        setErrorEmail('none');
       }
-      if (error_email && error_password) {
+      if (haveErrorEmail && haveErrorPassword) {
         axios
-          .get("https://67312aae7aaf2a9aff10029c.mockapi.io/users")
+          .get('https://67312aae7aaf2a9aff10029c.mockapi.io/users')
           .then((response) => {
-            const dados = response.data;
-            const verificar = dados.some(
+            const infoData = response.data;
+            const checkUser = infoData.some(
               (usersdata) =>
-                usersdata.email == email && usersdata.senha == String(password)
+                usersdata.email === email &&
+                usersdata.senha === String(password),
             );
 
-            const log_verificar_email = dados.some(
-              (logdados) => logdados.email == email
+            const logFindEmail = infoData.some(
+              (users) => users.email === email,
             );
-            const log_verificar_senha = dados.some(
-              (logdados) => logdados.password == password
+            const logFindPassword = infoData.some(
+              (users) => users.password === password,
             );
 
-            if (verificar) {
-              navigate("/home");
-              setParamscode({
-                message: "",
+            if (checkUser) {
+              // Se tudo estiver ok
+              navigate('/home');
+              setParameterUtils({
+                message: '',
                 destino: email,
                 senha: password,
               });
-            } else if (!log_verificar_email) {
-              setInfo_error_email("Essa conta não existe!");
-              setMensagem_error_email("visible");
-              setInput_error_email("2px solid red");
-            } else if (!log_verificar_senha) {
-              setInfo_error_password("Senha incorreta");
-              setMensagem_error_password("visible");
-              setInput_error_password("2px solid red");
+            } else if (!logFindEmail) {
+              // Se não, verifica se existe uma conta com esse email, ou se a senha ta errada
+              setInfoErrorEmail('Essa conta não existe!');
+              setStatusErrorEmail('visible');
+              setErrorEmail('2px solid red');
+            } else if (!logFindPassword) {
+              setInfoErrorPassword('Senha incorreta');
+              setStatusErrorPassword('visible');
+              setErrorPassword('2px solid red');
             }
           });
       }
     }
-    setSinal(false);
-  }, [sinal]);
+    setSignal(false);
+  }, [signal]);
 
   return (
     <section className={styles.Logar}>
@@ -119,13 +129,13 @@ function Logar() {
           id="email"
           onChange={(e) => setEmail(e.target.value)}
           required
-          style={{ border: `${input_error_email}` }}
+          style={{ border: `${ErrorEmail}` }}
         />
         <p
           className={styles.Msgerror}
-          style={{ visibility: `${mensagem_error_email}` }}
+          style={{ visibility: `${statusErrorEmail}` }}
         >
-          {info_error_email}
+          {infoErrorEmail}
         </p>
       </div>
 
@@ -135,18 +145,18 @@ function Logar() {
           type="password"
           id="password"
           onChange={(e) => setPassword(e.target.value)}
-          style={{ border: `${input_error_password}` }}
+          style={{ border: `${ErrorPassword}` }}
         />
         <p
           className={styles.Msgerror}
-          style={{ visibility: `${mensagem_error_password}` }}
+          style={{ visibility: `${statusErrorPassword}` }}
         >
-          {info_error_password}
+          {infoErrorPassword}
         </p>
       </div>
 
       <nav>
-        <button style={{ cursor: "pointer" }} onClick={() => verificar()}>
+        <button style={{ cursor: 'pointer' }} onClick={() => checkLogin()}>
           Entrar
         </button>
       </nav>

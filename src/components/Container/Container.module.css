@@ -1,51 +1,53 @@
-@media screen and (min-width: 766px) and (max-width: 800px) {
+@media screen and (width >= 766px) and (width <= 800px) {
   .Container {
     display: flex;
     justify-content: center;
-    justify-content: center;
-    width: 100px;
     width: 280px;
-    padding: 10px 0px;
+    padding: 10px 0;
     background-color: transparent;
     transition: 0.3s ease-in;
     opacity: 0.9;
   }
+
   .Container:hover {
     transform: scale(1.1);
     opacity: 1;
   }
 }
-@media screen and (max-width: 569px) {
+
+@media screen and (width <= 569px) {
   .Container {
     justify-content: center;
     padding: 10px;
   }
 }
-@media screen and (min-width: 570px) and (max-width: 765px) {
+
+@media screen and (width >= 570px) and (width <= 765px) {
   .Container {
     justify-content: center;
-    width: 100px;
     width: 280px;
-    padding: 10px 0px;
+    padding: 10px 0;
     background-color: transparent;
     transition: 0.3s ease-in;
     opacity: 0.9;
   }
 }
-@media screen and (min-width: 800px) {
+
+@media screen and (width >= 800px) {
   .Container {
     justify-content: space-between;
     width: 300px;
     margin-bottom: 30px;
   }
 }
+
 .Container {
   margin-left: 0;
-
   transition: 0.3s ease-in;
   background-color: transparent;
   opacity: 0.9;
 }
+
 .Container:hover {
   transform: scale(1.1);
   opacity: 1;
