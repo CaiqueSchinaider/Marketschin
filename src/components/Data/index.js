@@ -9,8 +9,8 @@ function Data() {
   return parameterUtils ? (
     <main className={styles.Data}>
       <h1>Usuario</h1>
-      <div className={styles.LineDatas}>
-        <section className={styles.DadosPessoais}>
+      <div className={styles.DataGroup}>
+        <section className={styles.LocalUserData}>
           <h2>Dados Pessoais</h2>
           <h3>Informações de Login</h3>
           <p>
@@ -21,7 +21,7 @@ function Data() {
           </p>
           <Link to="/emailverification">Redefinir senha</Link>
         </section>
-        <section className={styles.DadosBancarios}>
+        <section className={styles.LocalBankData}>
           <h2>Dados Bancarios</h2>
           <h3>Cartões</h3>
           <Link to="/addcard">

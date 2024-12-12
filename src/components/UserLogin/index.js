@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import styles from './Logar.module.css';
+import styles from './UserLogin.module.css';
 import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { ParameterUtilsContext } from '../../contexts/ParameterUtils';
@@ -121,8 +121,8 @@ function Logar() {
   }, [signal]);
 
   return (
-    <section className={styles.Logar}>
-      <div className={styles.emaildiv}>
+    <section className={styles.LoginData}>
+      <div>
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -132,14 +132,14 @@ function Logar() {
           style={{ border: `${ErrorEmail}` }}
         />
         <p
-          className={styles.Msgerror}
+          className={styles.ErrorMessage}
           style={{ visibility: `${statusErrorEmail}` }}
         >
           {infoErrorEmail}
         </p>
       </div>
 
-      <div id="passworddiv">
+      <div>
         <label htmlFor="password">Senha</label>
         <input
           type="password"
@@ -148,7 +148,7 @@ function Logar() {
           style={{ border: `${ErrorPassword}` }}
         />
         <p
-          className={styles.Msgerror}
+          className={styles.ErrorMessage}
           style={{ visibility: `${statusErrorPassword}` }}
         >
           {infoErrorPassword}

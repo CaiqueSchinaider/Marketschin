@@ -1,10 +1,10 @@
 @media screen and (width >= 1152px) {
   /* Link encobrindo todo elemento */
-  .Carroseul a {
+  .Slides a {
     text-decoration: none;
   }
 
-  .Carroseul {
+  .Slides {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +19,7 @@
   }
 
   /* Recebe <a> + <p> */
-  .Carroseul nav {
+  .Slides nav {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -27,7 +27,7 @@
     margin: 10px 0 0;
   }
 
-  .Carroseul nav p {
+  .Slides nav p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,11 +45,11 @@
     transition: 0.3s ease;
   }
 
-  .Carroseul nav p:hover {
+  .Slides nav p:hover {
     transform: scale(1.1);
   }
 
-  .Carroseul ul {
+  .Slides ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +58,7 @@
   }
 
   /* Recebe img e section (Nome e Valor) */
-  .Carroseul div {
+  .Slides div {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -71,13 +71,13 @@
   }
 
   /* Imagem */
-  .Carroseul div img {
+  .Slides div img {
     transform: scale(1.2);
     margin-top: 20px;
   }
 
   /* Encobre Valor e Nome */
-  .Carroseul section {
+  .Slides section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,7 +90,7 @@
   }
 
   /* Nome */
-  .Carroseul section p {
+  .Slides section p {
     display: flex !important;
     justify-content: center;
     align-items: center;
@@ -110,7 +110,7 @@
   }
 
   /* Valor */
-  .Carroseul section h3 {
+  .Slides section h3 {
     height: 50px;
     margin: 0;
     font-size: 3.4rem;
@@ -119,7 +119,7 @@
     text-shadow: 0 0 5px white;
   }
 
-  .Carroseul section a {
+  .Slides section a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,7 +137,7 @@
     transition: 0.3s ease;
   }
 
-  .Carroseul section a:hover {
+  .Slides section a:hover {
     transform: scale(1.1);
     box-shadow: 0 0 10px white;
     text-shadow: 0 0 4px white;
@@ -155,11 +155,11 @@ font-family: "Courier Prime", serif;
 
 @media screen and (width <= 1151px) and (width >= 721px) {
   /* Link encobrindo todo elemento */
-  .Carroseul a {
+  .Slides a {
     text-decoration: none;
   }
 
-  .Carroseul {
+  .Slides {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -174,7 +174,7 @@ font-family: "Courier Prime", serif;
   }
 
   /* Recebe <a> + <p> */
-  .Carroseul nav {
+  .Slides nav {
     display: flex;
     justify-content: center;
     width: 80%;
@@ -182,7 +182,7 @@ font-family: "Courier Prime", serif;
     gap: 5px;
   }
 
-  .Carroseul nav p {
+  .Slides nav p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,11 +200,11 @@ font-family: "Courier Prime", serif;
     transition: 0.3s ease;
   }
 
-  .Carroseul nav p:hover {
+  .Slides nav p:hover {
     transform: scale(1.1);
   }
 
-  .Carroseul ul {
+  .Slides ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,7 +213,7 @@ font-family: "Courier Prime", serif;
   }
 
   /* Recebe img e section (Nome e Valor) */
-  .Carroseul div {
+  .Slides div {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -226,13 +226,13 @@ font-family: "Courier Prime", serif;
   }
 
   /* Imagem */
-  .Carroseul div img {
+  .Slides div img {
     transform: scale(1.2);
     margin-top: 25px;
   }
 
   /* Encobre Valor e Nome */
-  .Carroseul section {
+  .Slides section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -245,7 +245,7 @@ font-family: "Courier Prime", serif;
   }
 
   /* Nome */
-  .Carroseul section p {
+  .Slides section p {
     display: flex !important;
     justify-content: center;
     align-items: center;
@@ -265,7 +265,7 @@ font-family: "Courier Prime", serif;
   }
 
   /* Valor */
-  .Carroseul section h3 {
+  .Slides section h3 {
     height: 50px;
     margin: 0 0 10px;
     font-size: 6vw !important;
@@ -274,7 +274,7 @@ font-family: "Courier Prime", serif;
     text-shadow: 0 0 5px white;
   }
 
-  .Carroseul section a {
+  .Slides section a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -292,7 +292,7 @@ font-family: "Courier Prime", serif;
     transition: 0.3s ease;
   }
 
-  .Carroseul section a:hover {
+  .Slides section a:hover {
     transform: scale(1.1);
     box-shadow: 0 0 10px white;
     text-shadow: 0 0 4px white;
@@ -310,11 +310,11 @@ font-family: "Zilla Slab", serif;
 
 @media screen and (width <= 720px) {
   /* Link encobrindo todo elemento */
-  .Carroseul a {
+  .Slides a {
     text-decoration: none;
   }
 
-  .Carroseul {
+  .Slides {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -330,7 +330,7 @@ font-family: "Zilla Slab", serif;
   }
 
   /* Recebe <a> + <p> */
-  .Carroseul nav {
+  .Slides nav {
     display: flex;
     justify-content: center;
     width: 80%;
@@ -338,7 +338,7 @@ font-family: "Zilla Slab", serif;
     gap: 20px;
   }
 
-  .Carroseul nav p {
+  .Slides nav p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -356,11 +356,11 @@ font-family: "Zilla Slab", serif;
     transition: 0.3s ease;
   }
 
-  .Carroseul nav p:hover {
+  .Slides nav p:hover {
     transform: scale(1.1);
   }
 
-  .Carroseul ul {
+  .Slides ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -369,7 +369,7 @@ font-family: "Zilla Slab", serif;
   }
 
   /* Recebe img e section (Nome e Valor) */
-  .Carroseul div {
+  .Slides div {
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -383,7 +383,7 @@ font-family: "Zilla Slab", serif;
   }
 
   /* Imagem */
-  .Carroseul div img {
+  .Slides div img {
     justify-content: center;
     transform: scale(1.77);
     z-index: 1;
@@ -392,7 +392,7 @@ font-family: "Zilla Slab", serif;
   }
 
   /* Encobre Valor e Nome */
-  .Carroseul section {
+  .Slides section {
     display: flex;
     flex-direction: column;
     width: 95vw !important;
@@ -405,7 +405,7 @@ font-family: "Zilla Slab", serif;
   }
 
   /* Nome */
-  .Carroseul section p {
+  .Slides section p {
     display: flex !important;
     justify-content: center;
     align-items: center;
@@ -425,7 +425,7 @@ font-family: "Zilla Slab", serif;
   }
 
   /* Valor */
-  .Carroseul section h3 {
+  .Slides section h3 {
     height: 50px;
     margin: 10px 0 0;
     font-size: clamp(40px, 8.5vw, 90px) !important;
@@ -434,7 +434,7 @@ font-family: "Zilla Slab", serif;
     text-shadow: 0 0 5px white;
   }
 
-  .Carroseul section a {
+  .Slides section a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -452,7 +452,7 @@ font-family: "Zilla Slab", serif;
     transition: 0.3s ease;
   }
 
-  .Carroseul section a:hover {
+  .Slides section a:hover {
     transform: scale(1.1);
     box-shadow: 0 0 10px white;
     text-shadow: 0 0 4px white;

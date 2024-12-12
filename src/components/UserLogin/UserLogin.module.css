@@ -1,4 +1,4 @@
-.Logar {
+.LoginData {
   opacity: 0;
   animation: aparecer 0.4s ease 1 forwards;
 }
@@ -25,38 +25,38 @@
   }
 }
 
-.Logar div {
+.LoginData div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.Logar input {
+.LoginData input {
   width: 280px;
-  text-align: center;
-  color: white;
   height: 33px;
+  color: white;
+  text-align: center;
   background-color: transparent;
   border-radius: 4px;
 }
 
-.Logar input:focus {
+.LoginData input:focus {
+  color: black;
   background-color: white !important;
   border: none !important;
-  color: black;
 }
 
-.Logar label {
+.LoginData label {
   padding: 5px 0 10px;
 }
 
-.Logar nav {
+.LoginData nav {
   display: flex;
   justify-content: center;
   margin: 10px 0 0;
 }
 
-.Logar nav button {
+.LoginData nav button {
   width: 130px;
   height: 36px;
   color: white;
@@ -66,11 +66,11 @@
   transition: 0.3s ease;
 }
 
-.Logar nav button:hover {
+.LoginData nav button:hover {
   transform: scale(1.1);
 }
 
-.Msgerror {
+.ErrorMessage {
   margin: 0 0 10px !important;
   padding: 0;
   color: red;
@@ -80,21 +80,22 @@
 }
 
 @media screen and (width <= 570px) {
-  .Msgerror {
+  .ErrorMessage {
     font-size: 0.7rem !important;
   }
 
-  .Logar input {
+  .LoginData input {
     width: 70vw;
-    text-align: center;
-    color: white;
     height: 43px;
+    color: white;
+    text-align: center;
+
     margin-inline: 10px;
     background-color: transparent;
     border-radius: 4px;
   }
 
-  .Logar nav button {
+  .LoginData nav button {
     width: 150px;
     height: 50px;
     font-size: 1.1rem;

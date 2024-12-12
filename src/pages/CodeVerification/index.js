@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import styles from './PassCodeVerification.module.css';
+import styles from './CodeVerification.module.css';
 
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -51,8 +51,8 @@ function PassCodeVerification() {
   }
 
   return (
-    <section className={styles.CodeVerification}>
-      <div className={styles.EmailInput}>
+    <section className={styles.CodeCheck}>
+      <div className={styles.InsertCodeBox}>
         <h1>- Código enviado para seu email! -</h1>
         <h2>Digite o código</h2>
         <p>{infoError}</p>

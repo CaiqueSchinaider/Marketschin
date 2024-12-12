@@ -1,59 +1,61 @@
 @media screen and (width >= 705px) {
-  .Cart {
+  .BuyCart {
     margin-top: 100px;
   }
 
-  .Cart main {
+  .BuyCart main {
     display: flex;
     flex-direction: row;
     height: 100%;
   }
 
-  .Cart h1 {
+  .BuyCart h1 {
     color: wheat;
   }
 
-  .Cart .Paidetodas {
+  .BuyCart .ProductsList {
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+
+    height: 500px;
     width: 1200px;
-    height: 700px;
+
     margin: auto;
     background-color: #1d1c21 !important;
     border: 2px solid white;
   }
 
-  .Cart section {
+  .BuyCart section {
     display: flex;
     justify-content: space-between;
     height: 115px;
+    margin: 10px 10px 15px 20px;
     background-color: rgb(54 54 54);
     box-shadow: 3px 3px 10px black;
-    margin: 10px 10px 15px 20px;
     border-radius: 10px;
     border: 1px solid rgb(255 255 255);
-    overflow: hidden;
   }
 
-  .Cart section div {
+  .BuyCart section div {
     display: flex;
     flex-direction: row;
   }
 
-  .Cart section div div {
+  .BuyCart section div div {
     display: flex;
     flex-direction: column;
   }
 
-  .Cart section div h2 {
+  .BuyCart section div h2 {
     margin: 0;
   }
 
-  .Cart section div h3 {
+  .BuyCart section div h3 {
     margin: 10px 30px 0 10px;
   }
 
-  .Cart section button {
+  .BuyCart section button {
     width: 50px;
     height: 50px;
     background-color: transparent;
@@ -67,35 +69,35 @@
     margin-right: 20px;
   }
 
-  .Cart .Xparatelefones {
+  .BuyCart .DeleteButton {
     display: none;
   }
 
-  .Cart section button:hover {
+  .BuyCart section button:hover {
     transform: scale(1.1);
   }
 
-  .Cart section picture {
+  .BuyCart section picture {
     width: 115px;
     height: 115px;
     margin-right: 10px;
   }
 
-  .Cart section picture img {
+  .BuyCart section picture img {
     width: 115px;
     height: 115px;
   }
 
-  .Cart section h2 {
+  .BuyCart section h2 {
     color: white;
   }
 
-  .Cart section h3 {
+  .BuyCart section h3 {
     font-size: 1.7rem;
     color: gold;
   }
 
-  .Cart aside {
+  .BuyCart aside {
     display: flex;
     flex-direction: column;
     width: 380px;
@@ -107,7 +109,7 @@
     border-radius: 10px;
   }
 
-  .Cart .Precototal {
+  .BuyCart .PriceTotal {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,23 +123,23 @@
     border: 1px solid white;
   }
 
-  .Cart .Precototal p {
+  .BuyCart .PriceTotal p {
     margin: 0 !important;
   }
 
-  .Cart .Precototal strong {
+  .BuyCart .PriceTotal strong {
     font-size: clamp(20px, 1.4vw, 50px);
     color: gold;
   }
 
-  .Cart aside button {
+  .BuyCart aside button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 80%;
     height: 45px;
-    padding: 0 40px;
     margin: 20px auto;
+    padding: 0 40px;
     color: white;
     background-color: #9b0202;
     box-shadow: 1px 1px 10px rgb(0 0 0 / 56.2%);
@@ -145,7 +147,7 @@
     border: 1px solid white;
   }
 
-  .Cart aside button img {
+  .BuyCart aside button img {
     transform: scale(0.6);
     filter: contrast(0) brightness(100);
     width: 70px;
@@ -153,42 +155,42 @@
     border-right: 2px solid white;
   }
 
-  .Cart aside button p {
+  .BuyCart aside button p {
     width: 120px;
     text-align: start;
   }
 
-  .Cart aside button:hover {
+  .BuyCart aside button:hover {
     transform: scale(1.1);
   }
 
-  .Cart aside button a {
+  .BuyCart aside button a {
+    width: 120px;
     text-decoration: none;
     color: white;
-    width: 120px;
   }
 }
 
 @media screen and (width <= 704px) {
-  .Cart {
+  .BuyCart {
     margin-top: 130px;
   }
 
-  .Cart main {
+  .BuyCart main {
     display: flex;
     flex-direction: column;
     height: 100%;
   }
 
-  .Cart h1 {
+  .BuyCart h1 {
     color: wheat;
   }
 
-  .Cart .Paidetodas {
+  .BuyCart .ProductsList {
     display: flex;
     justify-content: center;
     width: auto;
-    height: auto;
+
     margin: auto auto 10px;
     background-color: #1d1c21 !important;
     gap: 10px;
@@ -198,27 +200,29 @@
     border: 2px solid white;
   }
 
-  .Cart section {
+  .BuyCart section {
     display: relative;
     flex-direction: column;
     justify-content: space-between;
     width: 180px !important;
     height: 240px;
+    margin: 10px 5px 15px;
+
     background-color: rgb(54 54 54);
     box-shadow: 3px 3px 10px black;
     position: relative;
-    margin: 10px 5px 15px;
+
     border-radius: 10px;
     border: 1px solid wheat;
     overflow: hidden;
   }
 
-  .Cart section div {
+  .BuyCart section div {
     display: flex;
     flex-direction: column;
   }
 
-  .Cart section div div {
+  .BuyCart section div div {
     display: flex;
     flex-direction: column;
     width: 180px;
@@ -229,19 +233,19 @@
     bottom: 0;
   }
 
-  .Cart section div h2 {
+  .BuyCart section div h2 {
     margin: 10px 0 0 7px;
     font-size: 0.8rem;
     color: white;
   }
 
-  .Cart section div h3 {
+  .BuyCart section div h3 {
     margin: 4px 0 10px 10px;
     font-size: 1.3rem;
     color: gold;
   }
 
-  .Cart .Xparatelefones {
+  .BuyCart .DeleteButton {
     display: flex;
     width: 35px;
     height: 35px;
@@ -258,35 +262,35 @@
     border-radius: 50px;
   }
 
-  .Cart section button {
+  .BuyCart section button {
     display: none;
   }
 
-  .Cart section button:hover {
+  .BuyCart section button:hover {
     transform: scale(1.1);
   }
 
-  .Cart section picture {
+  .BuyCart section picture {
     width: 115px;
     height: 115px;
     margin-right: 10px;
   }
 
-  .Cart section picture img {
+  .BuyCart section picture img {
     width: 180px;
     height: 180px;
   }
 
-  .Cart section h2 {
+  .BuyCart section h2 {
     color: white;
   }
 
-  .Cart section h3 {
+  .BuyCart section h3 {
     font-size: 1.7rem;
     color: gold;
   }
 
-  .Cart aside {
+  .BuyCart aside {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -300,7 +304,7 @@
     border-radius: 10px;
   }
 
-  .Cart aside button img {
+  .BuyCart aside button img {
     transform: scale(0.5);
     filter: contrast(0) brightness(100);
     width: 70px;
@@ -308,7 +312,7 @@
     padding-right: 5px;
   }
 
-  .Cart aside button {
+  .BuyCart aside button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -322,13 +326,13 @@
     border: 1px solid white;
   }
 
-  .Cart aside button p {
+  .BuyCart aside button p {
     width: 100px;
     font-size: 0.7rem;
     text-align: start;
   }
 
-  .Cart .Precototal {
+  .BuyCart .PriceTotal {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -342,30 +346,30 @@
     border: 1px solid white;
   }
 
-  .Cart .Precototal p {
+  .BuyCart .PriceTotal p {
     margin: 0 !important;
   }
 
-  .Cart .Precototal strong {
+  .BuyCart .PriceTotal strong {
     color: gold;
   }
 
-  .Cart aside button:hover {
+  .BuyCart aside button:hover {
     transform: scale(1.1);
   }
 
-  .Cart aside button a {
+  .BuyCart aside button a {
     text-decoration: none;
-    color: white;
     font-size: 0.7rem;
+    color: white;
   }
 
-  .Cart .Notificação {
+  .AlertNotification {
     left: 20% !important;
   }
 }
 
-.Cart .Notificação {
+.AlertNotification {
   width: 280px;
   height: 80px;
   padding: 5px 5px 20px;
@@ -381,24 +385,18 @@
   top: 100px;
   z-index: 1000;
   animation: notificar 2s linear 1 forwards;
-  animation: aparecer 1s ease-in-out 1 forwards;
+  animation: aparecer 3s ease-in-out 1 forwards;
 }
 
 @keyframes aparecer {
   0% {
     opacity: 0;
   }
-
-  40% {
-    opacity: 0.3;
-  }
-
-  70% {
-    opacity: 0.7;
-  }
-
-  100% {
+  50% {
     opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
@@ -426,16 +424,16 @@
   }
 }
 
-.Cart .Notificação p {
+.AlertNotification p {
   font-size: 1.3rem;
 }
 
-.Cart aside {
+.BuyCart aside {
   background-color: #1d1c21;
   box-shadow: 1px 1px 8px rgb(251 251 251 / 58.7%);
   border: 2px solid white;
 }
 
-.Cart .Paidetodas {
+.BuyCart .ProductsList {
   box-shadow: 1px 1px 8px rgb(251 251 251 / 58.7%);
 }

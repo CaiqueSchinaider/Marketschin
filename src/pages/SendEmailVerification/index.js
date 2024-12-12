@@ -84,7 +84,7 @@ function SendEmailVerification() {
   ////////////////////////////////////////////////////////////////////////////////////////////////////////
   return (
     <section className={styles.SendEmailVerification}>
-      <div className={styles.EmailInput}>
+      <div className={styles.InsertEmail}>
         <h2>Digite seu Email</h2>
         <p>{infoError}</p>
         <input

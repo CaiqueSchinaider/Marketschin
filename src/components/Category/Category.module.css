@@ -1,23 +1,23 @@
 @media screen and (width <= 325px) {
-  .Categoria h1 {
+  .Categories h1 {
     display: flex;
     flex-direction: column;
     padding: 20px;
     font-size: 0.5rem !important;
   }
 
-  .Categoria h1 span p {
+  .Categories h1 span p {
     width: 200px !important;
     font-size: 1rem;
   }
 
-  .Categoria h1 nav p {
+  .Categories h1 nav p {
     overflow: hidden;
     white-space: nowrap !important;
     width: 60px;
   }
 
-  .Categoria h1 nav {
+  .Categories h1 nav {
     display: grid;
     flex-direction: column;
     width: 100px !important;
@@ -31,26 +31,26 @@
 }
 
 @media screen and (width >= 910px) {
-  .Categoria h1 {
+  .Categories h1 {
     padding-left: 0 !important;
   }
 }
 
 @media screen and (width >= 900px) {
-  .Categoria nav {
+  .Categories nav {
     width: auto;
     max-width: 750px;
   }
 }
 
 @media screen and (width >= 766px) and (width <= 799px) {
-  .Categoria div {
+  .Categories div {
     gap: 23px;
     padding-left: 0;
     justify-content: center;
   }
 
-  .Categoria nav {
+  .Categories nav {
     display: flex;
     justify-content: space-evenly;
     width: auto;
@@ -59,7 +59,7 @@
     gap: 9px;
   }
 
-  .Categoria nav p {
+  .Categories nav p {
     width: 100px;
     height: 20px;
     font-size: 1rem;
@@ -68,37 +68,37 @@
     text-overflow: ellipsis;
   }
 
-  .Categoria h1 {
+  .Categories h1 {
     padding: 20px 0 20px 70px;
   }
 }
 
 @media screen and (width <= 405px) {
-  .Categoria h1 {
+  .Categories h1 {
     display: flex;
     flex-direction: column;
     padding: 30px;
   }
 
-  .Categoria h1 p {
+  .Categories h1 p {
     width: 300px;
   }
 }
 
 @media screen and (width <= 568px) and (width >= 406px) {
-  .Categoria h1 {
+  .Categories h1 {
     display: flex;
     flex-direction: column;
     padding: 30px;
   }
 
-  .Categoria h1 p {
+  .Categories h1 p {
     width: 300px;
   }
 }
 
 @media screen and (width <= 568px) {
-  .Categoria nav {
+  .Categories nav {
     display: grid;
     grid-template-columns: 60px 20px;
     width: auto;
@@ -108,23 +108,23 @@
     justify-items: center;
   }
 
-  .Categoria nav p {
+  .Categories nav p {
     width: 100px;
     height: 20px;
     font-size: 0.7rem;
   }
 
-  .Categoria nav p:nth-of-type(5) {
+  .Categories nav p:nth-of-type(5) {
     grid-column: span 2;
   }
 
-  .Categoria div {
+  .Categories div {
     row-gap: 0;
     justify-content: center;
     margin-inline: 10px;
   }
 
-  .Categoria p {
+  .Categories p {
     width: 200px;
     font-size: 1.3rem;
     overflow: hidden;
@@ -133,7 +133,7 @@
 }
 
 @media screen and (width <= 700px) {
-  .Categoria nav {
+  .Categories nav {
     display: flex;
     justify-content: space-evenly;
     width: auto;
@@ -144,7 +144,7 @@
 }
 
 @media screen and (width >= 569px) and (width <= 765px) {
-  .Categoria div {
+  .Categories div {
     gap: 0;
     padding-left: 14%;
     display: flex;
@@ -152,7 +152,7 @@
     justify-content: center;
   }
 
-  .Categoria nav {
+  .Categories nav {
     display: flex;
     justify-content: space-evenly;
     width: auto;
@@ -161,7 +161,7 @@
     gap: 9px;
   }
 
-  .Categoria nav p {
+  .Categories nav p {
     width: 70px;
     height: 20px;
     font-size: 1rem;
@@ -170,47 +170,47 @@
     text-overflow: ellipsis;
   }
 
-  .Categoria h1 {
+  .Categories h1 {
     padding: 20px;
   }
 }
 
 @media screen and (width >= 901px) {
-  .Categoria h1 {
+  .Categories h1 {
     padding: 20px 0 20px 70px;
   }
 }
 
 @media screen and (width >= 768px) and (width <= 900px) {
-  .Categoria h1 {
+  .Categories h1 {
     padding: 20px 20px 20px 10px;
   }
 }
 
 @media screen and (width >= 767px) {
-  .Categoria {
+  .Categories {
     padding-left: 50px;
   }
 
-  .Categoria nav {
+  .Categories nav {
     display: flex;
     justify-content: space-evenly;
   }
 
-  .Categoria nav p {
+  .Categories nav p {
     width: 120px;
     height: 26px;
     font-size: 1.1rem;
   }
 
-  .Categoria div {
+  .Categories div {
     justify-content: flex-start;
     padding: 0 50px 40px;
     gap: 5px 30px;
   }
 }
 
-.Categoria {
+.Categories {
   width: auto;
   margin: 10px;
   color: white;
@@ -221,12 +221,12 @@
   margin-bottom: 400px;
 }
 
-.Categoria div {
+.Categories div {
   display: flex;
   flex-wrap: wrap;
 }
 
-.Categoria h1 {
+.Categories h1 {
   justify-content: center;
   margin: 0;
   font-size: 2em;
@@ -237,7 +237,7 @@
   text-shadow: 4px 6px 12px rgb(255 255 255 / 32.9%);
 }
 
-.Categoria nav {
+.Categories nav {
   justify-content: space-evenly;
   padding: 0;
   color: #fff;
@@ -251,7 +251,7 @@
   margin-top: 20px;
 }
 
-.Categoria nav p {
+.Categories nav p {
   background-color: #9b0202;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -262,12 +262,12 @@
   cursor: pointer;
 }
 
-.Categoria nav p:hover {
+.Categories nav p:hover {
   color: #fff;
   transform: scale(1.2);
 }
 
-.Categoria nav p:active {
+.Categories nav p:active {
   background-color: #641e0e;
   transform: scale(1.2);
   transition: none;

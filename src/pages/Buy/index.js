@@ -4,7 +4,7 @@ import Banner from '../../components/Banner';
 import Card from '../../components/Card';
 import Header from '../../components/Header';
 
-import Categoria from '../../components/Categoria';
+import Categoria from '../../components/Category';
 
 import { listProductsContext } from '../../contexts/MockProdutos';
 
@@ -69,12 +69,21 @@ function Buy() {
       </p>
     </>
   );
+
+  useEffect(() => {
+    setTimeout(() => {
+      const target = document.getElementById('ponto');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 800);
+  }, []);
   ////////////////////////////////////////////////
 
   return products ? (
-    <section className={styles.Buy}>
+    <section className={styles.BuyPage}>
       <Header />
-      <Banner pagina="Produtos" />
+      <Banner page="Produtos" />
 
       <>
         <div id="ponto">
@@ -85,7 +94,7 @@ function Buy() {
           />
         </div>
 
-        <Categoria navegação={LINKS} Need_AlgumaCategoria={filterSearch}>
+        <Categoria navegation={LINKS} needSomeCategory={filterSearch}>
           {products.map((dataProduct) => (
             <Card key={dataProduct.id} item={dataProduct} />
           ))}

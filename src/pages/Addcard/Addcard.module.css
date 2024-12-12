@@ -1,5 +1,5 @@
 @media screen and (width >= 400px) {
-  .Addcard {
+  .AddCard {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,7 @@
     background-image: linear-gradient(to bottom, #111215, #000);
   }
 
-  .DadosCard {
+  .CardData {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,19 +19,19 @@
     gap: 10px;
   }
 
-  .DadosCard h1 {
+  .CardDatah1 {
     font-size: clamp(28px, 3vw, 3vw);
     font-weight: normal;
     color: #9b0202;
     font-family: 'Protest Strike', serif;
   }
 
-  .DadosCard label {
+  .CardDatalabel {
     display: flex;
     flex-direction: column;
   }
 
-  .DadosCard input {
+  .CardDatainput {
     width: 300px;
     height: 35px;
     font-size: 1.1rem;
@@ -40,22 +40,22 @@
     border: 2px solid #9b0202;
   }
 
-  .DadosCard div input[name='cvv'] {
+  .CardDatadiv input[name='cvv'] {
     width: 100%;
     max-width: 100px;
     text-align: center;
   }
 
-  .DadosCard div input[name='date'] {
+  .CardDatadiv input[name='date'] {
     width: 100%;
     max-width: 220px;
   }
 
-  .DadosCard div label {
+  .CardDatadiv label {
     text-align: center;
   }
 
-  .DadosCard div {
+  .CardDatadiv {
     display: flex !important;
     flex-direction: row !important;
     justify-content: center;
@@ -66,14 +66,14 @@
 }
 
 @media screen and (width <= 399px) {
-  .Addcard {
+  .AddCard {
     display: flex;
     height: 100%;
     color: white;
     background-image: linear-gradient(to bottom, #111215, #000);
   }
 
-  .DadosCard {
+  .CardData {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,19 +83,19 @@
     gap: 10px;
   }
 
-  .DadosCard h1 {
+  .CardDatah1 {
     font-size: clamp(28px, 3vw, 3vw);
     font-weight: normal;
     color: #9b0202;
     font-family: 'Protest Strike', serif;
   }
 
-  .DadosCard label {
+  .CardDatalabel {
     display: flex;
     flex-direction: column;
   }
 
-  .DadosCard input {
+  .CardDatainput {
     width: 100%;
     height: 35px;
     font-size: 1.1rem;
@@ -104,23 +104,23 @@
     border: 2px solid #9b0202;
   }
 
-  .DadosCard div input[name='cvv'] {
+  .CardDatadiv input[name='cvv'] {
     width: 100%;
     max-width: 40px;
     text-align: center;
   }
 
-  .DadosCard div input[name='date'] {
+  .CardDatadiv input[name='date'] {
     width: 100%;
     max-width: 140px;
     text-align: center;
   }
 
-  .DadosCard div label {
+  .CardDatadiv label {
     text-align: center;
   }
 
-  .DadosCard div {
+  .CardDatadiv {
     display: flex !important;
     flex-direction: row !important;
     justify-content: center;

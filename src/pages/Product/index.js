@@ -39,7 +39,7 @@ function Product() {
     <>
       <Header />
       {selectedProduct ? (
-        <div className={styles.Product} id="ponto">
+        <div className={styles.ProductData} id="ponto">
           <aside>
             <figure>
               <a href={selectedProduct.thumb} target="blank">

@@ -1,11 +1,9 @@
-import Categoria from "../Categoria";
-import styles from "./Banner.module.css";
-import { useState } from "react";
+import styles from './Banner.module.css';
 
-function Banner({ pagina }) {
+function Banner({ page }) {
   return (
     <div className={styles.Banner}>
-      <h2>{pagina}</h2>
+      <h2>{page}</h2>
     </div>
   );
 }

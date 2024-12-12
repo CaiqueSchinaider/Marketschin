@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import styles from './Registrar.module.css';
+import styles from './UserRegister.module.css';
 import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { ParameterUtilsContext } from '../../contexts/ParameterUtils';
@@ -172,8 +172,8 @@ function Registrar() {
   }
 
   return (
-    <form className={styles.Registrar}>
-      <div className={styles.nicknamediv}>
+    <form className={styles.RegisterForm}>
+      <div>
         <label htmlFor="nickname">Nickname</label>
         <input
           type="text"
@@ -183,7 +183,7 @@ function Registrar() {
           style={{ border: '2px solid white' }}
         />
       </div>
-      <div className={styles.emaildiv}>
+      <div>
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -193,7 +193,7 @@ function Registrar() {
           style={{ border: `${ErrorEmail}` }}
         />
         <p
-          className={styles.Msgerror}
+          className={styles.ErrorMessage}
           style={{ visibility: `${statusErrorEmail}` }}
         >
           {infoErrorEmail}
@@ -209,7 +209,7 @@ function Registrar() {
           style={{ border: `${ErrorPassword}` }}
         />
         <p
-          className={styles.Msgerror}
+          className={styles.ErrorMessage}
           style={{ visibility: `${statusErrorPassword}` }}
         >
           {infoErrorPassword}
@@ -224,7 +224,7 @@ function Registrar() {
           style={{ border: `${ErrorPasswordCheck}` }}
         />
         <p
-          className={styles.Msgerror}
+          className={styles.ErrorMessage}
           style={{ visibility: `${statusErrorPasswordCheck}` }}
         >
           {infoErrorPasswordCheck}

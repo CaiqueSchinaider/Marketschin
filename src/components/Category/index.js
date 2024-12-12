@@ -1,13 +1,13 @@
-import styles from './Categoria.module.css';
+import styles from './Category.module.css';
 
-function Categoria({ Need_AlgumaCategoria, children, navegação }) {
+function Categoria({ needSomeCategory, children, navegation }) {
   return (
-    <section className={styles.Categoria}>
+    <section className={styles.Categories}>
       <h1>
         <span>
-          <p>{Need_AlgumaCategoria}</p>
+          <p>{needSomeCategory}</p>
         </span>
-        <nav>{navegação}</nav>
+        <nav>{navegation}</nav>
       </h1>
       <div>{children}</div>
     </section>

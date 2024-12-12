@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
-import Logar from '../../components/Logar';
+import Logar from '../../components/UserLogin';
 import styles from './Login.module.css';
-import Registrar from '../../components/Registrar';
+import Registrar from '../../components/UserRegister';
 import Loading from '../../components/Loading';
 
 import { LoginsContext } from '../../contexts/SignalLogins';
@@ -33,8 +33,8 @@ function Login() {
   return load ? (
     <Loading />
   ) : (
-    <section className={styles.Login}>
-      <section className={styles.Pai}>
+    <section className={styles.LoginPage}>
+      <section className={styles.InsertUserData}>
         <header>
           <h1> Market Schin</h1>
         </header>

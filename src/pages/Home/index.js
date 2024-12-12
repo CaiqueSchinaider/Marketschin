@@ -3,7 +3,7 @@ import Banner from '../../components/Banner';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Loading from '../../components/Loading';
-import Carroseul from '../../components/Carroseul';
+import Carroseul from '../../components/Carousel';
 import styles from './Home.module.css';
 
 function Home() {
@@ -23,16 +23,16 @@ function Home() {
   return (
     <>
       <Header />
-      <Banner pagina="Home" />
+      <Banner page="Home" />
       {loading ? (
         <Loading />
       ) : (
-        <main className={styles.Home}>
+        <main className={styles.HomePage}>
           {/* Descrição da loja */}
-          <section className={styles.Descrição}>
+          <section className={styles.PlatformDescription}>
             <h1>Você já conhece a nossa loja?</h1>
             <p>
-              A <strong className={styles.LojaCitar}>Market Schin</strong> foi
+              A <strong className={styles.MarketName}>Market Schin</strong> foi
               fundada com o compromisso de fortalecer a relação entre{' '}
               <strong>consumidores</strong> e <strong>produtores</strong>.
             </p>
@@ -47,7 +47,7 @@ function Home() {
           {/* Iframe */}
 
           {/* Slides de itens disponíveis */}
-          <section className={styles.Carousel}>
+          <section className={styles.ProductsSlides}>
             <Carroseul />
           </section>
         </main>

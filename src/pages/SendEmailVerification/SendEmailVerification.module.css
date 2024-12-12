@@ -7,7 +7,7 @@
   color: white;
 }
 
-.EmailInput {
+.InsertEmail {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,14 +15,14 @@
   margin: auto;
 }
 
-.EmailInput h2 {
+.InsertEmail h2 {
   font-size: clamp(20px, 5vw, 5vw);
   font-weight: lighter;
   font-family: 'Protest Strike';
   color: #fff;
 }
 
-.EmailInput p {
+.InsertEmail p {
   font-size: clamp(10px, 3vw, 3vw);
   font-weight: lighter;
   font-family: Jura, sans-serif;
@@ -30,7 +30,7 @@
   margin-top: 0;
 }
 
-.EmailInput input {
+.InsertEmail input {
   width: clamp(200px, 50vw, 50vw);
   height: 30px;
   color: white;
@@ -39,7 +39,7 @@
   border: 2px solid white;
 }
 
-.EmailInput button {
+.InsertEmail button {
   width: clamp(100px, 20vw, 20vw);
   height: clamp(30px, 6vw, 6vw);
   font-size: clamp(20px, 4vw, 4vw);

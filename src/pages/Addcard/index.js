@@ -1,11 +1,11 @@
-import Header from "../../components/Header";
-import styles from "./Addcard.module.css";
+import Header from '../../components/Header';
+import styles from './AddCard.module.css';
 
 function Addcard() {
   return (
-    <section className={styles.Addcard}>
+    <section className={styles.AddCard}>
       <Header />
-      <main className={styles.DadosCard}>
+      <main className={styles.CardData}>
         <h1>Adicionar Cartão</h1>
         <label>
           Nome do titular

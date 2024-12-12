@@ -24,16 +24,16 @@
     font-family: 'Protest Strike', serif;
   }
 
-  .LineDatas {
+  .DataGroup {
     display: flex;
     flex-direction: row;
   }
 
-  .DadosPessoais {
+  .LocalUserData {
     margin-left: 5vw;
   }
 
-  .DadosPessoais h2 {
+  .LocalUserData h2 {
     text-wrap: nowrap;
     font-size: 3vw;
     font-weight: lighter;
@@ -43,22 +43,22 @@
     font-family: 'Protest Strike', serif;
   }
 
-  .DadosPessoais h3 {
+  .LocalUserData h3 {
     margin-left: 3px;
     padding-bottom: 5px;
     text-align: center;
     border-bottom: 2px solid white;
   }
 
-  .DadosPessoais p {
+  .LocalUserData p {
     margin-left: 3vw;
   }
 
-  .DadosPessoais p strong {
+  .LocalUserData p strong {
     margin-right: 8px;
   }
 
-  .DadosPessoais a {
+  .LocalUserData a {
     font-size: 1.2rem;
     font-weight: bold;
     color: #9b0202;
@@ -67,11 +67,11 @@
     text-decoration: none;
   }
 
-  .DadosBancarios {
+  .LocalBankData {
     margin-left: 5vw;
   }
 
-  .DadosBancarios h2 {
+  .LocalBankData h2 {
     font-size: 3vw;
     text-wrap: nowrap;
     font-weight: lighter;
@@ -82,22 +82,22 @@
     font-family: 'Protest Strike', serif;
   }
 
-  .DadosBancarios h3 {
+  .LocalBankData h3 {
     margin-left: 3px;
     padding-bottom: 5px;
     text-align: center;
     border-bottom: 2px solid white;
   }
 
-  .DadosBancarios p {
+  .LocalBankData p {
     margin-left: 3vw;
   }
 
-  .DadosBancarios p strong {
+  .LocalBankData p strong {
     margin-right: 8px;
   }
 
-  .DadosBancarios a {
+  .LocalBankData a {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -110,7 +110,7 @@
     text-decoration: none;
   }
 
-  .DadosBancarios img {
+  .LocalBankData img {
     transform: scale(0.7);
     filter: invert(20) saturate(70);
   }
@@ -141,16 +141,16 @@
     font-family: 'Protest Strike', serif;
   }
 
-  .LineDatas {
+  .GroupDatas {
     display: flex;
     flex-direction: column;
   }
 
-  .DadosPessoais {
+  .LocalUserData {
     width: 95;
   }
 
-  .DadosPessoais h2 {
+  .LocalUserData h2 {
     display: flex;
     align-items: center;
     width: auto;
@@ -164,7 +164,7 @@
     font-family: 'Protest Strike', serif;
   }
 
-  .DadosPessoais h3 {
+  .LocalUserData h3 {
     margin-left: 3px;
     font-size: clamp(15px, 5vw, 5vw);
     padding-bottom: 5px;
@@ -172,17 +172,17 @@
     border-bottom: 2px solid white;
   }
 
-  .DadosPessoais p {
+  .LocalUserData p {
     margin-left: 3vw;
     text-wrap: nowrap;
     overflow: hidden;
   }
 
-  .DadosPessoais p strong {
+  .LocalUserData p strong {
     margin-right: 8px;
   }
 
-  .DadosPessoais a {
+  .LocalUserData a {
     font-size: 1.2rem;
     font-weight: bold;
     color: #9b0202;
@@ -191,7 +191,7 @@
     text-decoration: none;
   }
 
-  .DadosBancarios h2 {
+  .LocalBankData h2 {
     display: flex;
     align-items: center;
     height: 40px;
@@ -205,22 +205,22 @@
     font-family: 'Protest Strike', serif;
   }
 
-  .DadosBancarios h3 {
+  .LocalBankData h3 {
     margin-left: 3px;
     padding-bottom: 5px;
     text-align: center;
     border-bottom: 2px solid white;
   }
 
-  .DadosBancarios p {
+  .LocalBankData p {
     margin-left: 3vw;
   }
 
-  .DadosBancarios p strong {
+  .LocalBankData p strong {
     margin-right: 8px;
   }
 
-  .DadosBancarios a {
+  .LocalBankData a {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -233,7 +233,7 @@
     text-decoration: none;
   }
 
-  .DadosBancarios img {
+  .LocalBankData img {
     transform: scale(0.7);
     filter: invert(20) saturate(70);
   }

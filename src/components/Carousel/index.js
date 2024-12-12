@@ -1,4 +1,4 @@
-import styles from './Carroseul.module.css';
+import styles from './Caroseul.module.css';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Link } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { listProductsContext } from '../../contexts/MockProdutos';
 function Carroseul() {
   const [listProducts] = useContext(listProductsContext);
   return (
-    <inside className={styles.Carroseul}>
+    <inside className={styles.Slides}>
       <nav>
         <Link to={'/comprar/all'}>
           <p>Produtos</p>
@@ -21,7 +21,6 @@ function Carroseul() {
       </nav>
 
       <Carousel
-        className={styles.Juntante}
         showThumbs={false}
         interval={5000}
         showArrows={false}

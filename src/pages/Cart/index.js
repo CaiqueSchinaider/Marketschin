@@ -7,100 +7,103 @@ import { listProductsContext } from '../../contexts/MockProdutos';
 
 function Cart() {
   const [listProducts] = useContext(listProductsContext);
-  const whatSomeList = JSON.parse(localStorage.getItem('lista'));
-  const { productPurchased } = useParams();
+  const whatSomeList = JSON.parse(localStorage.getItem('listacart'));
+  const { productpurchased } = useParams();
 
   // Todos os useStates
   const [productSelected, setProductSelected] = useState();
   const [catchList, setCatchList] = useState(whatSomeList || []);
   const [sendSignal, setSendSignal] = useState(false);
-  const [deleteProductID, setDeleteProductID] = useState();
-  const [deleteAllProducts, setDeleteAllProducts] = useState();
+
   const [load, setLoad] = useState(false);
   const [notification, setNotification] = useState('block');
   const [priceTotal, setPriceTotal] = useState();
 
-  // useEffect que verifica qual é o item em questão
-  useEffect(() => {
-    if (productPurchased === 'none') {
-      setProductSelected(true);
+  function checkList() {
+    const clear = JSON.parse(localStorage.getItem('clear'));
+
+    if (productpurchased === 'none') {
+      setProductSelected('none');
+      setSendSignal(true);
       setNotification('none');
     } else {
-      setTimeout(() => {
-        setNotification('none');
-      }, 2800);
       if (listProducts) {
         const findProduct = listProducts.find(
-          (product) => product.id === parseInt(productPurchased),
+          (products) => products.id == productpurchased,
         );
-        setProductSelected(findProduct);
+        checkHaveItem(findProduct);
       }
     }
-  }, [productPurchased, listProducts]);
+  }
 
-  // useEffect que verifica se o item já está na lista do carrinho
-  useEffect(() => {
-    if (productSelected && productPurchased !== 'none') {
-      const haveThisProduct = catchList.find(
-        (product) => product.id === parseInt(productSelected.id),
-      );
-      if (!haveThisProduct) {
-        setSendSignal(true);
-      }
-    } else if (productSelected && productPurchased === 'none') {
-      setSendSignal(false);
+  function checkHaveItem(item) {
+    const haveItemID = catchList.find((products) => products.id == item.id);
+    if (haveItemID) {
+      addProduct(false);
+    } else {
+      addProduct(true, item);
     }
-  }, [productSelected]);
+  }
 
-  // useEffect que atualiza a lista com o novo produto
-  useEffect(() => {
-    if (sendSignal) {
-      const updateList = [...catchList, productSelected];
+  function addProduct(value, item) {
+    setTimeout(() => {
+      setNotification('none');
+    }, 3000);
+    if (value) {
+      const list = catchList;
+      const updateList = [...list, item];
+      console.log(updateList);
       setCatchList(updateList);
-      localStorage.setItem('lista', JSON.stringify(updateList));
-    }
-  }, [sendSignal]);
+      if (updateList) {
+        setSendSignal(true);
 
-  // useEffect para apagar produtos
-  useEffect(() => {
-    if (deleteProductID) {
-      const productRemainder = catchList.filter(
-        (product) => product.id !== deleteProductID,
+        localStorage.setItem('listacart', JSON.stringify(updateList));
+      }
+    } else {
+      setSendSignal(true);
+    }
+  }
+
+  function deleteProductID(id) {
+    const findProductDelete = catchList.find((product) => product.id == id);
+    if (findProductDelete) {
+      const deleteProduct = catchList.filter(
+        (products) => products.id !== findProductDelete.id,
       );
-      setCatchList(productRemainder);
-      localStorage.setItem('lista', JSON.stringify(productRemainder));
+      if (deleteProduct) {
+        localStorage.setItem('listacart', JSON.stringify(deleteProduct));
+        setCatchList(deleteProduct);
+      }
     }
-  }, [deleteProductID]);
+  }
+
+  function deleteAllProducts() {
+    const deleteProducts = [];
+    setCatchList([]);
+
+    if (deleteProducts) {
+      localStorage.setItem('listacart', JSON.stringify(deleteProducts));
+    }
+  }
 
   useEffect(() => {
-    if (deleteAllProducts === 'delete') {
-      const listClear = [];
-      setCatchList(listClear);
-      localStorage.setItem('lista', JSON.stringify(listClear));
-    }
-  }, [deleteAllProducts]);
-  useEffect(() => {
-    const whatPrice = catchList.reduce(function (initialValue, product) {
-      return initialValue + Number.parseFloat(product.valor);
-    }, 0);
-    setPriceTotal(whatPrice);
-  }, [catchList]);
-  useEffect(() => {
+    checkList();
     setTimeout(() => {
       setLoad(true);
+
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 300);
-  }, []);
+  }, [listProducts]);
 
   return (
     <>
       {load ? (
         <>
           <Header />
-          {productSelected ? (
-            <div className={styles.Cart}>
+          {sendSignal ? (
+            <div className={styles.BuyCart}>
               <div
-                className={styles.Notificação}
+                className={styles.AlertNotification}
                 style={{ display: `${notification}` }}
               >
                 <p> Produto adicionado ao carrinho!</p>
@@ -108,7 +111,7 @@ function Cart() {
               <main>
                 <aside>
                   <button
-                    onClick={() => setDeleteAllProducts('delete')}
+                    onClick={() => deleteAllProducts()}
                     style={{ cursor: 'pointer' }}
                   >
                     <img src="/pic/excluir.png" alt="pic excluir" />
@@ -121,7 +124,6 @@ function Cart() {
                     <Link to="/comprar/all">Continuar compras</Link>
                   </button>
                   <button
-                    onClick={() => setDeleteAllProducts('delete')}
                     style={{
                       cursor: 'pointer',
 
@@ -131,7 +133,7 @@ function Cart() {
                     <img src="/pic/confirm.png" alt="pic confirm" />
                     <p> Finalizar compras</p>
                   </button>
-                  <div className={styles.Precototal}>
+                  <div className={styles.PriceTotal}>
                     <p>
                       <strong>Preço total</strong>
                     </p>
@@ -143,7 +145,7 @@ function Cart() {
                     </p>
                   </div>
                 </aside>
-                <div className={styles.Paidetodas}>
+                <div className={styles.ProductsList}>
                   {catchList.map((product) => (
                     <section key={product.id}>
                       <div>
@@ -165,13 +167,13 @@ function Cart() {
                           </h3>
                         </div>
                         <button
-                          className={styles.Xparatelefones}
-                          onClick={() => setDeleteProductID(product.id)}
+                          className={styles.DeleteButton}
+                          onClick={() => deleteProductID(product.id)}
                           style={{ cursor: 'pointer' }}
                         ></button>
                       </div>
                       <button
-                        onClick={() => setDeleteProductID(product.id)}
+                        onClick={() => deleteProductID(product.id)}
                         style={{ cursor: 'pointer' }}
                       ></button>
                     </section>

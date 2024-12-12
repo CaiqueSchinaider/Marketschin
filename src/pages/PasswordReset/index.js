@@ -1,5 +1,5 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import styles from './Redefinir.module.css';
+import styles from './PasswordReset.module.css';
 import { useContext, useState } from 'react';
 
 import axios from 'axios';
@@ -11,16 +11,16 @@ function Redefinir() {
   const navigate = useNavigate();
   const [checkSegurity] = useContext(SegurityPasswordContext);
   const { prmsemail } = useParams();
-  const [newPass, setNewPass] = useState('');
+  const [newPassword, setnewPassword] = useState('');
   const [afterCheck, setAfterCheck] = useState('');
   const [infoErrorPassword, setInfoErrorPassword] = useState('');
   const [errorPassword, ErrorPassword] = useState('2px solid white');
   const [titleDinamic, setTitleDinamic] = useState('Crie uma nova senha');
   const [buttonDisplay, setButtonDisplay] = useState('none');
 
-  Redirecionar();
+  BlockContinuation();
 
-  function Redirecionar() {
+  function BlockContinuation() {
     if (!checkSegurity) {
       setTimeout(() => {
         navigate('/emailverification');
@@ -32,40 +32,40 @@ function Redefinir() {
   console.log('Esse é o email', prmsemail);
   console.log('Esse é o meu parametros code', parameterUtils);
 
-  async function RedefinirPass() {
+  async function PasswordReset() {
     if (parameterUtils) {
-      if (newPass.length < 8) {
+      if (newPassword.length < 8) {
         setInfoErrorPassword('A senha deve conter no mínimo 8 caracteres');
         ErrorPassword('2px solid red');
-      } else if (!/[A-Z]/.test(newPass)) {
+      } else if (!/[A-Z]/.test(newPassword)) {
         setInfoErrorPassword(
           'A senha deve conter no mínimo uma letra maiuscula',
         );
         ErrorPassword('2px solid red');
-      } else if (!/[a-z]/.test(newPass)) {
+      } else if (!/[a-z]/.test(newPassword)) {
         setInfoErrorPassword(
           'A senha deve conter no mínimo uma letra minuscula',
         );
         ErrorPassword('2px solid red');
-      } else if (!/[0-9]/.test(newPass)) {
+      } else if (!/[0-9]/.test(newPassword)) {
         setInfoErrorPassword('A senha deve conter no mínimo um número');
         ErrorPassword('2px solid red');
       } else {
-        const dados = await identificarID();
+        const dados = await identifyID();
 
         const user = await dados.find(
           (user) => user.email === parameterUtils.destino,
         );
         console.log(prmsemail);
         console.log(user);
-        const updatepass = { senha: newPass };
+        const updatePassword = { senha: newPassword };
 
-        AtualizarUser(user.id, updatepass);
+        newPasswordPost(user.id, updatePassword);
       }
     }
   }
 
-  async function identificarID() {
+  async function identifyID() {
     // Funçao que retorna dados do mock users
     try {
       const response = await axios.get(
@@ -78,7 +78,7 @@ function Redefinir() {
     }
   }
 
-  async function AtualizarUser(userID, newData) {
+  async function newPasswordPost(userID, newData) {
     try {
       const response = await axios.patch(
         `https://67312aae7aaf2a9aff10029c.mockapi.io/users/${userID}`,
@@ -104,16 +104,16 @@ function Redefinir() {
   }
 
   return checkSegurity ? (
-    <section className={styles.Redefinir}>
-      <div className={styles.EmailInput}>
+    <section className={styles.PasswordReset}>
+      <div className={styles.InsertPassword}>
         <h2>{titleDinamic}</h2>
         <p style={{ display: infoErrorPassword }}>{infoErrorPassword}</p>
         <input
           type="text"
-          onChange={(e) => setNewPass(e.target.value)}
+          onChange={(e) => setnewPassword(e.target.value)}
           style={{ display: afterCheck, border: errorPassword }}
         />
-        <button onClick={() => RedefinirPass()} style={{ display: afterCheck }}>
+        <button onClick={() => PasswordReset()} style={{ display: afterCheck }}>
           Redefinir
         </button>
         <Link to="/" style={{ display: buttonDisplay }}>

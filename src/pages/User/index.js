@@ -38,9 +38,9 @@ function User({ children }) {
   }, [parameterUtils]);
 
   return (
-    <div className={styles.User}>
+    <div className={styles.UserPage}>
       <Header />
-      <div className={styles.Agrupamento}>
+      <div className={styles.UserInfo}>
         {/* Info do Usuario  */}
         <aside className={styles.Infos}>
           <h1> Suas Informações</h1>
@@ -72,7 +72,7 @@ function User({ children }) {
       </div>
 
       {/* Slides de produtos disponiveis  */}
-      <section className={styles.Caroseul}>
+      <section className={styles.UserContent}>
         <Data />
         {/* <Carroseul /> */}
       </section>

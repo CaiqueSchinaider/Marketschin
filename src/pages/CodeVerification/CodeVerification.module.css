@@ -1,4 +1,4 @@
-.CodeVerification {
+.CodeCheck {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,7 +7,7 @@
   color: white;
 }
 
-.EmailInput {
+.InsertCodeBox {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +15,7 @@
   margin: auto;
 }
 
-.EmailInput h1 {
+.InsertCodeBox h1 {
   font-size: clamp(20px, 4vw, 4vw);
   margin-bottom: 0;
   font-weight: lighter;
@@ -34,14 +34,14 @@
   }
 }
 
-.EmailInput h2 {
+.InsertCodeBox h2 {
   font-size: clamp(20px, 6vw, 6vw);
   font-weight: lighter;
   font-family: 'Protest Strike';
   color: #9b0202;
 }
 
-.EmailInput p {
+.InsertCodeBox p {
   font-size: clamp(10px, 3vw, 3vw);
   font-weight: lighter;
   font-family: Jura, sans-serif;
@@ -49,7 +49,7 @@
   margin-top: 0;
 }
 
-.EmailInput input {
+.InsertCodeBox input {
   width: clamp(200px, 50vw, 50vw);
   height: 30px;
   color: white;
@@ -58,7 +58,7 @@
   border: 2px solid white;
 }
 
-.EmailInput button {
+.InsertCodeBox button {
   width: clamp(100px, 20vw, 20vw);
   height: clamp(30px, 6vw, 6vw);
   font-size: clamp(20px, 4vw, 4vw);
