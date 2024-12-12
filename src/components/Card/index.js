@@ -1,18 +1,25 @@
-import Container from "../Container"
-import styles from "./Card.module.css"
+import { Link } from 'react-router-dom';
+import Container from '../Container';
+import styles from './Card.module.css';
 
-function Card({data}) {
-    return(
-        <Container>
+function Card({ item }) {
+  const valueFormatted = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(item.valor);
+  return (
+    <Container>
+      <Link to={`/produto/${item.id}`} style={{ textDecoration: 'none' }}>
+        <section className={styles.Card}>
+          <img src={item.thumb} alt="Produto imagem"></img>
 
-            {data.map((item) =>
-            <section className={styles.Card}>
-            <a href={item.link}><img src={item.thumb}></img></a>
-             <p>{item.name}<h2>R${item.valor}</h2></p>
-            </section>
-        )}
-
-        </Container>
-    );
+          <p>
+            <span>{item.name}</span>
+            <h2>{valueFormatted}</h2>
+          </p>
+        </section>
+      </Link>
+    </Container>
+  );
 }
-export default Card
+export default Card;

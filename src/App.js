@@ -1,20 +1,12 @@
-
-
-import AppRoutes from "./routes";
+import ParamsCodeProvider from './contexts/ParameterUtils';
+import AppRoutes from './routes';
 
 function App() {
   return (
-    <>
-    <AppRoutes/>
-    
-    </>
-  )}
-  
-
-        
-       
-  
-
-    
+    <ParamsCodeProvider>
+      <AppRoutes />
+    </ParamsCodeProvider>
+  );
+}
 
 export default App;

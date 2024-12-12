@@ -1,0 +1,71 @@
+.CodeCheck {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+.InsertCodeBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.InsertCodeBox h1 {
+  font-size: clamp(20px, 4vw, 4vw);
+  margin-bottom: 0;
+  font-weight: lighter;
+  font-family: 'Protest Strike';
+  color: rgb(255 255 255);
+  animation: show 2s ease-in-out;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.InsertCodeBox h2 {
+  font-size: clamp(20px, 6vw, 6vw);
+  font-weight: lighter;
+  font-family: 'Protest Strike';
+  color: #9b0202;
+}
+
+.InsertCodeBox p {
+  font-size: clamp(10px, 3vw, 3vw);
+  font-weight: lighter;
+  font-family: Jura, sans-serif;
+  color: #f00;
+  margin-top: 0;
+}
+
+.InsertCodeBox input {
+  width: clamp(200px, 50vw, 50vw);
+  height: 30px;
+  color: white;
+  text-align: center;
+  background-color: black;
+  border: 2px solid white;
+}
+
+.InsertCodeBox button {
+  width: clamp(100px, 20vw, 20vw);
+  height: clamp(30px, 6vw, 6vw);
+  font-size: clamp(20px, 4vw, 4vw);
+  color: white;
+  background-color: #9b0202;
+  font-family: 'Bebas Neue', sans-serif;
+  border: 2px solid rgb(0 0 0);
+  border-radius: 10px;
+  margin-top: 10px;
+}

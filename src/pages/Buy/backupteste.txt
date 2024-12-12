@@ -1,0 +1,81 @@
+import { useContext, useEffect, useState } from 'react';
+import styles from './Buy.module.css';
+import Banner from '../../components/Banner';
+import Card from '../../components/Card';
+import Header from '../../components/Header';
+
+import Categoria from '../../components/Categoria';
+import Produtos from '../../utils/produtosMock';
+import { MockProdutosContext } from '../../contexts/MockProdutos';
+
+function Buy() {
+  //States de carregamento
+
+  const [mock_produtos, setMock_produtos] = useContext(MockProdutosContext);
+
+  // Links para navegação
+  const links = (
+    <>
+      <p
+        onClick={() => {
+          // filtrarPorCategoria("Banheiro");
+        }}
+      >
+        Banheiro
+      </p>
+      <p
+        onClick={() => {
+          // filtrarPorCategoria("Outros");
+        }}
+      >
+        Outros
+      </p>
+      <p
+        onClick={() => {
+          // filtrarPorCategoria("Quarto");
+        }}
+      >
+        Quarto
+      </p>
+      <p
+        onClick={() => {
+          // filtrarPorCategoria("Sala de Estar");
+        }}
+      >
+        Sala de Estar
+      </p>
+      <p
+        onClick={() => {
+          // filtrarPorCategoria("Cozinha");
+        }}
+      >
+        Cozinha
+      </p>
+    </>
+  );
+
+  const categoriaAtual = 'Cozinha';
+
+  return mock_produtos ? (
+    <section className={styles.Buy}>
+      <Header />
+      <Banner pagina="Produtos" />
+
+      <>
+        <div id="ponto">
+          <input type="search" placeholder="Pesquisar..." />
+        </div>
+
+        <Categoria navegação={links} Need_AlgumaCategoria={categoriaAtual}>
+          {mock_produtos.map((produto) => (
+            <Card key={produto.id} item={produto} />
+          ))}
+        </Categoria>
+      </>
+    </section>
+  ) : (
+    <></>
+  );
+}
+
+export default Buy;

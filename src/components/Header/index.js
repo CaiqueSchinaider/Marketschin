@@ -1,24 +1,29 @@
-import styles from "./Header.module.css";
-import { Link } from "react-router-dom"; // Corrigido o caminho do import
+import styles from './Header.module.css';
+import { Link } from 'react-router-dom'; // Corrigido o caminho do import
 
 function Header() {
-    return (
-        <header className={styles.Header}> 
-            <span>
-                <Link to="/home">
-                    <h1>Market Schin</h1>
-                </Link>
-            </span>
-            <nav>
-                <a href="#">
-                    <img src="/pic/home.png" alt="Home" />
-                </a>
-                <a href="#">
-                    <img src="/pic/cart.png" alt="Cart" />
-                </a>
-            </nav>
-        </header>
-    );
+  return (
+    <header className={styles.Header}>
+      <span>
+        <Link to="/">Market Schin</Link>
+      </span>
+
+      <nav>
+        <Link to="/home">
+          <img src="/pic/home.png" alt="pic home" />
+        </Link>
+        <Link to="/comprar/all">
+          <img src="/pic/sacola.png" alt="pic market" />
+        </Link>
+        <Link to="/carrinho/none">
+          <img src="/pic/cart.png" alt="pic cart" />
+        </Link>
+        <Link to="/user">
+          <img src="/pic/perfil.png" alt="pic profile" />
+        </Link>
+      </nav>
+    </header>
+  );
 }
 
 export default Header;

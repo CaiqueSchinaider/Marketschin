@@ -1,0 +1,93 @@
+.RegisterForm {
+  opacity: 0;
+  animation: aparecer 0.4s ease 1 forwards;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0.2;
+  }
+
+  25% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  75% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.RegisterForm div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.RegisterForm input {
+  width: 280px;
+  height: 33px;
+  color: white;
+  text-align: center;
+
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+.RegisterForm input:focus {
+  background-color: white !important;
+  border: none !important;
+}
+
+.RegisterForm label {
+  padding: 5px 0 10px;
+}
+
+.RegisterForm nav {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 0;
+}
+
+.RegisterForm nav button {
+  width: 100px;
+  height: 28px;
+  color: white;
+  background-color: brown;
+  border: 1px solid rgb(49 0 0);
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.RegisterForm nav button:hover {
+  transform: scale(1.1);
+}
+
+.Msgerror {
+  margin: 0 0 10px !important;
+  padding: 0;
+  color: red;
+  visibility: hidden;
+  position: relative;
+  margin-right: 50px;
+}
+
+@media screen and (width <= 570px) {
+  .Msgerror {
+    font-size: 0.7rem !important;
+    margin-top: 4px !important;
+  }
+
+  .RegisterForm input {
+    width: 65vw;
+    height: 40px;
+    border-radius: 3px;
+  }
+}

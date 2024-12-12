@@ -1,0 +1,274 @@
+@media screen and (width <= 325px) {
+  .Categories h1 {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 0.5rem !important;
+  }
+
+  .Categories h1 span p {
+    width: 200px !important;
+    font-size: 1rem;
+  }
+
+  .Categories h1 nav p {
+    overflow: hidden;
+    white-space: nowrap !important;
+    width: 60px;
+  }
+
+  .Categories h1 nav {
+    display: grid;
+    flex-direction: column;
+    width: 100px !important;
+    width: auto;
+    max-width: 100px !important;
+    grid-template-columns: 60px 70px;
+    gap: 5px;
+    min-width: 150px;
+    justify-items: center;
+  }
+}
+
+@media screen and (width >= 910px) {
+  .Categories h1 {
+    padding-left: 0 !important;
+  }
+}
+
+@media screen and (width >= 900px) {
+  .Categories nav {
+    width: auto;
+    max-width: 750px;
+  }
+}
+
+@media screen and (width >= 766px) and (width <= 799px) {
+  .Categories div {
+    gap: 23px;
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  .Categories nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: auto;
+    max-width: 555px;
+    margin: auto;
+    gap: 9px;
+  }
+
+  .Categories nav p {
+    width: 100px;
+    height: 20px;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .Categories h1 {
+    padding: 20px 0 20px 70px;
+  }
+}
+
+@media screen and (width <= 405px) {
+  .Categories h1 {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .Categories h1 p {
+    width: 300px;
+  }
+}
+
+@media screen and (width <= 568px) and (width >= 406px) {
+  .Categories h1 {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .Categories h1 p {
+    width: 300px;
+  }
+}
+
+@media screen and (width <= 568px) {
+  .Categories nav {
+    display: grid;
+    grid-template-columns: 60px 20px;
+    width: auto;
+    max-width: 680px;
+    gap: 5px;
+    min-width: 250px;
+    justify-items: center;
+  }
+
+  .Categories nav p {
+    width: 100px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+
+  .Categories nav p:nth-of-type(5) {
+    grid-column: span 2;
+  }
+
+  .Categories div {
+    row-gap: 0;
+    justify-content: center;
+    margin-inline: 10px;
+  }
+
+  .Categories p {
+    width: 200px;
+    font-size: 1.3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media screen and (width <= 700px) {
+  .Categories nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: auto;
+    max-width: 600px;
+    margin: auto;
+    gap: 9px;
+  }
+}
+
+@media screen and (width >= 569px) and (width <= 765px) {
+  .Categories div {
+    gap: 0;
+    padding-left: 14%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .Categories nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: auto;
+    max-width: 600px;
+    margin: auto;
+    gap: 9px;
+  }
+
+  .Categories nav p {
+    width: 70px;
+    height: 20px;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .Categories h1 {
+    padding: 20px;
+  }
+}
+
+@media screen and (width >= 901px) {
+  .Categories h1 {
+    padding: 20px 0 20px 70px;
+  }
+}
+
+@media screen and (width >= 768px) and (width <= 900px) {
+  .Categories h1 {
+    padding: 20px 20px 20px 10px;
+  }
+}
+
+@media screen and (width >= 767px) {
+  .Categories {
+    padding-left: 50px;
+  }
+
+  .Categories nav {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .Categories nav p {
+    width: 120px;
+    height: 26px;
+    font-size: 1.1rem;
+  }
+
+  .Categories div {
+    justify-content: flex-start;
+    padding: 0 50px 40px;
+    gap: 5px 30px;
+  }
+}
+
+.Categories {
+  width: auto;
+  margin: 10px;
+  color: white;
+  background-color: #1d1c21 !important;
+  box-shadow: inset 5px 3px 20px 1px black;
+  border-radius: 50px;
+  border: 2px solid #eee5e9;
+  margin-bottom: 400px;
+}
+
+.Categories div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Categories h1 {
+  justify-content: center;
+  margin: 0;
+  font-size: 2em;
+  font-weight: 700;
+  background-color: transparent;
+  font-family: sans-serif;
+  font-style: italic;
+  text-shadow: 4px 6px 12px rgb(255 255 255 / 32.9%);
+}
+
+.Categories nav {
+  justify-content: space-evenly;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  background-color: #111215;
+  box-shadow: inset 5px 4px 8px #000000b5;
+  border: 1px solid white;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.Categories nav p {
+  background-color: #9b0202;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 6px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px 0 #000000e8;
+  transition: 0.7s ease;
+  cursor: pointer;
+}
+
+.Categories nav p:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+.Categories nav p:active {
+  background-color: #641e0e;
+  transform: scale(1.2);
+  transition: none;
+}

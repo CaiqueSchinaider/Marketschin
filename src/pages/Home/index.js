@@ -1,36 +1,60 @@
-import Banner from "../../components/Banner";
-import Card from "../../components/Card";
-import Header from "../../components/Header";
-import produtosMock from "../../utils/productMock"
+import { useState, useEffect } from 'react';
+import Banner from '../../components/Banner';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Loading from '../../components/Loading';
+import Carroseul from '../../components/Carousel';
+import styles from './Home.module.css';
 
 function Home() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Define o fundo da página
+    document.body.style.backgroundColor = 'rgb(21, 32, 149)';
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 500);
+
+    // Cleanup do timeout ao desmontar o componente
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <>
-    <Header />
-    <Banner/>
-  
-  
-  
-      {produtosMock.map((produto) => {
-        return (
-          <div style={{width: "auto"}}> 
-          <h1 style={{backgroundColor: "#18181874", borderRadius: "10px 10px 0px 0px", fontFamily:"Righteous, sans-serif", color: "white", width: "230px", 
-            margin: "7px 42px -1px 40px", paddingTop: "px", boxShadow: "7px 13px 14px 0px #0000009c",  alignItems: "center", display:"flex", justifyContent: "center",alignItems:"center"}}> {produto.Categoria} </h1>
-          
-          <Card data={produto.produtos}/>
-          </div>
-        
-        ) 
-      }
+      <Header />
+      <Banner page="Home" />
+      {loading ? (
+        <Loading />
+      ) : (
+        <main className={styles.HomePage}>
+          {/* Descrição da loja */}
+          <section className={styles.PlatformDescription}>
+            <h1>Você já conhece a nossa loja?</h1>
+            <p>
+              A <strong className={styles.MarketName}>Market Schin</strong> foi
+              fundada com o compromisso de fortalecer a relação entre{' '}
+              <strong>consumidores</strong> e <strong>produtores</strong>.
+            </p>
+            <p>
+              Atuamos como intermediários <strong>confiáveis</strong>,
+              assegurando um transporte <strong>eficiente</strong>, pagamentos{' '}
+              <strong>seguros</strong> e a <strong>qualidade</strong> de nossos
+              produtos!
+            </p>
+          </section>
+
+          {/* Iframe */}
+
+          {/* Slides de itens disponíveis */}
+          <section className={styles.ProductsSlides}>
+            <Carroseul />
+          </section>
+        </main>
       )}
+      <Footer />
     </>
-  )}
-  
-
-        
-       
-  
-
-    
+  );
+}
 
 export default Home;

@@ -1,11 +1,10 @@
-import styles from "./Footer.module.css"
+import styles from "./Footer.module.css";
 
 function Footer() {
-    return(
-        <footer className={styles.Footer}>
-            &copy; Desenvolvido por Caique Schinaider
-        </footer>
-        
-    )
+  return (
+    <footer className={styles.Footer}>
+      &copy; Fundador Caique Schinaider
+    </footer>
+  );
 }
-export default Footer
+export default Footer;

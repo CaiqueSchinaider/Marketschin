@@ -1,0 +1,18 @@
+.PageNotFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+}
+
+.PageNotFound a {
+  font-size: 1.6rem;
+  color: rgb(107 6 6);
+  transition: 0.3s ease;
+}
+
+.PageNotFound a:hover {
+  transform: scale(1.05);
+}

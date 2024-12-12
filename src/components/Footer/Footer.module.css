@@ -1,14 +1,17 @@
 .Footer {
-
-    background-color: rgba(0, 2, 133, 0.855);;
-    color: rgb(255, 255, 255);
-    bottom: 0;
-    width: 100%;
-    height: 35px;
-    text-align: center;
-    align-items: bottom;
-    z-index: 900;
-    font-family: "Righteous", sans-serif;
-    font-size: 1.2rem;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 35px;
+  font-size: 1rem;
+  color: rgb(255 255 255);
+  background-color: #29339b44;
+  backdrop-filter: blur(3px);
+  position: fixed;
+  bottom: 0;
+  z-index: 900;
+  margin-top: 20px;
+  border-top: 1px solid white;
+  font-family: Righteous, sans-serif;
 }

@@ -1,0 +1,439 @@
+@media screen and (width >= 705px) {
+  .BuyCart {
+    margin-top: 100px;
+  }
+
+  .BuyCart main {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+
+  .BuyCart h1 {
+    color: wheat;
+  }
+
+  .BuyCart .ProductsList {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    height: 500px;
+    width: 1200px;
+
+    margin: auto;
+    background-color: #1d1c21 !important;
+    border: 2px solid white;
+  }
+
+  .BuyCart section {
+    display: flex;
+    justify-content: space-between;
+    height: 115px;
+    margin: 10px 10px 15px 20px;
+    background-color: rgb(54 54 54);
+    box-shadow: 3px 3px 10px black;
+    border-radius: 10px;
+    border: 1px solid rgb(255 255 255);
+  }
+
+  .BuyCart section div {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .BuyCart section div div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .BuyCart section div h2 {
+    margin: 0;
+  }
+
+  .BuyCart section div h3 {
+    margin: 10px 30px 0 10px;
+  }
+
+  .BuyCart section button {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    box-shadow: 1px 1px 10px rgb(0 0 0 / 56.2%);
+    background-image: url('/public/pic/excluir.png');
+    background-size: 3rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;
+    margin-top: 25px;
+    margin-right: 20px;
+  }
+
+  .BuyCart .DeleteButton {
+    display: none;
+  }
+
+  .BuyCart section button:hover {
+    transform: scale(1.1);
+  }
+
+  .BuyCart section picture {
+    width: 115px;
+    height: 115px;
+    margin-right: 10px;
+  }
+
+  .BuyCart section picture img {
+    width: 115px;
+    height: 115px;
+  }
+
+  .BuyCart section h2 {
+    color: white;
+  }
+
+  .BuyCart section h3 {
+    font-size: 1.7rem;
+    color: gold;
+  }
+
+  .BuyCart aside {
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    margin: 0 20px;
+    color: white;
+    background-color: rgb(85 11 11);
+    box-shadow: inset 2px 2px 10px black;
+    margin-right: auto;
+    border-radius: 10px;
+  }
+
+  .BuyCart .PriceTotal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    margin: 20px auto;
+    color: white;
+    background-color: #1d1c21;
+    box-shadow: inset 1px 1px 15px rgb(0 0 0 / 56.2%);
+    border: 1px solid white;
+  }
+
+  .BuyCart .PriceTotal p {
+    margin: 0 !important;
+  }
+
+  .BuyCart .PriceTotal strong {
+    font-size: clamp(20px, 1.4vw, 50px);
+    color: gold;
+  }
+
+  .BuyCart aside button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 45px;
+    margin: 20px auto;
+    padding: 0 40px;
+    color: white;
+    background-color: #9b0202;
+    box-shadow: 1px 1px 10px rgb(0 0 0 / 56.2%);
+    border-radius: 15px;
+    border: 1px solid white;
+  }
+
+  .BuyCart aside button img {
+    transform: scale(0.6);
+    filter: contrast(0) brightness(100);
+    width: 70px;
+    padding-right: 20px;
+    border-right: 2px solid white;
+  }
+
+  .BuyCart aside button p {
+    width: 120px;
+    text-align: start;
+  }
+
+  .BuyCart aside button:hover {
+    transform: scale(1.1);
+  }
+
+  .BuyCart aside button a {
+    width: 120px;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+@media screen and (width <= 704px) {
+  .BuyCart {
+    margin-top: 130px;
+  }
+
+  .BuyCart main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .BuyCart h1 {
+    color: wheat;
+  }
+
+  .BuyCart .ProductsList {
+    display: flex;
+    justify-content: center;
+    width: auto;
+
+    margin: auto auto 10px;
+    background-color: #1d1c21 !important;
+    gap: 10px;
+    flex-wrap: wrap;
+    min-height: 300px;
+    min-width: 300px;
+    border: 2px solid white;
+  }
+
+  .BuyCart section {
+    display: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 180px !important;
+    height: 240px;
+    margin: 10px 5px 15px;
+
+    background-color: rgb(54 54 54);
+    box-shadow: 3px 3px 10px black;
+    position: relative;
+
+    border-radius: 10px;
+    border: 1px solid wheat;
+    overflow: hidden;
+  }
+
+  .BuyCart section div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .BuyCart section div div {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    height: 70px;
+    background-color: #111215;
+    position: absolute;
+    border-top: 1px solid white;
+    bottom: 0;
+  }
+
+  .BuyCart section div h2 {
+    margin: 10px 0 0 7px;
+    font-size: 0.8rem;
+    color: white;
+  }
+
+  .BuyCart section div h3 {
+    margin: 4px 0 10px 10px;
+    font-size: 1.3rem;
+    color: gold;
+  }
+
+  .BuyCart .DeleteButton {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    color: transparent;
+    background-color: rgb(0 0 0 / 96.8%);
+    position: absolute;
+    background-image: url('/public/pic/excluir.png');
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: center;
+    opacity: 0.9;
+    top: 6px;
+    right: 3px;
+    border-radius: 50px;
+  }
+
+  .BuyCart section button {
+    display: none;
+  }
+
+  .BuyCart section button:hover {
+    transform: scale(1.1);
+  }
+
+  .BuyCart section picture {
+    width: 115px;
+    height: 115px;
+    margin-right: 10px;
+  }
+
+  .BuyCart section picture img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .BuyCart section h2 {
+    color: white;
+  }
+
+  .BuyCart section h3 {
+    font-size: 1.7rem;
+    color: gold;
+  }
+
+  .BuyCart aside {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: auto;
+    max-width: 300px;
+    margin: auto;
+    color: white;
+    background-color: rgb(85 11 11);
+    box-shadow: inset 2px 2px 10px black;
+    min-width: 300px;
+    border-radius: 10px;
+  }
+
+  .BuyCart aside button img {
+    transform: scale(0.5);
+    filter: contrast(0) brightness(100);
+    width: 70px;
+    border-right: 2px solid white;
+    padding-right: 5px;
+  }
+
+  .BuyCart aside button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 50px;
+    margin: 20px auto;
+    color: white;
+    background-color: #9b0202;
+    box-shadow: 1px 1px 10px rgb(0 0 0 / 56.2%);
+    border-radius: 15px;
+    border: 1px solid white;
+  }
+
+  .BuyCart aside button p {
+    width: 100px;
+    font-size: 0.7rem;
+    text-align: start;
+  }
+
+  .BuyCart .PriceTotal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 70px;
+    margin: 20px auto;
+    color: white;
+    background-color: #1d1c21;
+    box-shadow: inset 1px 1px 15px rgb(0 0 0 / 56.2%);
+    border: 1px solid white;
+  }
+
+  .BuyCart .PriceTotal p {
+    margin: 0 !important;
+  }
+
+  .BuyCart .PriceTotal strong {
+    color: gold;
+  }
+
+  .BuyCart aside button:hover {
+    transform: scale(1.1);
+  }
+
+  .BuyCart aside button a {
+    text-decoration: none;
+    font-size: 0.7rem;
+    color: white;
+  }
+
+  .AlertNotification {
+    left: 20% !important;
+  }
+}
+
+.AlertNotification {
+  width: 280px;
+  height: 80px;
+  padding: 5px 5px 20px;
+  color: white;
+  text-align: center;
+  background-color: rgb(15 0 148);
+  position: absolute;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+  border: 1px solid white;
+  opacity: 0;
+  top: 100px;
+  z-index: 1000;
+  animation: notificar 2s linear 1 forwards;
+  animation: aparecer 3s ease-in-out 1 forwards;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes notificar {
+  0% {
+    opacity: 0;
+    top: 50px;
+  }
+
+  25% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+    top: 100px;
+  }
+
+  75% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.AlertNotification p {
+  font-size: 1.3rem;
+}
+
+.BuyCart aside {
+  background-color: #1d1c21;
+  box-shadow: 1px 1px 8px rgb(251 251 251 / 58.7%);
+  border: 2px solid white;
+}
+
+.BuyCart .ProductsList {
+  box-shadow: 1px 1px 8px rgb(251 251 251 / 58.7%);
+}

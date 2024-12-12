@@ -1,140 +1,177 @@
-@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Righteous&family=Rubik+Mono+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bowlby+One&family=Kode+Mono:wght@400..700&family=Righteous&family=Rubik+Mono+One&display=swap');
+/* Regras de reponsividade do Header */
+@media screen and (width <= 710px) {
+  .Header nav a:nth-of-type(1) {
+    width: auto;
+    color: white;
+    text-decoration: none;
+    transform: scale(0.5);
+  }
 
-/*Regras de reponsividade do Header*/
-@media screen and (max-width: 600px) {
-    .Header span {
-        font-size: 1rem;
-        nav a:nth-of-type(1) {
-            color: white;
-            width: 100px;
-            padding: 10px;
-            text-decoration: none;
-            padding-inline: 2.3rem;
-            transform: scale(0.4);
-        }
-    }
-    .Header nav a:nth-of-type(1) {
-        color: white;
-        width: 100px;
-        padding: 10px;
-        text-decoration: none;
-        padding-inline: 2.3rem;
-        transform: scale(0.5);
-    }
-    .Header nav a:nth-of-type(2) {
-        color: white;
-        width: 100px;
-        padding: 10px;
-        text-decoration: none;
-        padding-inline: 2.3rem;
-        transform: scale(0.4);
-    }
+  .Header nav a:nth-of-type(2) {
+    width: auto;
+    color: white;
+    text-decoration: none;
+    transform: scale(0.3);
+  }
+
+  .Header nav a:nth-of-type(3) {
+    width: auto;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transform: scale(0.4);
+  }
+
+  .Header nav a:nth-of-type(4) {
+    width: auto;
+    color: white;
+    text-decoration: none;
+    transform: scale(0.3) !important;
+  }
+
+  .Header span {
+    display: block;
+    width: auto !important;
+    margin: 10px !important;
+    font-size: 2rem;
+  }
+
+  .Header {
+    flex-direction: column;
+  }
+
+  .Header nav {
+    justify-content: center !important;
+    margin: auto !important;
+  }
 }
 
+/* ------------- */
 
-/*-------------*/
+@media screen and (width >= 711px) {
+  .Header span {
+    font-size: 3rem;
+  }
 
-@media screen and (min-width: 601px){
-    .Header span {
-        font-size: 2rem;
-    }
-    .Header nav a:nth-of-type(1) {
-        color: white;
-        width: 100px;
-        padding: 10px;
-        text-decoration: none;
-        padding-inline: 2.3rem;
-        transform: scale(0.7);
-    }
-    .Header nav a:nth-of-type(2) {
-        color: white;
-        width: 100px;
-        padding: 10px;
-        text-decoration: none;
-        padding-inline: 2.3rem;
-        transform: scale(0.6);
-    }
+  .Header nav {
+    justify-content: space-evenly !important;
+    width: auto !important;
+    margin-right: 40px !important;
+    gap: 10px;
+  }
+
+  .Header nav a:nth-of-type(1) {
+    width: auto;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    padding-inline: 1rem;
+    transform: scale(0.7);
+  }
+
+  .Header nav a:nth-of-type(2) {
+    width: auto;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    padding-inline: 0.3rem;
+    transform: scale(0.42);
+  }
+
+  .Header nav a:nth-of-type(3) {
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    padding-inline: 2rem;
+    transform: scale(0.56);
+  }
+
+  .Header nav a:nth-of-type(4) {
+    display: flex;
+    justify-content: center;
+    width: 30px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    padding-inline: 2.3rem;
+    transform: scale(0.5);
+  }
 }
-/*--------------------------------------------*/
 
-
-
-
-
+/* -------------------------------------------- */
 
 .Header {
-    background-color: rgba(5, 7, 109, 0.89);
-    display: flex;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    align-items: center;
-    z-index: 1000;
-    border-bottom: 2px solid white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: rgb(23 23 47 / 89%);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid white;
 }
 
-/*Botões do Nav, Casinha e Carrinho*/
+/* Botões do Nav, Casinha e Carrinho */
 .Header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 260px;
-    margin-left: auto;
-    margin-right: 1em;
-    text-align: center;
-    height: 44px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 220px;
+  height: 44px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: 1em;
 }
 
-
-/*--------------------------------------*/
-
-
+/* -------------------------------------- */
 
 .Header img {
-    transition: 0.6s ease;
+  transition: 0.6s ease;
 }
+
 .Header a:nth-of-type(2) {
-    padding-left: 0;
+  padding-left: 0;
 }
 
-
-.Header img:hover{
-    transform: scale(1.2);
-
-
+.Header img:hover {
+  transform: scale(1.2);
 }
+
 .Header input {
-    background-color: rgba(0, 2, 133, 0.855);
-    border: 1px solid rgba(255, 255, 255, 0.493);
-    margin-left: 570px;
-    width: 450px;
-    color: white;
-    padding: 10px;
+  width: 450px;
+  padding: 10px;
+  color: white;
+  background-color: rgb(0 2 133 / 85.5%);
+  border: 1px solid rgb(255 255 255 / 49.3%);
+  margin-left: 570px;
 }
+
 .Header span {
-    color: rgb(255, 255, 255);
-    font-family: sans-serif;
-    margin-left: 1.6rem;
-    margin-bottom: -9px;
-    width: 700px;
-    align-items: center;
-    /*font-family: "Righteous", sans-serif;*/
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: bolder;
-    padding: 0;
-    margin: 0; 
+  align-items: center;
+  width: 700px;
+  margin: 0 0 0 15px;
+  padding: 0;
+  font-weight: bolder;
+  color: rgb(255 255 255);
+  margin-left: 1.6rem;
+  margin-bottom: -9px;
+
+  /* font-family: "Righteous", sans-serif; */
+  font-family: 'Bebas Neue', sans-serif;
 }
+
 .Header span a {
-    color: aliceblue;
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
-    height: 0px;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  color: aliceblue;
+  text-decoration: none;
 }
+
 .Header h1 {
-    margin: 2px 0px 0px 20px;
-    padding-bottom: 0;
+  margin: 2px 0 0 20px;
+  padding-bottom: 0;
 }
-
-
