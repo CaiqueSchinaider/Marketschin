@@ -7,9 +7,11 @@ import Header from '../../components/Header';
 import Categoria from '../../components/Category';
 
 import { listProductsContext } from '../../contexts/MockProdutos';
+import { useParams } from 'react-router-dom';
 
 function Buy() {
   //States
+  const { paramscategoria } = useParams();
   const [listProducts] = useContext(listProductsContext);
   const [products, setProducts] = useState(listProducts);
   ////////////////////////////////////////////////
@@ -76,8 +78,11 @@ function Buy() {
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
+      if (paramscategoria !== 'all') {
+        filterSearch(paramscategoria);
+      }
     }, 800);
-  }, []);
+  }, [paramscategoria]);
   ////////////////////////////////////////////////
 
   return products ? (

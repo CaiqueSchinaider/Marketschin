@@ -14,9 +14,7 @@ function Product() {
 
   useEffect(() => {
     if (listProducts) {
-      const findProduct = listProducts.find(
-        (product) => product.id === parseInt(id),
-      );
+      const findProduct = listProducts.find((product) => product.id === id);
       setSelectedProduct(findProduct);
     }
   }, [id, listProducts]);

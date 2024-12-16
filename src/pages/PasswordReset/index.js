@@ -2,11 +2,26 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import styles from './PasswordReset.module.css';
 import { useContext, useState } from 'react';
 
-import axios from 'axios';
+import { initializeApp } from 'firebase/app';
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  updateDoc,
+  doc,
+} from 'firebase/firestore';
 import { ParameterUtilsContext } from '../../contexts/ParameterUtils';
 import { SegurityPasswordContext } from '../../contexts/SegurityPassword';
 
 function Redefinir() {
+  const firebaseConfig = initializeApp({
+    apiKey: 'AIzaSyDIs9ELd9Fe4C-uP0r_m6H1jZgiKBQ4nb0',
+    authDomain: 'marketschin-react.firebaseapp.com',
+    projectId: 'marketschin-react',
+  });
+  const dataBase = getFirestore(firebaseConfig);
+  const userCollectionRef = collection(dataBase, 'users');
+
   const [parameterUtils] = useContext(ParameterUtilsContext);
   const navigate = useNavigate();
   const [checkSegurity] = useContext(SegurityPasswordContext);
@@ -68,36 +83,26 @@ function Redefinir() {
   async function identifyID() {
     // Funçao que retorna dados do mock users
     try {
-      const response = await axios.get(
-        'https://67312aae7aaf2a9aff10029c.mockapi.io/users',
-      );
-      console.log('Dados pegos com sucesso', response.data);
-      return response.data; //Retornando a lista para onde a função foi chamada
+      const dataUser = await getDocs(userCollectionRef);
+      const infoData = dataUser.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      console.log('Dados pegos com sucesso');
+      return infoData; //Retornando a lista para onde a função foi chamada
     } catch (error) {
       console.error('Error ao pegar dados', error.name);
     }
   }
 
-  async function newPasswordPost(userID, newData) {
+  async function newPasswordPost(userID, senha) {
     try {
-      const response = await axios.patch(
-        `https://67312aae7aaf2a9aff10029c.mockapi.io/users/${userID}`,
-        newData,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        },
-      );
-      console.log(
-        'Usuario atualizado',
-        response.data,
-        setAfterCheck('none'),
-        setTitleDinamic('Senha Redefinida!'),
-        setButtonDisplay('flex'),
-        setInfoErrorPassword(''),
-      );
-      return response.data;
+      const userRef = doc(dataBase, 'users', userID);
+      updateDoc(userRef, senha);
+      setAfterCheck('none');
+      setTitleDinamic('Senha Redefinida!');
+      setButtonDisplay('flex');
+      setInfoErrorPassword('');
     } catch (error) {
       console.error('Error ao atualizar o usuario', error.message);
     }

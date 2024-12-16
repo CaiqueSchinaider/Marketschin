@@ -1,9 +1,18 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './UserRegister.module.css';
 import { useState, useEffect, useContext } from 'react';
-import axios from 'axios';
+import { initializeApp } from 'firebase/app';
+import { collection, getDocs, getFirestore } from 'firebase/firestore';
 import { ParameterUtilsContext } from '../../contexts/ParameterUtils';
 function Registrar() {
+  const firebaseConfig = initializeApp({
+    apiKey: 'AIzaSyDIs9ELd9Fe4C-uP0r_m6H1jZgiKBQ4nb0',
+    authDomain: 'marketschin-react.firebaseapp.com',
+    projectId: 'marketschin-react',
+  });
+  const dataBase = getFirestore(firebaseConfig);
+  const userCollectionRef = collection(dataBase, 'users');
+
   const [, setParameterUtils] = useContext(ParameterUtilsContext);
   const navigate = useNavigate();
   // States que recebem os valores dos inputs
@@ -138,14 +147,13 @@ function Registrar() {
 
   async function userRegister() {
     try {
-      const Response = await axios.get(
-        'https://67312aae7aaf2a9aff10029c.mockapi.io/users',
-      );
-      const dados_user = Response.data;
-      const localizar_usuario = await dados_user.some(
-        (log_users) => log_users.email === email,
-      );
-      if (localizar_usuario) {
+      const dataUsers = await getDocs(userCollectionRef);
+      const infoData = dataUsers.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      const anyUser = await infoData.some((users) => users.email === email);
+      if (anyUser) {
         setInfoErrorEmail('Essa conta já existe!');
         setStatusErrorEmail('visible');
         setErrorEmail('2px solid red');

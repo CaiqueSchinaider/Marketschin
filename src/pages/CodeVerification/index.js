@@ -5,8 +5,17 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ParameterUtilsContext } from '../../contexts/ParameterUtils';
 import { SegurityPasswordContext } from '../../contexts/SegurityPassword';
+import { initializeApp } from 'firebase/app';
+import { addDoc, collection, getDocs, getFirestore } from 'firebase/firestore';
 
 function PassCodeVerification() {
+  const firebaseConfig = initializeApp({
+    apiKey: 'AIzaSyDIs9ELd9Fe4C-uP0r_m6H1jZgiKBQ4nb0',
+    authDomain: 'marketschin-react.firebaseapp.com',
+    projectId: 'marketschin-react',
+  });
+  const dataBase = getFirestore(firebaseConfig);
+  const userCollectionRef = collection(dataBase, 'users');
   const { status } = useParams();
   const [, setCheckSegurity] = useContext(SegurityPasswordContext);
   const [parameterUtils] = useContext(ParameterUtilsContext);
@@ -18,16 +27,12 @@ function PassCodeVerification() {
   console.log(parameterUtils.message);
   async function createUser() {
     try {
-      const userData = {
+      addDoc(userCollectionRef, {
         nickname: parameterUtils.nickname,
         email: parameterUtils.destino,
         senha: parameterUtils.senha,
-      };
-      const response = axios.post(
-        'https://67312aae7aaf2a9aff10029c.mockapi.io/users',
-        userData,
-      );
-      console.log('Usuario adicionado', response.data);
+      });
+      console.log('Usuario adicionado');
       navigate('/');
     } catch (error) {
       console.error(error.name);
