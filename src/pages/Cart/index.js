@@ -7,7 +7,7 @@ import { listProductsContext } from '../../contexts/MockProdutos';
 
 function Cart() {
   const [listProducts] = useContext(listProductsContext);
-  const whatSomeList = JSON.parse(localStorage.getItem('listacart'));
+  const whatSomeList = JSON.parse(localStorage.getItem('listcart'));
   const { productpurchased } = useParams();
 
   // Todos os useStates
@@ -57,7 +57,7 @@ function Cart() {
       if (updateList) {
         setSendSignal(true);
 
-        localStorage.setItem('listacart', JSON.stringify(updateList));
+        localStorage.setItem('listcart', JSON.stringify(updateList));
       }
     } else {
       setSendSignal(true);
@@ -71,7 +71,7 @@ function Cart() {
         (products) => products.id !== findProductDelete.id,
       );
       if (deleteProduct) {
-        localStorage.setItem('listacart', JSON.stringify(deleteProduct));
+        localStorage.setItem('listcart', JSON.stringify(deleteProduct));
         setCatchList(deleteProduct);
       }
     }
@@ -82,7 +82,7 @@ function Cart() {
     setCatchList([]);
 
     if (deleteProducts) {
-      localStorage.setItem('listacart', JSON.stringify(deleteProducts));
+      localStorage.setItem('listcart', JSON.stringify(deleteProducts));
     }
   }
 
@@ -119,20 +119,25 @@ function Cart() {
                     <p>Limpar carrinho </p>
                   </button>
 
-                  <button>
-                    <img src="/pic/market.png" alt="pic market" />
-                    <Link to="/comprar/all">Continuar compras</Link>
-                  </button>
-                  <button
-                    style={{
-                      cursor: 'pointer',
+                  <Link to="/comprar/all" style={{ textDecoration: 'none' }}>
+                    <button>
+                      <img src="/pic/market.png" alt="pic market" />
+                      <p> Continuar compras</p>
+                    </button>
+                  </Link>
 
-                      fontWeight: 'bolder',
-                    }}
-                  >
-                    <img src="/pic/confirm.png" alt="pic confirm" />
-                    <p> Finalizar compras</p>
-                  </button>
+                  <Link to="/finish" style={{ textDecoration: 'none' }}>
+                    <button
+                      style={{
+                        cursor: 'pointer',
+
+                        fontWeight: 'bolder',
+                      }}
+                    >
+                      <img src="/pic/confirm.png" alt="pic confirm" />
+                      <p> Finalizar compras</p>
+                    </button>
+                  </Link>
                   <div className={styles.PriceTotal}>
                     <p>
                       <strong>Preço total</strong>

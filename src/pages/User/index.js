@@ -7,6 +7,8 @@ import { initializeApp } from 'firebase/app';
 import { collection, getDocs, getFirestore, addDoc } from 'firebase/firestore';
 import { ParameterUtilsContext } from '../../contexts/ParameterUtils';
 import { Link } from 'react-router-dom';
+import Buy from '../Buy';
+import Carroseul from '../../components/Carousel';
 
 function User({ children }) {
   const firebaseConfig = initializeApp({
@@ -17,6 +19,7 @@ function User({ children }) {
   const dataBase = getFirestore(firebaseConfig);
   const userCollectionRef = collection(dataBase, 'products');
   const [parameterUtils] = useContext(ParameterUtilsContext);
+  const [changeInfo, setChangeInfo] = useState('buy');
   const [user, setUser] = useState(null);
   function setar() {
     const products = [
@@ -361,13 +364,13 @@ function User({ children }) {
 
         {/* Navegation  */}
         <nav className={styles.Navigation}>
-          <button>
+          <button onClick={() => setChangeInfo('buy')}>
             <img src="/pic/market.png" alt="Imagem de Compras" /> <p>Compras</p>
           </button>
           <button>
             <img src="/pic/Sell.png" alt="Imagem de Vendas" /> <p>Vendas</p>
           </button>
-          <button>
+          <button onClick={() => setChangeInfo('user')}>
             <img src="/pic/Person Security.png" alt="Imagem de Conta" />{' '}
             <p>Conta</p>
           </button>
@@ -385,8 +388,13 @@ function User({ children }) {
 
       {/* Slides de produtos disponiveis  */}
       <section className={styles.UserContent}>
-        <Data />
-        {/* <Carroseul /> */}
+        {changeInfo == 'user' ? (
+          <Data />
+        ) : changeInfo == 'buy' ? (
+          <Carroseul />
+        ) : (
+          <></>
+        )}
       </section>
     </div>
   );

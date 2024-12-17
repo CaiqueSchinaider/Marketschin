@@ -139,7 +139,7 @@
   .UserPage .Navigation button {
     display: flex;
     flex-direction: row !important;
-    justify-usercontent: center !important;
+    justify-content: center !important;
     align-items: center;
     width: 13vw;
     height: 45px;

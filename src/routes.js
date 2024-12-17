@@ -20,6 +20,7 @@ import Redefinir from './pages/PasswordReset';
 import SegurityPasswordProvider from './contexts/SegurityPassword';
 import ListProductsProvider from './contexts/MockProdutos';
 import ParameterUtilsProvider from './contexts/ParameterUtils';
+import FinishBuy from './pages/FinishBuy';
 
 function AppRoutes() {
   return (
@@ -53,6 +54,7 @@ function AppRoutes() {
                     element={<SendEmailVerification />}
                   ></Route>
                   <Route path="/redefinirpass" element={<Redefinir />}></Route>
+                  <Route path="/finish" element={<FinishBuy />}></Route>
                 </Routes>
               </LoginsProvider>
             </ConfimCodeProvider>

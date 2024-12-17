@@ -1,0 +1,108 @@
+.FinishPage {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #111215;
+}
+
+/* .FinishPage img {
+  filter: invert(100);
+  transform: rotate(180deg);
+} */
+.Transaction {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100vw;
+  height: 30%;
+  background-color: #9b0202;
+}
+.CurrentBalance {
+  display: flex;
+  justify-content: center;
+  width: 35vw;
+  height: 130px;
+  color: white;
+  background-color: black;
+}
+
+.PostPurchase {
+  display: flex;
+  justify-content: center;
+  width: 35vw;
+  height: 130px;
+  color: white;
+  background-color: black;
+}
+
+/************************************/
+
+.InfoCheck {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  height: 70%;
+  box-shadow: inset -1px 1px 20px 5px rgba(0, 0, 0, 0.684);
+}
+
+.ItensPurchased {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 38vw;
+  height: 330px;
+  padding: 10px;
+  color: white;
+  background-color: #1d1c21;
+  border: 2px solid rgb(101, 101, 101);
+  border-radius: 5px;
+  box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.027);
+  overflow-y: scroll;
+}
+.ItensPurchased h3 {
+  text-align: center;
+}
+.ItensPurchased div {
+  display: flex;
+
+  flex-direction: row;
+  text-wrap: nowrap;
+  justify-content: space-between;
+  padding-left: 20px;
+  align-items: center;
+  height: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.59);
+  font-size: clamp(13px, 2vw, 2vw);
+  background-color: rgb(0, 0, 0);
+}
+.ItensPurchased div section {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  height: 80px;
+}
+.ItensPurchased div section p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.ItensPurchased div img {
+  display: flex;
+  transform: scale(1);
+  width: 100px;
+}
+.PriceInfo {
+  width: 28vw;
+  height: 230px;
+  background-color: black;
+}
+.InfoCheck button {
+  width: 150px;
+  height: 60px;
+  background-color: gold;
+}
