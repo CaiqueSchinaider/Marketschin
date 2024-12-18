@@ -1,41 +1,13 @@
 .FinishPage {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #111215;
+  background-color: #000108;
 }
-
-/* .FinishPage img {
-  filter: invert(100);
-  transform: rotate(180deg);
-} */
-.Transaction {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-
-  width: 100vw;
-  height: 30%;
-  background-color: #9b0202;
-}
-.CurrentBalance {
-  display: flex;
-  justify-content: center;
-  width: 35vw;
-  height: 130px;
-  color: white;
-  background-color: black;
-}
-
-.PostPurchase {
-  display: flex;
-  justify-content: center;
-  width: 35vw;
-  height: 130px;
-  color: white;
-  background-color: black;
+a {
+  text-decoration: none;
 }
 
 /************************************/
@@ -46,7 +18,7 @@
   justify-content: space-evenly;
   align-items: center;
   width: 100vw;
-  height: 70%;
+  height: 100vh;
   box-shadow: inset -1px 1px 20px 5px rgba(0, 0, 0, 0.684);
 }
 
@@ -55,21 +27,29 @@
   flex-direction: column;
   gap: 6px;
   width: 38vw;
-  height: 330px;
+  height: 450px;
   padding: 10px;
   color: white;
   background-color: #1d1c21;
   border: 2px solid rgb(101, 101, 101);
   border-radius: 5px;
   box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.027);
+}
+.ItensList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   overflow-y: scroll;
 }
 .ItensPurchased h3 {
+  margin: 10px;
+  font-size: clamp(13px, 1.7vw, 2vw);
+  font-weight: normal;
   text-align: center;
+  font-family: 'Protest Strike';
 }
 .ItensPurchased div {
   display: flex;
-
   flex-direction: row;
   text-wrap: nowrap;
   justify-content: space-between;
@@ -78,12 +58,12 @@
   height: 100px;
   border: 1px solid rgba(255, 255, 255, 0.59);
   font-size: clamp(13px, 2vw, 2vw);
+  font-family: 'Plus Jakarta Sans';
   background-color: rgb(0, 0, 0);
 }
 .ItensPurchased div section {
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   height: 80px;
 }
@@ -98,11 +78,46 @@
 }
 .PriceInfo {
   width: 28vw;
-  height: 230px;
-  background-color: black;
+  color: white;
+  height: 310px;
+  border: 2px solid rgb(101, 101, 101);
+  border-radius: 5px;
+  background-color: #020117;
+  box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.027);
+}
+.InfoCheck nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.InfoCheck button:nth-child(3) {
+  width: 200px;
+  height: 60px;
+  border-radius: 20px;
+  border: 2px solid rgba(226, 226, 226, 0.719);
+  font-family: 'Bebas Neue';
+  font-size: 2vw;
+  font-weight: bold;
+  margin-top: 14px;
+  text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.325);
+  color: white;
+  background-color: rgba(243, 211, 34, 0.887);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.589);
 }
 .InfoCheck button {
-  width: 150px;
+  width: 190px;
   height: 60px;
-  background-color: gold;
+  border-radius: 8px;
+  border: 2px solid rgba(226, 226, 226, 0.719);
+  font-family: 'Protest Strike';
+  font-size: 1.4vw;
+  font-weight: normal;
+  margin-top: 2px;
+  color: white;
+  transition: ease 0.3s;
+  background-color: #700a0a;
+}
+.InfoCheck button:hover {
+  transform: scale(1.1);
 }
