@@ -79,7 +79,8 @@ function Product() {
             </h3>
             <p>{selectedProduct.descricao}</p>
             <h3 style={{ color: '#9b0202' }}>Especificações</h3>
-            <p>{selectedProduct.especificacoes}</p>
+            <p>{selectedProduct.especificoes}</p>{' '}
+            {/* ERRO DE DIGITAÇÂO NO DATABASE */}
           </section>
 
           <nav>

@@ -3,14 +3,14 @@ import styles from './FinishBuy.module.css';
 
 function FinishBuy() {
   const listCart = JSON.parse(localStorage.getItem('listcart'));
-  const CurrentBalance = listCart.reduce(
+  const subTotal = listCart.reduce(
     (current, initialvalue) => current + Number(initialvalue.valor),
     0,
   );
   if (listCart) {
     console.log(listCart);
   }
-  return listCart && CurrentBalance ? (
+  return listCart && subTotal ? (
     <main className={styles.FinishPage}>
       <section className={styles.InfoCheck}>
         <div className={styles.ItensPurchased}>
@@ -47,20 +47,48 @@ function FinishBuy() {
         <div className={styles.PriceInfo}>
           <h2> Itens </h2>
           <div className={styles.priceList}>
-            <ul>
+            <ul className={styles.List}>
               {listCart.map((product) => (
-                <li>
-                  {product.name} -{' '}
-                  {Number(product.valor).toLocaleString('pt-BR', {
-                    style: 'currency',
-                    currency: 'BRL',
-                  })}
+                <li
+                  className={styles.ItemLine}
+                  style={{ listStyleType: 'none' }}
+                >
+                  {product.name}{' '}
+                  <div>
+                    {Number(product.valor).toLocaleString('pt-BR', {
+                      style: 'currency',
+                      currency: 'BRL',
+                    })}
+                  </div>
                 </li>
               ))}
             </ul>
+            <div className={styles.Price}>
+              <section>
+                <h2>Subtotal: </h2>
+                <p>
+                  {subTotal.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </p>{' '}
+                <p
+                  style={{
+                    color: '#b2b2b2',
+                    fontFamily: 'Protest Strike',
+                    fontWeight: 'normal',
+                  }}
+                >
+                  + Frete
+                </p>
+              </section>
+              <div>
+                <h1>Total:</h1> <p>{/* Soma do subtotal mais frete */}</p>
+              </div>
+            </div>
           </div>
         </div>
-        <nav>
+        <nav className={styles.Navigation}>
           <Link to="/comprar/all">
             <button> Continuar Comprando</button>
           </Link>

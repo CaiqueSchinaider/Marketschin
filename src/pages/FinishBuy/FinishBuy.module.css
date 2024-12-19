@@ -1,123 +1,563 @@
-.FinishPage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000108;
-}
-a {
-  text-decoration: none;
-}
+@media screen and (width >= 1090px) {
+  .FinishPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000108;
+  }
+  a {
+    text-decoration: none;
+  }
 
-/************************************/
+  /************************************/
 
-.InfoCheck {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  box-shadow: inset -1px 1px 20px 5px rgba(0, 0, 0, 0.684);
-}
+  .InfoCheck {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: inset -1px 1px 20px 5px rgba(0, 0, 0, 0.684);
+  }
 
-.ItensPurchased {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  width: 38vw;
-  height: 450px;
-  padding: 10px;
-  color: white;
-  background-color: #1d1c21;
-  border: 2px solid rgb(101, 101, 101);
-  border-radius: 5px;
-  box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.027);
+  .ItensPurchased {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 38vw;
+    height: 450px;
+    padding: 10px;
+    color: white;
+    background-color: #1d1c21;
+    border: 2px solid rgb(101, 101, 101);
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.027);
+  }
+  .ItensList {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-y: scroll;
+  }
+  .ItensPurchased h3 {
+    margin: 10px;
+    font-size: clamp(13px, 1.7vw, 2vw);
+    font-weight: normal;
+    text-align: center;
+    font-family: 'Protest Strike';
+  }
+  .ItensPurchased div {
+    display: flex;
+    flex-direction: row;
+    text-wrap: nowrap;
+    justify-content: space-between;
+    padding-left: 20px;
+    align-items: center;
+    height: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.59);
+    font-size: clamp(13px, 2vw, 2vw);
+    font-family: 'Plus Jakarta Sans';
+    background-color: rgb(0, 0, 0);
+  }
+  .ItensPurchased div section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80px;
+  }
+  .ItensPurchased div section p {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .ItensPurchased div img {
+    display: flex;
+    transform: scale(1);
+    width: 100px;
+  }
+  .PriceInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 28vw;
+    height: 380px;
+    color: white;
+    border: 2px solid rgb(101, 101, 101);
+    border-radius: 5px;
+    background-color: #020117;
+    box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.027);
+  }
+  .Price section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    border-bottom: 1px solid white;
+  }
+  .Price section p {
+    font-size: clamp(12px, 2vw, 2vw);
+    color: #9b0202;
+    font-family: 'Bebas Neue';
+  }
+  .List {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    height: 130px;
+    padding: 10px 0px 2px 0px;
+    border: 1px solid white;
+    gap: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .List::-webkit-scrollbar {
+    width: 8px;
+
+    background-color: #020117;
+  }
+  .List::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 5px;
+    background-color: #6f6f6f;
+  }
+  .ItemLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 16vw;
+    height: 60px;
+    padding: 0px 10px;
+    font-size: clamp(14px, 1vw, 1vw);
+    font-family: 'Protest Strike';
+    border-bottom: 1px solid white;
+  }
+  .ItemLine div {
+    display: flex;
+    width: 5vw;
+    padding: 3px;
+    font-family: 'Bebas Neue';
+    font-size: clamp(10px, 1.3vw, 20px);
+    font-weight: normal;
+    background-color: #700a0a;
+  }
+  .InfoCheck nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .InfoCheck button:nth-child(3) {
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    border: 2px solid rgba(226, 226, 226, 0.719);
+    font-family: 'Bebas Neue';
+    font-size: clamp(15px, 1.4vw, 27px);
+    font-weight: bold;
+    margin-top: 14px;
+    text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.325);
+    color: white;
+    background-color: rgba(243, 211, 34, 0.887);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.589);
+  }
+  .InfoCheck button {
+    width: 190px;
+    height: 60px;
+    border-radius: 8px;
+    border: 2px solid rgba(226, 226, 226, 0.719);
+    font-family: 'Protest Strike';
+    font-size: clamp(15px, 1.4vw, 20px);
+    font-weight: normal;
+    margin-top: 2px;
+    color: white;
+    transition: ease 0.3s;
+    background-color: #700a0a;
+  }
+  .InfoCheck button:hover {
+    transform: scale(1.1);
+  }
 }
-.ItensList {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  overflow-y: scroll;
+@media screen and (width <= 1089px) and (width >= 680px) {
+  .FinishPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000108;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  /************************************/
+
+  .InfoCheck {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: inset -1px 1px 20px 5px rgba(0, 0, 0, 0.684);
+  }
+
+  .ItensPurchased {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 38vw;
+    height: 450px;
+    padding: 10px;
+    color: white;
+    background-color: #1d1c21;
+    border: 2px solid rgb(101, 101, 101);
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.027);
+  }
+  .ItensList {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-y: scroll;
+  }
+  .ItensPurchased h3 {
+    margin: 10px;
+    font-size: clamp(13px, 1.7vw, 2vw);
+    font-weight: normal;
+    text-align: center;
+    font-family: 'Protest Strike';
+  }
+  .ItensPurchased div {
+    display: flex;
+    flex-direction: row;
+    text-wrap: nowrap;
+    justify-content: space-between;
+    padding-left: 20px;
+    align-items: center;
+    height: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.59);
+    font-size: clamp(13px, 2vw, 2vw);
+    font-family: 'Plus Jakarta Sans';
+    background-color: rgb(0, 0, 0);
+  }
+  .ItensPurchased div section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80px;
+  }
+  .ItensPurchased div section p {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .ItensPurchased div img {
+    display: flex;
+    transform: scale(1);
+    width: 100px;
+  }
+  .PriceInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: clamp(240px, 38vw, 800px);
+    height: 380px;
+    color: white;
+    border: 2px solid rgb(101, 101, 101);
+    border-radius: 5px;
+    background-color: #020117;
+    box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.027);
+  }
+  .Price section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    border-bottom: 1px solid white;
+  }
+  .Price section p {
+    font-size: clamp(19px, 2vw, 2vw);
+    color: #9b0202;
+    font-family: 'Bebas Neue';
+  }
+  .List {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 37vw;
+    height: 130px;
+    padding: 10px 0px 2px 0px;
+    border: 1px solid white;
+    gap: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .List::-webkit-scrollbar {
+    width: 8px;
+
+    background-color: #020117;
+  }
+  .List::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 5px;
+    background-color: #6f6f6f;
+  }
+  .ItemLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25vw;
+    height: 60px;
+    padding: 0px 10px;
+    font-size: clamp(15px, 1vw, 1vw);
+    font-family: 'Protest Strike';
+    border-bottom: 1px solid white;
+  }
+  .ItemLine div {
+    display: flex;
+    width: 10vw;
+    padding: 3px;
+    font-family: 'Bebas Neue';
+    font-size: clamp(16px, 1.3vw, 20px);
+    font-weight: normal;
+    background-color: #700a0a;
+  }
+  .InfoCheck nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .InfoCheck button:nth-child(3) {
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    border: 2px solid rgba(226, 226, 226, 0.719);
+    font-family: 'Bebas Neue';
+    font-size: clamp(px, 1.4vw, 27px);
+    font-weight: bold;
+    text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.325);
+    color: white;
+    background-color: rgba(243, 211, 34, 0.887);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.589);
+  }
+  .InfoCheck button {
+    width: 190px;
+    height: 60px;
+    border-radius: 8px;
+    border: 2px solid rgba(226, 226, 226, 0.719);
+    font-family: 'Protest Strike';
+    font-size: clamp(15px, 1.4vw, 20px);
+    font-weight: normal;
+    margin-top: 2px;
+    color: white;
+    transition: ease 0.3s;
+    background-color: #700a0a;
+  }
+  .InfoCheck button:hover {
+    transform: scale(1.07);
+  }
+  .Navigation {
+    position: absolute;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    bottom: 100px;
+  }
 }
-.ItensPurchased h3 {
-  margin: 10px;
-  font-size: clamp(13px, 1.7vw, 2vw);
-  font-weight: normal;
-  text-align: center;
-  font-family: 'Protest Strike';
-}
-.ItensPurchased div {
-  display: flex;
-  flex-direction: row;
-  text-wrap: nowrap;
-  justify-content: space-between;
-  padding-left: 20px;
-  align-items: center;
-  height: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.59);
-  font-size: clamp(13px, 2vw, 2vw);
-  font-family: 'Plus Jakarta Sans';
-  background-color: rgb(0, 0, 0);
-}
-.ItensPurchased div section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 80px;
-}
-.ItensPurchased div section p {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-.ItensPurchased div img {
-  display: flex;
-  transform: scale(1);
-  width: 100px;
-}
-.PriceInfo {
-  width: 28vw;
-  color: white;
-  height: 310px;
-  border: 2px solid rgb(101, 101, 101);
-  border-radius: 5px;
-  background-color: #020117;
-  box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.027);
-}
-.InfoCheck nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-.InfoCheck button:nth-child(3) {
-  width: 200px;
-  height: 60px;
-  border-radius: 20px;
-  border: 2px solid rgba(226, 226, 226, 0.719);
-  font-family: 'Bebas Neue';
-  font-size: 2vw;
-  font-weight: bold;
-  margin-top: 14px;
-  text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.325);
-  color: white;
-  background-color: rgba(243, 211, 34, 0.887);
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.589);
-}
-.InfoCheck button {
-  width: 190px;
-  height: 60px;
-  border-radius: 8px;
-  border: 2px solid rgba(226, 226, 226, 0.719);
-  font-family: 'Protest Strike';
-  font-size: 1.4vw;
-  font-weight: normal;
-  margin-top: 2px;
-  color: white;
-  transition: ease 0.3s;
-  background-color: #700a0a;
-}
-.InfoCheck button:hover {
-  transform: scale(1.1);
+@media screen and (width <= 679px) {
+  .FinishPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000108;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  /************************************/
+
+  .InfoCheck {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: inset -1px 1px 20px 5px rgba(0, 0, 0, 0.684);
+  }
+
+  .ItensPurchased {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 80vw;
+    height: 220px;
+    padding: 10px;
+    color: white;
+    background-color: #1d1c21;
+    border: 2px solid rgb(101, 101, 101);
+    border-radius: 5px;
+    box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.027);
+  }
+  .ItensList {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-y: scroll;
+  }
+  .ItensPurchased h3 {
+    margin: 10px;
+    font-size: clamp(13px, 1.7vw, 2vw);
+    font-weight: normal;
+    text-align: center;
+    font-family: 'Protest Strike';
+  }
+  .ItensPurchased div {
+    display: flex;
+    flex-direction: row;
+    text-wrap: nowrap;
+    justify-content: space-between;
+    padding-left: 20px;
+    align-items: center;
+    height: 80px;
+    border: 1px solid rgba(255, 255, 255, 0.59);
+    font-size: clamp(13px, 2vw, 2vw);
+    font-family: 'Plus Jakarta Sans';
+    background-color: rgb(0, 0, 0);
+  }
+  .ItensPurchased div section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80px;
+  }
+  .ItensPurchased div section p {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .ItensPurchased div img {
+    display: flex;
+    transform: scale(1);
+    width: 80px;
+  }
+  .PriceInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: clamp(300px, 90vw, 800px);
+    height: 380px;
+    color: white;
+    border: 2px solid rgb(101, 101, 101);
+    border-radius: 5px;
+    background-color: #020117;
+    box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.027);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .Price section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    border-bottom: 1px solid white;
+  }
+  .Price section p {
+    font-size: clamp(19px, 2vw, 2vw);
+    color: #9b0202;
+    font-family: 'Bebas Neue';
+  }
+  .List {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: clamp(220px, 60vw, 400px);
+    height: 130px;
+    padding: 10px 0px 2px 0px;
+    border: 1px solid white;
+    gap: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .List::-webkit-scrollbar {
+    width: 8px;
+
+    background-color: #020117;
+  }
+  .List::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 5px;
+    background-color: #6f6f6f;
+  }
+  .ItemLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 43vw;
+    height: 60px;
+    padding: 0px 10px;
+    font-size: clamp(15px, 1vw, 1vw);
+    font-family: 'Protest Strike';
+    border-bottom: 1px solid white;
+  }
+  .ItemLine div {
+    display: flex;
+    width: 100px;
+    padding: 3px;
+    font-family: 'Bebas Neue';
+    font-size: clamp(20px, 1.3vw, 20px);
+    font-weight: normal;
+    background-color: #700a0a;
+  }
+  .InfoCheck nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .InfoCheck button:nth-child(3) {
+    width: 100px;
+    height: 60px;
+    border-radius: 20px;
+    border: 2px solid rgba(226, 226, 226, 0.719);
+    font-family: 'Bebas Neue';
+    font-size: clamp(px, 1.4vw, 27px);
+    font-weight: bold;
+    text-shadow: 0px 0px 7px rgba(255, 255, 255, 0.325);
+    color: white;
+    background-color: rgba(243, 211, 34, 0.887);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.589);
+  }
+  .InfoCheck button {
+    width: 100px;
+    height: 60px;
+    border-radius: 8px;
+    border: 2px solid rgba(226, 226, 226, 0.719);
+    font-family: 'Protest Strike';
+    font-size: clamp(15px, 1.4vw, 20px);
+    font-weight: normal;
+    margin-top: 2px;
+    color: white;
+    transition: ease 0.3s;
+    background-color: #700a0a;
+  }
+  .InfoCheck button:hover {
+    transform: scale(1.07);
+  }
+  .Navigation {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+  }
 }

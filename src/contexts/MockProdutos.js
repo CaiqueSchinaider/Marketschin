@@ -11,7 +11,7 @@ export default function ListProductsProvider({ children }) {
     projectId: 'marketschin-react',
   });
   const dataBase = getFirestore(firebaseConfig);
-  const userCollectionRef = collection(dataBase, 'products');
+  const userCollectionRef = collection(dataBase, 'product');
 
   const [listProducts, setListProducts] = useState();
 

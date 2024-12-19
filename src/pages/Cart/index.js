@@ -14,6 +14,7 @@ function Cart() {
   const [productSelected, setProductSelected] = useState();
   const [catchList, setCatchList] = useState(whatSomeList || []);
   const [sendSignal, setSendSignal] = useState(false);
+  const [finishSignal, setFinishSignal] = useState(false);
 
   const [load, setLoad] = useState(false);
   const [notification, setNotification] = useState('block');
@@ -85,7 +86,19 @@ function Cart() {
       localStorage.setItem('listcart', JSON.stringify(deleteProducts));
     }
   }
-
+  useEffect(() => {
+    setPriceTotal(
+      catchList.reduce(
+        (current, initialvalue) => current + Number(initialvalue.valor),
+        0,
+      ),
+    );
+    if (catchList.length > 0) {
+      setFinishSignal(true);
+    } else {
+      setFinishSignal(false);
+    }
+  }, [catchList]);
   useEffect(() => {
     checkList();
     setTimeout(() => {
@@ -125,19 +138,23 @@ function Cart() {
                       <p> Continuar compras</p>
                     </button>
                   </Link>
+                  {finishSignal ? (
+                    <Link to="/finish" style={{ textDecoration: 'none' }}>
+                      <button
+                        style={{
+                          cursor: 'pointer',
 
-                  <Link to="/finish" style={{ textDecoration: 'none' }}>
-                    <button
-                      style={{
-                        cursor: 'pointer',
+                          fontWeight: 'bolder',
+                        }}
+                      >
+                        <img src="/pic/confirm.png" alt="pic confirm" />
+                        <p> Finalizar compras</p>
+                      </button>
+                    </Link>
+                  ) : (
+                    <></>
+                  )}
 
-                        fontWeight: 'bolder',
-                      }}
-                    >
-                      <img src="/pic/confirm.png" alt="pic confirm" />
-                      <p> Finalizar compras</p>
-                    </button>
-                  </Link>
                   <div className={styles.PriceTotal}>
                     <p>
                       <strong>Preço total</strong>
@@ -151,38 +168,51 @@ function Cart() {
                   </div>
                 </aside>
                 <div className={styles.ProductsList}>
-                  {catchList.map((product) => (
-                    <section key={product.id}>
-                      <div>
-                        <Link
-                          to={`/produto/${product.id}`}
-                          style={{ textDecoration: 'none' }}
-                        >
-                          <picture>
-                            <img src={product.thumb} alt={product.name}></img>
-                          </picture>
-                        </Link>
+                  {finishSignal ? (
+                    catchList.map((product) => (
+                      <section key={product.id}>
                         <div>
-                          <h2>{product.name}</h2>
-                          <h3>
-                            {Number.parseFloat(product.valor).toLocaleString(
-                              'pt-br',
-                              { style: 'currency', currency: 'BRL' },
-                            )}
-                          </h3>
+                          <Link
+                            to={`/produto/${product.id}`}
+                            style={{ textDecoration: 'none' }}
+                          >
+                            <picture>
+                              <img src={product.thumb} alt={product.name}></img>
+                            </picture>
+                          </Link>
+                          <div>
+                            <h2>{product.name}</h2>
+                            <h3>
+                              {Number.parseFloat(product.valor).toLocaleString(
+                                'pt-br',
+                                { style: 'currency', currency: 'BRL' },
+                              )}
+                            </h3>
+                          </div>
+                          <button
+                            className={styles.DeleteButton}
+                            onClick={() => deleteProductID(product.id)}
+                            style={{ cursor: 'pointer' }}
+                          ></button>
                         </div>
                         <button
-                          className={styles.DeleteButton}
                           onClick={() => deleteProductID(product.id)}
                           style={{ cursor: 'pointer' }}
                         ></button>
-                      </div>
-                      <button
-                        onClick={() => deleteProductID(product.id)}
-                        style={{ cursor: 'pointer' }}
-                      ></button>
-                    </section>
-                  ))}
+                      </section>
+                    ))
+                  ) : (
+                    <h1
+                      style={{
+                        margin: '70px auto auto auto',
+                        fontFamily: 'Protest Strike',
+                        fontWeight: 'normal',
+                        fontSize: 'clamp(15px, 3vw, 3vw)',
+                      }}
+                    >
+                      Nenhum Produto no carrinho!
+                    </h1>
+                  )}
                 </div>
               </main>
             </div>
