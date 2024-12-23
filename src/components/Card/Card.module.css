@@ -91,7 +91,8 @@
     grid-template-columns: 10px 10px;
   }
 
-  .Card p {
+  background-color: aliceblue;
+  .Card .InfoCard {
     padding-left: 20px;
     margin-top: 15px;
     font-size: 0.6rem;
@@ -140,7 +141,8 @@
     font-size: 1.1rem;
   }
 
-  .Card p {
+  background-color: aliceblue;
+  .Card .InfoCard {
     display: inline-block;
     flex-direction: column;
     margin-top: 10px;
@@ -167,39 +169,62 @@
 @media screen and (width >= 801px) {
   .Card {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 300px;
     max-width: 350px;
-    flex-wrap: wrap;
     gap: 30px;
+    overflow: hidden;
   }
 
   .Card img {
     width: 260px;
     height: 260px;
-    padding: 22px;
+    padding: 22px 22px 0px 22px;
     border-radius: 50px;
   }
 
   .Card h2 {
-    font-size: 1.5rem;
+    margin: 0px;
+    padding: 0px 0px 0px 40px;
+    font-size: 2rem;
     padding-top: 0;
   }
 
-  .Card p {
-    margin-top: 0;
-    padding-left: 30px;
-    height: 70px;
-    padding-bottom: 15px;
-    padding-top: 0;
+  .Card .InfoCard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: nowrap;
+    height: 130px;
+    margin: 0px;
+    padding: 0px;
   }
 
-  .Card span {
-    font-size: 1.2rem;
-  }
+  .InfoCard p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210px;
+    height: 40px;
+    margin: 0px auto;
+    padding: 0px 0px 0px 10px;
 
-  .Card section p {
-    margin-top: 13px;
+    font-size: 1.3rem;
+    font-family: 'Protest Strike', sans-serif;
+    font-weight: normal;
+    color: black;
+    overflow: hidden;
+
+    text-wrap: nowrap;
+  }
+  .InfoCard button {
+    width: 120px;
+    height: 30px;
+    margin: 0px auto;
+    color: white;
+    background-color: gold;
   }
 }
 
@@ -216,7 +241,8 @@
 .Card h2 {
   margin-top: 1px;
   font-weight: bolder;
-  color: #a72608;
+  font-family: 'Bebas Neue', sans-serif;
+  color: #9b0202;
 }
 
 .Card span {

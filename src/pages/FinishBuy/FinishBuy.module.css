@@ -35,12 +35,22 @@
     border: 2px solid rgb(101, 101, 101);
     border-radius: 5px;
     box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.027);
+    overflow-y: scroll;
+  }
+  .ItensPurchased::-webkit-scrollbar {
+    width: 8px;
+
+    background-color: #020117;
+  }
+  .ItensPurchased::-webkit-scrollbar-thumb {
+    width: 10px;
+    border-radius: 5px;
+    background-color: #6f6f6f;
   }
   .ItensList {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    overflow-y: scroll;
   }
   .ItensPurchased h3 {
     margin: 10px;
@@ -137,7 +147,9 @@
   }
   .ItemLine div {
     display: flex;
+    justify-content: center;
     width: 5vw;
+    min-width: 70px;
     padding: 3px;
     font-family: 'Bebas Neue';
     font-size: clamp(10px, 1.3vw, 20px);
@@ -218,12 +230,12 @@
     border: 2px solid rgb(101, 101, 101);
     border-radius: 5px;
     box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.027);
+    overflow-y: scroll;
   }
   .ItensList {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    overflow-y: scroll;
   }
   .ItensPurchased h3 {
     margin: 10px;
@@ -408,12 +420,12 @@
     border: 2px solid rgb(101, 101, 101);
     border-radius: 5px;
     box-shadow: 1px 1px 8px rgba(251, 251, 251, 0.027);
+    overflow-y: scroll;
   }
   .ItensList {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    overflow-y: scroll;
   }
   .ItensPurchased h3 {
     margin: 10px;

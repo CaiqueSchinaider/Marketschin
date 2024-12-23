@@ -11,7 +11,7 @@ export default function ListProductsProvider({ children }) {
     projectId: 'marketschin-react',
   });
   const dataBase = getFirestore(firebaseConfig);
-  const userCollectionRef = collection(dataBase, 'product');
+  const userCollectionRef = collection(dataBase, 'product'); // Products é um mock hospedado no Firestore (firebase)
 
   const [listProducts, setListProducts] = useState();
 

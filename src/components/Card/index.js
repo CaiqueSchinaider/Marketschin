@@ -13,10 +13,11 @@ function Card({ item }) {
         <section className={styles.Card}>
           <img src={item.thumb} alt="Produto imagem"></img>
 
-          <p>
-            <span>{item.name}</span>
+          <div className={styles.InfoCard}>
+            <p> {item.name}</p>
             <h2>{valueFormatted}</h2>
-          </p>
+            <button>adicionar ao carrinho</button>
+          </div>
         </section>
       </Link>
     </Container>
