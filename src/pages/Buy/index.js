@@ -8,67 +8,83 @@ import Categoria from '../../components/Category';
 
 import { listProductsContext } from '../../contexts/MockProdutos';
 import { useParams } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import { NotificationContext } from '../../contexts/Notification';
+import Loading from '../../components/Loading';
 
 function Buy() {
   //States
+  const [notification] = useContext(NotificationContext);
   const { paramscategoria } = useParams();
   const [listProducts] = useContext(listProductsContext);
   const [products, setProducts] = useState(listProducts);
+  const [category, setCategory] = useState('Todos');
+
   ////////////////////////////////////////////////
 
   // Filtrar produtos por pesquisa
-  function filterSearch(searchValue) {
-    if (listProducts) {
-      const productFilter = listProducts.filter(
-        (product) =>
-          product.categoria.includes(searchValue) ||
-          product.name.includes(searchValue),
-      );
-      if (productFilter) {
-        setProducts(productFilter);
+  async function filterSearch(searchValue) {
+    setCategory(searchValue);
+    if (searchValue == '') {
+      setProducts(listProducts);
+      setCategory('Todos');
+    } else {
+      if (listProducts) {
+        const productFilter = await listProducts.filter(
+          (product) =>
+            product.categoria.includes(searchValue) ||
+            product.name.includes(searchValue),
+        );
+        if (productFilter) {
+          setProducts(productFilter);
+        }
       }
     }
   }
   ////////////////////////////////////////////////
-
+  function deleteContent() {
+    const inputSearch = document.getElementById('search');
+    inputSearch.value = '';
+    filterSearch('');
+  }
   // Links para navegação
   const LINKS = (
     <>
-      <p
+      <button
         onClick={() => {
           filterSearch('Banheiro');
         }}
       >
         Banheiro
-      </p>
-      <p
+      </button>
+      <button
         onClick={() => {
           filterSearch('Outros');
         }}
       >
         Outros
-      </p>
-      <p
+      </button>
+      <button
         onClick={() => {
           filterSearch('Quarto');
         }}
       >
         Quarto
-      </p>
-      <p
+      </button>
+      <button
         onClick={() => {
           filterSearch('Sala de Estar');
         }}
       >
         Sala de Estar
-      </p>
-      <p
+      </button>
+      <button
         onClick={() => {
           filterSearch('Cozinha');
         }}
       >
         Cozinha
-      </p>
+      </button>
     </>
   );
 
@@ -88,18 +104,26 @@ function Buy() {
   return products ? (
     <section className={styles.BuyPage}>
       <Header />
-      <Banner page="Produtos" />
+      <ToastContainer />
 
       <>
         <div id="ponto">
           <input
+            id="search"
+            className={styles.Search}
             type="search"
             placeholder="Pesquisar..."
             onChange={(e) => filterSearch(e.target.value)}
           />
+          <button
+            className={styles.SearchDelete}
+            onClick={() => deleteContent()}
+          >
+            <img src="/pic/excluir.png"></img>
+          </button>
         </div>
 
-        <Categoria navegation={LINKS} needSomeCategory={filterSearch}>
+        <Categoria navigation={LINKS} needSomeCategory={category}>
           {products.map((dataProduct) => (
             <Card key={dataProduct.id} item={dataProduct} />
           ))}
@@ -107,7 +131,7 @@ function Buy() {
       </>
     </section>
   ) : (
-    <></>
+    <Loading />
   );
 }
 

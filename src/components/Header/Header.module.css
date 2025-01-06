@@ -107,7 +107,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  background-color: rgb(23 23 47 / 89%);
+  background-color: #03091a;
   position: fixed;
   top: 0;
   z-index: 1000;

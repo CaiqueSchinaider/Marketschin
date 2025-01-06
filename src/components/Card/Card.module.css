@@ -1,230 +1,180 @@
-/* Para telas menores */
-@media screen and (width >= 766px) and (width <= 800px) {
-  .Card img {
-    width: 99px;
-    height: 99px;
-    position: relative;
-    padding-right: 7px;
-    border-radius: 13px;
-  }
-
-  .Card h2 {
-    font-size: 1.3rem;
-    padding-top: 0;
-    padding-left: 10px;
-  }
-
-  .Card span {
-    padding-top: 0;
-    padding-left: 10px;
-    margin-top: 0;
-    display: inline-block;
-    width: 150px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-
-  .Card {
-    display: flex;
-    flex-direction: row-reverse;
-
-    max-width: 300px;
-    height: auto;
-    max-height: 80px;
-    margin: 10px;
-    padding-left: 0;
-    padding-top: 7px;
-    padding-bottom: 25px;
-    gap: 30px;
-  }
-}
-
-@media screen and (width >= 569px) and (width <= 765px) {
-  .Card {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    width: 400px;
-    height: auto;
-    max-height: 80px;
-    margin: 10px;
-    padding: 7px 10px 25px;
-    padding-top: 7px;
-    padding-bottom: 25px;
-    gap: 30px;
-    padding-left: 20px;
-  }
-
-  .Card span {
-    padding-top: 0;
-    margin-top: 0;
-    display: inline-block;
-    width: 270px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    font-size: 1.4rem;
-  }
-
-  .Card img {
-    width: 99px;
-    height: 99px;
-    position: relative;
-    padding-left: 10px;
-    border-radius: 13px;
-  }
-
-  .Card h2 {
-    font-size: 1.6rem;
-    padding-top: 0;
-  }
-}
-
-@media screen and (width <= 364px) {
-  .Card {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 200px;
-    height: auto;
-    max-height: 80px;
-    grid-template-columns: 10px 10px;
-  }
-
-  background-color: aliceblue;
-  .Card .InfoCard {
-    padding-left: 20px;
-    margin-top: 15px;
-    font-size: 0.6rem;
-  }
-
-  .Card h2 {
-    font-size: 1rem;
-  }
-
-  .Card img {
-    width: 44px;
-    height: 44px;
-    position: relative;
-    border-radius: 6px;
-  }
-
-  .Card a {
-    width: 48px;
-    height: 44px;
-    padding: 10px 7px 10px 2px;
-  }
-}
-
-@media screen and (width <= 568px) and (width >= 365px) {
+@media screen and (width <= 909px) {
   .Card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 180px;
-    max-width: 120px;
-    height: 180px;
-    font-size: 0.5rem;
-  }
-
-  .Card img {
-    display: flex;
-    width: 70px;
-    height: 70px;
-    margin-top: 10px;
-    margin-left: 25px;
-    border-radius: 10px;
-  }
-
-  .Card h2 {
-    height: 10px;
-    font-size: 1.1rem;
-  }
-
-  background-color: aliceblue;
-  .Card .InfoCard {
-    display: inline-block;
-    flex-direction: column;
-    margin-top: 10px;
-    padding-left: 20px;
-    justify-content: center;
-    width: 90px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .Card span {
-    width: 80px;
-    font-size: 0.7rem;
-    color: black;
-  }
-
-  .Card section p {
-    margin-top: 13px;
-  }
-}
-
-/* Para telas maiores */
-@media screen and (width >= 801px) {
-  .Card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 300px;
-    max-width: 350px;
-    gap: 30px;
+    max-width: 150px;
+    height: 232px !important;
+    max-height: 300px;
+    margin: 5px;
+    background-color: #111111 !important;
     overflow: hidden;
   }
-
   .Card img {
-    width: 260px;
-    height: 260px;
-    padding: 22px 22px 0px 22px;
-    border-radius: 50px;
-  }
-
-  .Card h2 {
-    margin: 0px;
-    padding: 0px 0px 0px 40px;
-    font-size: 2rem;
-    padding-top: 0;
+    width: 150px;
+    height: 150px;
   }
 
   .Card .InfoCard {
     display: flex;
     flex-direction: column;
     width: 100%;
-    flex-wrap: nowrap;
-    height: 130px;
-    margin: 0px;
+    height: 100px;
+    margin: 0px !important;
     padding: 0px;
+
+    flex-wrap: nowrap;
   }
 
   .InfoCard p {
+    display: block !important;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    margin: 0px auto;
+    padding: 0px 4px;
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: rgb(255, 255, 255) !important;
+    line-height: 40px;
+    font-family: 'Protest Strike', sans-serif;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: nowrap;
+  }
+  .InfoCard section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 44px;
+    background-color: #0a0546;
+  }
+  .InfoCard h2 {
+    display: flex;
+    align-items: center;
+    width: auto !important;
+    max-width: 100px;
+    overflow: hidden;
+    margin: 0px !important;
+    padding-left: 3px;
+    font-size: 1.67rem;
+    color: gold !important;
+  }
+  .InfoCard button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 210px;
+    width: 30px;
+    height: 30px;
+    margin: 0px;
+    border-radius: 7px;
+    border: 1px solid white;
+    background-color: #3d0303;
+    transition: ease 0.3s;
+    overflow: hidden;
+  }
+  .InfoCard button img {
+    width: 27px;
+    height: 27px;
+  }
+  .InfoCard button:hover {
+    transform: scale(1.06);
+  }
+}
+
+@media screen and (width >= 910px) {
+  .Card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px !important;
+    max-width: 250px;
+    height: 330px !important;
+    max-height: 330px;
+    margin: 5px;
+    background-color: #111111 !important;
+    overflow: hidden;
+  }
+  .Card img {
+    width: 250px;
+    height: 250px;
+  }
+  .LinksCard {
+    display: flex !important;
+    width: 250px !important;
+    max-width: 250px !important;
+    height: 250px !important;
+    max-height: 250px !important;
+  }
+
+  .Card .InfoCard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100px;
+    margin: 0px !important;
+    padding: 0px;
+
+    flex-wrap: nowrap;
+  }
+
+  .InfoCard p {
+    display: block !important;
+    align-items: center;
+    width: 100%;
     height: 40px;
     margin: 0px auto;
-    padding: 0px 0px 0px 10px;
-
-    font-size: 1.3rem;
-    font-family: 'Protest Strike', sans-serif;
+    padding: 0px 4px;
+    font-size: 1.2rem;
     font-weight: normal;
-    color: black;
+    color: rgb(255, 255, 255) !important;
+    line-height: 40px;
+    font-family: 'Protest Strike', sans-serif;
+    text-overflow: ellipsis;
     overflow: hidden;
-
     text-wrap: nowrap;
   }
+  .InfoCard section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 44px;
+    background-color: #0a0546;
+  }
+  .InfoCard h2 {
+    display: flex;
+    align-items: center;
+    width: auto !important;
+    max-width: 100px;
+    overflow: hidden;
+    margin: 0px !important;
+    padding-left: 3px;
+    font-size: 1.67rem;
+    color: gold !important;
+  }
   .InfoCard button {
-    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
     height: 30px;
-    margin: 0px auto;
-    color: white;
-    background-color: gold;
+    margin: 0px;
+    border-radius: 7px;
+    border: 1px solid white;
+    background-color: #3d0303;
+    transition: ease 0.3s;
+    overflow: hidden;
+  }
+  .InfoCard button img {
+    width: 27px;
+    height: 27px;
+  }
+  .InfoCard button:hover {
+    transform: scale(1.06);
   }
 }
 
@@ -233,7 +183,7 @@
   margin: 0 10px;
   background-color: #fff;
   box-shadow: 1px 1px 10px rgb(0 0 0 / 72.6%);
-  cursor: pointer;
+  border: 1px solid rgba(245, 245, 245, 0.541);
   transition: 0.8s ease;
   border-radius: 10px;
 }
@@ -245,8 +195,23 @@
   color: #9b0202;
 }
 
-.Card span {
-  font-weight: bold;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+.Card p {
+  font-weight: normal;
+  font-family: 'Protest Strike', sans-serif;
   color: #121113;
+}
+.Card img {
+  cursor: pointer;
+}
+.Card button {
+  cursor: pointer;
+}
+
+.LinksCard {
+  width: auto;
+  max-width: 150px;
+  height: auto;
+  max-height: 150px;
+  margin: 0px;
+  padding: 0px;
 }

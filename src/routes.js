@@ -21,46 +21,52 @@ import SegurityPasswordProvider from './contexts/SegurityPassword';
 import ListProductsProvider from './contexts/MockProdutos';
 import ParameterUtilsProvider from './contexts/ParameterUtils';
 import FinishBuy from './pages/FinishBuy';
+import NotificationProvider from './contexts/Notification';
 
 function AppRoutes() {
   return (
     <BrowserRouter>
-      <SegurityPasswordProvider>
-        <ListProductsProvider>
-          <ParameterUtilsProvider>
-            <ConfimCodeProvider>
-              <LoginsProvider>
-                <Routes>
-                  <Route path="/comprar/:paramscategoria" element={<Buy />}>
-                    {' '}
-                  </Route>
-                  <Route path="/home" element={<Home />}></Route>
-                  <Route path="/produto/:id" element={<Product />}></Route>
-                  <Route
-                    path="/carrinho/:productpurchased"
-                    element={<Cart />}
-                  ></Route>
-                  <Route path="/" element={<Login />}></Route>
-                  <Route path="*" element={<PageNotFound />}></Route>
+      <NotificationProvider>
+        <SegurityPasswordProvider>
+          <ListProductsProvider>
+            <ParameterUtilsProvider>
+              <ConfimCodeProvider>
+                <LoginsProvider>
+                  <Routes>
+                    <Route path="/comprar/:paramscategoria" element={<Buy />}>
+                      {' '}
+                    </Route>
+                    <Route path="/home" element={<Home />}></Route>
+                    <Route path="/produto/:id" element={<Product />}></Route>
+                    <Route
+                      path="/carrinho/:productpurchased"
+                      element={<Cart />}
+                    ></Route>
+                    <Route path="/" element={<Login />}></Route>
+                    <Route path="*" element={<PageNotFound />}></Route>
 
-                  <Route path="/user" element={<User />}></Route>
-                  <Route path="/addcard" element={<Addcard />}></Route>
-                  <Route
-                    path="/codeverification/:status"
-                    element={<PassCodeVerification />}
-                  ></Route>
-                  <Route
-                    path="/emailverification"
-                    element={<SendEmailVerification />}
-                  ></Route>
-                  <Route path="/redefinirpass" element={<Redefinir />}></Route>
-                  <Route path="/finish" element={<FinishBuy />}></Route>
-                </Routes>
-              </LoginsProvider>
-            </ConfimCodeProvider>
-          </ParameterUtilsProvider>
-        </ListProductsProvider>
-      </SegurityPasswordProvider>
+                    <Route path="/user" element={<User />}></Route>
+                    <Route path="/addcard" element={<Addcard />}></Route>
+                    <Route
+                      path="/codeverification/:status"
+                      element={<PassCodeVerification />}
+                    ></Route>
+                    <Route
+                      path="/emailverification"
+                      element={<SendEmailVerification />}
+                    ></Route>
+                    <Route
+                      path="/redefinirpass"
+                      element={<Redefinir />}
+                    ></Route>
+                    <Route path="/finish" element={<FinishBuy />}></Route>
+                  </Routes>
+                </LoginsProvider>
+              </ConfimCodeProvider>
+            </ParameterUtilsProvider>
+          </ListProductsProvider>
+        </SegurityPasswordProvider>
+      </NotificationProvider>
     </BrowserRouter>
   );
 }
