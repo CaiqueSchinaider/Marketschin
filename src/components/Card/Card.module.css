@@ -66,7 +66,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
+    width: 40px;
     height: 30px;
     margin: 0px;
     border-radius: 7px;
@@ -139,7 +139,7 @@
   .InfoCard section {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 44px;
@@ -149,20 +149,20 @@
     display: flex;
     align-items: center;
     width: auto !important;
-    max-width: 100px;
+    max-width: 130px;
     overflow: hidden;
-    margin: 0px !important;
+    margin: 0px 0px 0px 14px !important;
     padding-left: 3px;
-    font-size: 1.67rem;
+    font-size: 2rem;
     color: gold !important;
   }
   .InfoCard button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
-    margin: 0px;
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px 8px 0px;
     border-radius: 7px;
     border: 1px solid white;
     background-color: #3d0303;
@@ -170,8 +170,8 @@
     overflow: hidden;
   }
   .InfoCard button img {
-    width: 27px;
-    height: 27px;
+    width: 35px;
+    height: 35px;
   }
   .InfoCard button:hover {
     transform: scale(1.06);
@@ -180,7 +180,7 @@
 
 .Card {
   height: auto;
-  margin: 0 10px;
+  margin: 7px 14px;
   background-color: #fff;
   box-shadow: 1px 1px 10px rgb(0 0 0 / 72.6%);
   border: 1px solid rgba(245, 245, 245, 0.541);

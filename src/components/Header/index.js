@@ -13,10 +13,10 @@ function Header() {
           <img src="/pic/home.png" alt="pic home" />
         </Link>
         <Link to="/comprar/all">
-          <img src="/pic/sacola.png" alt="pic market" />
+          <img src="/pic/cart.png" alt="pic market" />
         </Link>
         <Link to="/carrinho/none">
-          <img src="/pic/cart.png" alt="pic cart" />
+          <img src="/pic/sacola.png" alt="pic cart" />
         </Link>
         <Link to="/user">
           <img src="/pic/perfil.png" alt="pic profile" />

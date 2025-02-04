@@ -85,6 +85,13 @@ function Buy() {
       >
         Cozinha
       </button>
+      <button
+        onClick={() => {
+          filterSearch('');
+        }}
+      >
+        Todos
+      </button>
     </>
   );
 

@@ -7,14 +7,14 @@
     transform: scale(0.5);
   }
 
-  .Header nav a:nth-of-type(2) {
+  .Header nav a:nth-of-type(3) {
     width: auto;
     color: white;
     text-decoration: none;
     transform: scale(0.3);
   }
 
-  .Header nav a:nth-of-type(3) {
+  .Header nav a:nth-of-type(2) {
     width: auto;
     padding: 10px;
     color: white;
@@ -69,7 +69,7 @@
     transform: scale(0.7);
   }
 
-  .Header nav a:nth-of-type(2) {
+  .Header nav a:nth-of-type(3) {
     width: auto;
     padding: 10px;
     color: white;
@@ -78,7 +78,7 @@
     transform: scale(0.42);
   }
 
-  .Header nav a:nth-of-type(3) {
+  .Header nav a:nth-of-type(2) {
     display: flex;
     justify-content: center;
     width: 30px;
