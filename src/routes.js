@@ -21,7 +21,7 @@ import ListProductsProvider from './contexts/MockProdutos';
 import ParameterUtilsProvider from './contexts/ParameterUtils';
 import FinishBuy from './pages/FinishBuy';
 import NotificationProvider from './contexts/Notification';
-import AddCard from './pages/Addcard';
+import AddCard from './pages/AddCard';
 
 function AppRoutes() {
   return (
@@ -46,7 +46,10 @@ function AppRoutes() {
                     <Route path="*" element={<PageNotFound />}></Route>
 
                     <Route path="/user" element={<User />}></Route>
-                    <Route path="/addcard" element={<AddCard />}></Route>
+
+                    <Route path="/addcard" element={<AddCard />}>
+                      {' '}
+                    </Route>
                     <Route
                       path="/codeverification/:status"
                       element={<PassCodeVerification />}
