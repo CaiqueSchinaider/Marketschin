@@ -11,7 +11,6 @@ import LoginsProvider from './contexts/SignalLogins';
 import ConfimCodeProvider from './contexts/ConfirmCode';
 import ParamsCodeProvider from './contexts/ParameterUtils';
 import User from './pages/User';
-import Addcard from './pages/AddCard';
 
 import PassCodeVerification from './pages/CodeVerification';
 import SendEmailVerification from './pages/SendEmailVerification';
