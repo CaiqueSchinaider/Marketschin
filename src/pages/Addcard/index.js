@@ -8,7 +8,7 @@ function AddCard() {
       <main className={styles.CardData}>
         <h1>Adicionar Cartão</h1>
         <label>
-          Nome do titular
+          Nome do titula
           <input type="text" />
         </label>
         <label>
