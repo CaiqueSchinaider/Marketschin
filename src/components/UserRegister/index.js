@@ -6,9 +6,9 @@ import { collection, getDocs, getFirestore } from 'firebase/firestore';
 import { ParameterUtilsContext } from '../../contexts/ParameterUtils';
 function Registrar() {
   const firebaseConfig = initializeApp({
-    apiKey: 'AIzaSyDIs9ELd9Fe4C-uP0r_m6H1jZgiKBQ4nb0',
-    authDomain: 'marketschin-react.firebaseapp.com',
-    projectId: 'marketschin-react',
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
   });
   const dataBase = getFirestore(firebaseConfig);
   const userCollectionRef = collection(dataBase, 'users');
