@@ -1,7 +1,7 @@
 import Header from '../../components/Header';
 import styles from './AddCard.module.css';
 
-function Addcard() {
+function AddCard() {
   return (
     <section className={styles.AddCard}>
       <Header />
@@ -34,4 +34,4 @@ function Addcard() {
   );
 }
 
-export default Addcard;
+export default AddCard;
